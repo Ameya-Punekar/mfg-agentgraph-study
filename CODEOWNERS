@@ -1,0 +1,8 @@
+# Default owner for all changes in this private thesis repository.
+* @Ameya-Punekar
+
+# Thesis brain and paper artifacts require explicit owner review when using PRs.
+/thesis-wiki/ @Ameya-Punekar
+/concept-paper/ @Ameya-Punekar
+/scripts/ @Ameya-Punekar
+/.github/ @Ameya-Punekar

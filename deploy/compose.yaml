@@ -1,0 +1,127 @@
+# Free-only local deployment envelope for MFG-AgentGraph (Issue #114).
+#
+# Every published port binds 127.0.0.1. There is no paid service, hosted
+# endpoint or cloud model, and no outbound network access after the initial
+# image and model pull.
+#
+# Identities are pinned by tag and manifest digest to the frozen protocol
+# (`implementation-study-protocol-v1`). Change them only through a new
+# protocol version.
+name: mfg-agentgraph
+
+services:
+  fuseki:
+    image: secoresearch/fuseki:6.2.0@sha256:74833bbf3967f41f5f98ddd6b861abf1a426705056da3bbdb516b8a703342aa9
+    restart: unless-stopped
+    environment:
+      # A local admin password only; never a service credential.
+      ADMIN_PASSWORD: ${MFG_FUSEKI_ADMIN_PASSWORD:?set MFG_FUSEKI_ADMIN_PASSWORD in deploy/.env}
+      # The image publishes /ds/data and /ds/update as read-only by default;
+      # bootstrap and provenance writes both need these.
+      ENABLE_DATA_WRITE: "true"
+      ENABLE_UPDATE: "true"
+      ENABLE_SHACL: ${MFG_FUSEKI_ENABLE_SHACL:-false}
+    ports:
+      - "127.0.0.1:${MFG_FUSEKI_PORT:-3030}:3030"
+    entrypoint:
+      - /bin/sh
+      - -c
+      # The image entrypoint rewrites assembler.ttl/config.ttl with `sed -i` to
+      # apply ENABLE_DATA_WRITE / ENABLE_UPDATE / ENABLE_SHACL. Seed a
+      # container-local copy first so the tracked configuration is never
+      # modified by a running stack, then hand over to the real entrypoint.
+      - |
+        set -e
+        cp /fuseki-config/configuration/assembler.ttl "$$FUSEKI_BASE/configuration/assembler.ttl"
+        cp /fuseki-config/config.ttl "$$FUSEKI_BASE/config.ttl"
+        exec /docker-entrypoint.sh "$$@"
+      - --
+    # Compose replaces the image CMD whenever a service sets `entrypoint`, so
+    # the pinned image's own CMD is repeated here verbatim; otherwise the shell
+    # is exec'd with no arguments and the container exits immediately.
+    command:
+      - java
+      - -cp
+      - "*:/javalibs/*"
+      - org.apache.jena.fuseki.main.cmds.FusekiServerCmd
+    volumes:
+      - fuseki-tdb2:/fuseki-base/databases
+      - ./fuseki:/fuseki-config:ro
+    healthcheck:
+      # wget is installed by this image's own build (apk add wget).
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:3030/$$/ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 40s
+
+  qdrant:
+    image: qdrant/qdrant:v1.19.2@sha256:b7b0444c4c351c970b98e90a6f89c2ee4287c65b44e52b4cb503fa5b2aa927ad
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${MFG_QDRANT_PORT:-6333}:6333"
+    volumes:
+      - qdrant-storage:/qdrant/storage
+    healthcheck:
+      # The Debian base image ships no curl or wget; bash tests the port.
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/6333'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  # CPU profile: `docker compose --profile cpu up -d`
+  ollama:
+    image: ollama/ollama:0.23.2@sha256:d00473cb58f0082c07cd6ed0d326a8a86f443ab69c51f8fc2b1a41687d45c661
+    profiles: ["cpu"]
+    restart: unless-stopped
+    environment:
+      # Bind the container interface: published-port traffic arrives there, not
+      # on the container's own loopback. Host exposure stays loopback-only.
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_KEEP_ALIVE: ${MFG_OLLAMA_KEEP_ALIVE:-5m}
+    ports:
+      - "127.0.0.1:${MFG_OLLAMA_PORT:-11434}:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/11434'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+  # Optional GPU profile: `docker compose --profile gpu up -d`
+  # Requires the NVIDIA Container Toolkit on the host. The envelope that this
+  # profile actually delivers is measured by Issue #131, not assumed here.
+  ollama-gpu:
+    image: ollama/ollama:0.23.2@sha256:d00473cb58f0082c07cd6ed0d326a8a86f443ab69c51f8fc2b1a41687d45c661
+    profiles: ["gpu"]
+    restart: unless-stopped
+    environment:
+      # Bind the container interface: published-port traffic arrives there, not
+      # on the container's own loopback. Host exposure stays loopback-only.
+      OLLAMA_HOST: 0.0.0.0:11434
+      OLLAMA_KEEP_ALIVE: ${MFG_OLLAMA_KEEP_ALIVE:-5m}
+    ports:
+      - "127.0.0.1:${MFG_OLLAMA_PORT:-11434}:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/127.0.0.1/11434'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+
+volumes:
+  fuseki-tdb2:
+  qdrant-storage:
+  ollama-models:

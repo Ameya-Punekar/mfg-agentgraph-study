@@ -1,0 +1,27 @@
+@prefix ex: <https://w3id.org/mfg-agentgraph/example#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:mfg-agentgraph:graph:factory> {
+  ex:Pump_12 a ex:CentrifugalPump ;
+    ex:locatedAt ex:PumpStation_12 ;
+    ex:hasRecommendedProcedure ex:Procedure_InspectInletCavitation_Pump12 .
+
+  ex:Observation_Pump12_2026-05-18T14:03:00Z a sosa:Observation ;
+    sosa:hasFeatureOfInterest ex:Pump_12 ;
+    sosa:resultTime "2026-05-18T14:03:00Z"^^xsd:dateTime ;
+    ex:signal "anomalous_sound" ;
+    ex:anomaly "anomalous_sound" ;
+    ex:description "Anomalous sound detected at Pump_12 at 14:03 UTC." .
+
+  ex:Procedure_InspectInletCavitation_Pump12 a ex:Procedure ;
+    ex:applicableAsset ex:Pump_12 ;
+    ex:requiresObservation ex:Observation_Pump12_2026-05-18T14:03:00Z .
+
+  ex:EvidenceEdge_001 a ex:EvidenceEdge, rdf:Statement ;
+    rdf:subject ex:Pump_12 ;
+    rdf:predicate ex:hasRecommendedProcedure ;
+    rdf:object ex:Procedure_InspectInletCavitation_Pump12 ;
+    ex:requiresObservation ex:Observation_Pump12_2026-05-18T14:03:00Z .
+}

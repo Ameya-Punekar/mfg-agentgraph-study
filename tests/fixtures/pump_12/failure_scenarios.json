@@ -1,0 +1,81 @@
+{
+  "contract_version": "issue-8-pump-12-failure-scenarios-v1",
+  "expected_fallback_intents": {
+    "missing_target": "ask_operator_to_disambiguate",
+    "missing_observation": "insufficient_evidence",
+    "missing_procedure": "unsupported_lower_ranked",
+    "invalid_evidence_package": "fail_closed",
+    "provenance_write_failure": "block_no_recommendation"
+  },
+  "failure_scenarios": {
+    "missing_target": {
+      "id": "ex:Pump12Failure_missing_target",
+      "description": "Candidate action cannot identify the affected asset, so Architecture V1 asks the operator to disambiguate the target.",
+      "prerequisite": "resolved_target_asset",
+      "mutation": {
+        "path": "/candidate_actions/repaired/target",
+        "operation": "replace",
+        "expected_before": "ex:Pump_12",
+        "value": null
+      },
+      "expected_fallback_intent": "ask_operator_to_disambiguate",
+      "expected_architecture_v1_deviation": false
+    },
+    "missing_observation": {
+      "id": "ex:Pump12Failure_missing_observation",
+      "description": "The anomaly observation needed to ground the recommendation is unavailable, so Architecture V1 reports insufficient evidence.",
+      "prerequisite": "observation_support",
+      "mutation": {
+        "path": "/observation",
+        "operation": "remove",
+        "expected_before": {
+          "id": "ex:Observation_Pump12_2026-05-18T14:03:00Z",
+          "observed_asset": "ex:Pump_12",
+          "observed_at": "2026-05-18T14:03:00Z",
+          "signal": "anomalous_sound",
+          "description": "Anomalous sound detected at Pump_12 at 14:03 UTC.",
+          "anomaly": "anomalous_sound"
+        }
+      },
+      "expected_fallback_intent": "insufficient_evidence",
+      "expected_architecture_v1_deviation": false
+    },
+    "missing_procedure": {
+      "id": "ex:Pump12Failure_missing_procedure",
+      "description": "The candidate lacks the procedural citation while procedure resources remain available, so Architecture V1 treats the recommendation as unsupported/lower-ranked.",
+      "prerequisite": "procedural_citation",
+      "mutation": {
+        "path": "/candidate_actions/repaired/evidence_refs/1",
+        "operation": "remove",
+        "expected_before": "ex:SOP_Chunk_7"
+      },
+      "expected_fallback_intent": "unsupported_lower_ranked",
+      "expected_architecture_v1_deviation": false
+    },
+    "invalid_evidence_package": {
+      "id": "ex:Pump12Failure_invalid_evidence_package",
+      "description": "The evidence package omits a required release artifact reference, so Architecture V1 fails closed.",
+      "prerequisite": "complete_evidence_package",
+      "mutation": {
+        "path": "/expected_evidence_package/validation_report",
+        "operation": "remove",
+        "expected_before": "ex:ValidationReport_Pump12_001"
+      },
+      "expected_fallback_intent": "fail_closed",
+      "expected_architecture_v1_deviation": false
+    },
+    "provenance_write_failure": {
+      "id": "ex:Pump12Failure_provenance_write_failure",
+      "description": "The provenance trace cannot be written after validation succeeds, so Architecture V1 blocks release with no recommendation.",
+      "prerequisite": "persisted_provenance_trace",
+      "mutation": {
+        "path": "/provenance_trace/write_result",
+        "operation": "replace",
+        "expected_before": "success",
+        "value": "failure"
+      },
+      "expected_fallback_intent": "block_no_recommendation",
+      "expected_architecture_v1_deviation": false
+    }
+  }
+}

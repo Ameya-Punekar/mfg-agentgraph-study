@@ -1,0 +1,39 @@
+name: Feature request
+description: Request a new capability or improvement
+title: "feat: "
+labels: ["type:feature", "status:needs-triage"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What problem does this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: checkboxes
+    id: rq
+    attributes:
+      label: Thesis relevance
+      options:
+        - label: RQ1 — retrieval/answer quality
+        - label: RQ2 — ontology/SHACL
+        - label: RQ3 — provenance/trust
+        - label: RQ4 — local deployment
+        - label: Repository maintenance only
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      value: |
+        - [ ]
+        - [ ]

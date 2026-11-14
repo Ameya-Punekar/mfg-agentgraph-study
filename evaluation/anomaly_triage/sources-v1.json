@@ -1,0 +1,10 @@
+{
+  "contract_version": "mfg-agentgraph-annotation-sources-v1",
+  "sources": [
+    {
+      "evidence_id": "ex:SOP_Chunk_7",
+      "path": "tests/fixtures/sop/pump12-sop.txt",
+      "sha256": "3e538364b4d6a61f92e3bfd0976134865130063bdbcadd607cb203862957eecf"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: ruff-check
+        name: Ruff lint
+        entry: uv run ruff check --fix src tests
+        language: system
+        pass_filenames: false
+      - id: ruff-format
+        name: Ruff format
+        entry: uv run ruff format src tests
+        language: system
+        pass_filenames: false
+      - id: mypy
+        name: mypy strict types
+        entry: uv run mypy
+        language: system
+        pass_filenames: false
+      - id: repo-quality
+        name: repository governance
+        entry: python3 scripts/repo_quality_check.py
+        language: system
+        pass_filenames: false

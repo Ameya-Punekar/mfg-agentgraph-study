@@ -1,0 +1,109 @@
+{
+  "contract_version": "issue-8-pump-12-fixture-contract-v1",
+  "pump_station": {
+    "id": "ex:PumpStation_12",
+    "label": "Pump Station 12"
+  },
+  "asset": {
+    "id": "ex:Pump_12",
+    "label": "Pump 12",
+    "type": "centrifugal_pump",
+    "located_at": "ex:PumpStation_12"
+  },
+  "anomaly_window": {
+    "started_at": "2026-05-18T14:00:00Z",
+    "ended_at": "2026-05-18T14:10:00Z",
+    "timezone": "UTC"
+  },
+  "observation": {
+    "id": "ex:Observation_Pump12_2026-05-18T14:03:00Z",
+    "observed_asset": "ex:Pump_12",
+    "observed_at": "2026-05-18T14:03:00Z",
+    "signal": "anomalous_sound",
+    "description": "Anomalous sound detected at Pump_12 at 14:03 UTC.",
+    "anomaly": "anomalous_sound"
+  },
+  "procedure": {
+    "id": "ex:Procedure_InspectInletCavitation_Pump12",
+    "label": "Inspect Pump 12 inlet for cavitation according to SOP section 7",
+    "applicable_asset": "ex:Pump_12",
+    "requires_observation": "ex:Observation_Pump12_2026-05-18T14:03:00Z"
+  },
+  "kg_evidence": {
+    "id": "ex:EvidenceEdge_001",
+    "type": "kg_edge",
+    "subject": "ex:Pump_12",
+    "predicate": "ex:hasRecommendedProcedure",
+    "object": "ex:Procedure_InspectInletCavitation_Pump12",
+    "retrieved_at": "2026-05-18T14:04:00Z"
+  },
+  "document_evidence": {
+    "id": "ex:SOP_Chunk_7",
+    "type": "document_chunk",
+    "document": "SOP-PUMP-OPS-2026",
+    "chunk_index": 7,
+    "related_procedure": "ex:Procedure_InspectInletCavitation_Pump12",
+    "text": "For anomalous sound at Pump_12, inspect the pump inlet for cavitation before recommending corrective action.",
+    "source_path": "tests/fixtures/sop/pump12-sop.txt",
+    "start_line": 1,
+    "end_line": 1,
+    "source_sha256": "3e538364b4d6a61f92e3bfd0976134865130063bdbcadd607cb203862957eecf",
+    "index_contract_version": "mfg-agentgraph-procedural-index-v1",
+    "retrieved_at": "2026-05-18T14:04:05Z"
+  },
+  "candidate_actions": {
+    "incomplete": {
+      "id": "ex:CandidateAction_Pump12_Incomplete_001",
+      "label": "Inspect pump inlet for cavitation",
+      "target": null,
+      "evidence_refs": [],
+      "known_gaps": [
+        "target",
+        "evidence_refs"
+      ],
+      "created_at": "2026-05-18T14:05:00Z"
+    },
+    "repaired": {
+      "id": "ex:CandidateAction_Pump12_Repaired_001",
+      "label": "Inspect the pump inlet of Pump_12 for cavitation",
+      "target": "ex:Pump_12",
+      "repair_of": "ex:CandidateAction_Pump12_Incomplete_001",
+      "evidence_refs": [
+        "ex:EvidenceEdge_001",
+        "ex:SOP_Chunk_7"
+      ],
+      "created_at": "2026-05-18T14:05:30Z"
+    }
+  },
+  "expected_evidence_package": {
+    "id": "ex:EvidencePackage_Pump12_001",
+    "candidate_action": "ex:CandidateAction_Pump12_Repaired_001",
+    "evidence_refs": [
+      "ex:EvidenceEdge_001",
+      "ex:SOP_Chunk_7"
+    ],
+    "validation_report": "ex:ValidationReport_Pump12_001",
+    "provenance_trace": "ex:ProvenanceTrace_Pump12_001",
+    "generated_at": "2026-05-18T14:10:30Z"
+  },
+  "validation_report": {
+    "id": "ex:ValidationReport_Pump12_001",
+    "candidate_action": "ex:CandidateAction_Pump12_Repaired_001",
+    "status": "valid",
+    "validated_at": "2026-05-18T14:10:15Z",
+    "checks": [
+      "target_present",
+      "kg_evidence_present",
+      "document_evidence_present",
+      "evidence_package_complete"
+    ]
+  },
+  "provenance_trace": {
+    "id": "ex:ProvenanceTrace_Pump12_001",
+    "candidate_action": "ex:CandidateAction_Pump12_Repaired_001",
+    "evidence_package": "ex:EvidencePackage_Pump12_001",
+    "recorded_at": "2026-05-18T14:11:15Z",
+    "writer": "deterministic-fixture",
+    "write_result": "success"
+  }
+}

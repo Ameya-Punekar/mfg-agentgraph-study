@@ -1,0 +1,126 @@
+name: repo-quality
+
+on:
+  pull_request:
+    branches: [main, "feat/implementation-v1"]
+    types: [opened, synchronize, reopened, edited]
+  push:
+    branches:
+      - main
+      - "feat/**"
+      - "fix/**"
+      - "docs/**"
+      - "research/**"
+      - "experiment/**"
+      - "ci/**"
+      - "chore/**"
+      - "refactor/**"
+      - "test/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  repo-quality:
+    name: repo-quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.11"
+
+      - name: Require Conventional Commit pull-request title
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+
+          title = os.environ["PR_TITLE"]
+          pattern = r"^(feat|fix|docs|research|experiment|test|ci|chore|refactor)(\([a-z0-9-]+\))?!?: .+"
+          if re.fullmatch(pattern, title) is None:
+              raise SystemExit(
+                  "PR title must use Conventional Commits, for example: "
+                  "feat(validation): add SHACL report model"
+              )
+          PY
+
+      - name: Require issue closure or maintenance declaration
+        if: ${{ github.event_name == 'pull_request' && github.actor != 'dependabot[bot]' && github.actor != 'renovate[bot]' }}
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+
+          body = os.environ.get("PR_BODY") or ""
+          closes = re.search(
+              r"(?i)\b(?:close[sd]?|fix(?:e[sd])?|resolve[sd]?)\s+#\d+", body
+          )
+          maintenance = re.search(r"(?i)\bmaintenance[ -]only\b", body)
+          if closes is None and maintenance is None:
+              raise SystemExit(
+                  "PR body must close its issue with 'Closes #123' "
+                  "or declare 'Maintenance only'."
+              )
+          PY
+
+      - name: Run wiki structural audit
+        run: python3 scripts/wiki_health.py
+
+      - name: Require zero structural wiki issues
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          report = Path("thesis-wiki/wiki/wiki-health.md").read_text(encoding="utf-8")
+          required = (
+              "- Missing required field issues: 0",
+              "- RQ tag issues: 0",
+              "- Missing wikilink targets: 0",
+              "- Orphan/index coverage issues: 0",
+          )
+          missing = [line for line in required if line not in report]
+          if missing:
+              raise SystemExit("Wiki structural gate failed: " + ", ".join(missing))
+          PY
+
+      - name: Protect immutable raw sources
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: |
+          python3 - <<'PY'
+          import os
+          import subprocess
+
+          base = f"origin/{os.environ['BASE_REF']}"
+          changed = subprocess.check_output(
+              ["git", "diff", "--name-only", f"{base}...HEAD"],
+              text=True,
+          ).splitlines()
+          raw = [path for path in changed if path.startswith("thesis-wiki/raw/")]
+          if raw:
+              raise SystemExit(
+                  "Immutable thesis-wiki/raw paths changed in this PR: " + ", ".join(raw)
+              )
+          PY
+
+      - name: Run repository governance checks
+        run: python3 scripts/repo_quality_check.py

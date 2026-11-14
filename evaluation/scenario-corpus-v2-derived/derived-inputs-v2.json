@@ -1,0 +1,57 @@
+{
+  "artifact": "derived-inputs-v2.json",
+  "schema_version": 1,
+  "corpus_id": "mimii-synthetic-context-v2",
+  "scope": "Declared derived text inputs for supplemental documents whose downloadable artifact has no native text layer. A build verifies the download against the original-bytes identity, verifies the pinned text against its own identity, and uses the pinned text instead of re-running OCR.",
+  "hash_roles": {
+    "origin.sha256": "identity of the bytes served by the declared download URL (original image-only scan)",
+    "derived_artifact.sha256": "identity of the locally OCR'd PDF that produced the text; equal to sources-v2.json source_sha256, recorded but not re-derived by this build because OCR output bytes are not reproducible",
+    "text.sha256": "canonical identity of the pinned, committed text input that this build reads"
+  },
+  "inputs": [
+    {
+      "document_id": "doc:nrc-nureg-cr-6478",
+      "reason": "The NRC ML18086B223.pdf scan and its OSTI 515583 alternate both carry zero native text words, so pdftotext on either returns nothing. The corpus text comes from a real OCR layer placed over the OSTI scan.",
+      "origin": {
+        "url": "https://www.osti.gov/servlets/purl/515583",
+        "cache_name": "acquired/nrc-nureg-cr-6478-osti-515583-alt.pdf",
+        "sha256": "cb14029bd8deec1e8285cabb0a79d321a1c66db728cc1d537b53e5454a7b6ce7",
+        "bytes": 4075216,
+        "pages": 55,
+        "content_type": "application/pdf",
+        "note": "OSTI record 515583, canonical purl, HTTP 200; Image Alchemy scan of the same report. Preserved unchanged as the authoritative page images."
+      },
+      "derived_artifact": {
+        "cache_name": "acquired/nrc-nureg-cr-6478-ocr.pdf",
+        "sha256": "98bb723ed4c28ae8fe5d167b7c5b1db4b20c9db5bfeaf79c70ef3a8de32429e0",
+        "bytes": 4802093,
+        "pages": 55,
+        "note": "OCR text layer over the untouched scan page images, one text layer per source page; page count and page size preserved. Byte-identical regeneration is not deterministic, so this artifact is an identity record only."
+      },
+      "text": {
+        "path": "nrc-nureg-cr-6478.pdftotext-layout.txt",
+        "sha256": "3663e68e3b9bc6ff5ef25cf31e84f0ce0b790d333f6b237411a01dfd67590305",
+        "bytes": 103611,
+        "extraction": {
+          "tool": "pdftotext",
+          "tool_version": "26.01.0",
+          "args": [
+            "-layout",
+            "-enc",
+            "UTF-8"
+          ],
+          "applied_to": "acquired/nrc-nureg-cr-6478-ocr.pdf"
+        },
+        "note": "Exact layout text of the OCR PDF, committed as the pinned input because the OCR PDF bytes are not reproducible. The 12 procedural chunks and the document text_sha256 are derived from this text with the same paragraph and chunk-selection rule as every other PDF."
+      },
+      "ocr": {
+        "required_because": "both the NRC ML18086B223.pdf scan and the OSTI 515583 scan have 0 native text words",
+        "engine": "tesseract 5.5.0 (leptonica 1.86.0), eng, --psm 3, 300 dpi grayscale raster from pdftoppm",
+        "text_layer_insertion": "PyMuPDF 2.1, invisible render mode 3, DejaVu Sans 4-8 pt, one OCR line per extracted line; blank separator lines preserved",
+        "no_synthesis": "No word, number, or sentence was added, inferred, or repaired; a small number of OCR artefacts remain (hyphen splits, misread punctuation).",
+        "provenance_record": "evaluation/scenario-corpus-v1/acquisition-v1.json (NUREG/CR-6478 records)",
+        "tools_not_needed": "The OCR toolchain is not a build prerequisite: this build reads the committed text and never re-runs OCR."
+      }
+    }
+  ]
+}

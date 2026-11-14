@@ -1,0 +1,454 @@
+{
+ "artifact": "mfg-agentgraph-scenario-corpus-v2-sources",
+ "schema_version": 1,
+ "generated_utc": "2026-11-09T23:03:12Z",
+ "corpus_id": "mimii-synthetic-context-v2",
+ "version": "v2",
+ "contract_version": "mfg-agentgraph-scenario-corpus-v1",
+ "scope": "Supplemental source manifest for the additive v2 scenario corpus: the 11 complete documents acquired in the Issue #115 re-acquisition pass (nine NRC valve reports, the CDC/NIOSH dust-control handbook, and the current USACE EM 1110-2-3105). Excludes the two partial Navy volumes, the duplicate 1994 USACE edition, and the three unapproved optional NAVEDTRA candidates.",
+ "document_count": 11,
+ "counts": {
+  "v1_documents": 28,
+  "v2_supplemental_documents": 11,
+  "v2_total_document_artifacts": 39,
+  "underlying_document_families": 38,
+  "note": "39 document artifacts = 28 frozen-v1 documents + 11 v2 supplemental documents. That is 38 underlying document families, because doc:usace-em-1110-2-3105-2020 (30 April 2020) supersedes the 1994 edition already present in v1 as doc:usace-em-1110-2-3105. Do not claim 39 independent sources, and do not claim the ~50-document target is met."
+ },
+ "rights_method": {
+  "nrc": "All nine NRC reports use basis=site_permission with terms_url https://www.nrc.gov/about-nrc/site-disclaimer.html, fetched 2026-11-09 and verified to state that the NRC website is a U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, with credit requested, and that permission for embedded copyrighted material must come from the original source. Because most of these are contractor-prepared NUREG/CR reports, the basis is recorded as the site permission, not as blanket federal authorship.",
+  "cdc": "public_domain_statutory, evidenced by the public-domain statement printed in the acquired copy.",
+  "usace": "public_domain_statutory, evidenced by the printed distribution statement in the acquired copy.",
+  "per_document_ingest_check": "Each report's front matter and selected procedural chunks were inspected: no copyright notice, all-rights-reserved line, or reproduction restriction appears in the bodies; third-party figures, credited illustrations, and quoted industry standards are excluded from procedural text extraction."
+ },
+ "documents": [
+  {
+   "document_id": "doc:nrc-nureg-cr-4819-v1",
+   "title": "Aging and Service Wear of Solenoid-Operated Valves Used in Safety-Related Systems of Nuclear Power Plants, Volume 1 (NUREG/CR-4819 Vol. 1; ORNL/Sub/83-28915/4/V1)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0403/ML040360264.pdf",
+   "download_uri": "https://web.archive.org/web/20260215140752/https://www.nrc.gov/docs/ML0403/ML040360264.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-4819-v1.pdf",
+   "source_sha256": "5462408ecdc4243a8d2b0c4930f1a4b36400cff4fd4c77c9c3396c7dcb502afa",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 65,
+   "text_layer": true,
+   "extracted_words": 15178,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-4819, Volume 1 (ORNL/Sub/83-28915/4/V1), 1987",
+   "identity_evidence": "PDF internal Title metadata and page-1 title block read 'NUREG/CR-4819 Volume 1 ... Aging and Service Wear of Solenoid-Operated Valves'; matches OSTI 6380049 (NUREG/CR-4819-Vol.1)."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-6478",
+   "title": "Motor-Operated Valve (MOV) Actuator Motor and Gearbox Testing (NUREG/CR-6478; INEL-96/0219)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML1808/ML18086B223.pdf",
+   "download_uri": "https://www.osti.gov/servlets/purl/515583",
+   "cache_name": "acquired/nrc-nureg-cr-6478-ocr.pdf",
+   "source_sha256": "98bb723ed4c28ae8fe5d167b7c5b1db4b20c9db5bfeaf79c70ef3a8de32429e0",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 55,
+   "text_layer": true,
+   "extracted_words": 17716,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "nrc.gov /docs/ and the cr6478 catalogue page return HTTP 403 Akamai 'Access Denied' from this host",
+    "bytes_source": "https://www.osti.gov/servlets/purl/515583 (OSTI record 515583, canonical purl), HTTP 200, content-type application/pdf, content-length 4075216",
+    "validation": "pdfinfo 55 pages; pdfinfo reports no encrypted/form fields; %PDF-1.0 header; pdftotext on the plain scan returns 0 words (image-only), so a real OCR text layer was produced; the OCR PDF parses, keeps 55 pages, and yields 17716 extracted words and 12 procedural chunks",
+    "why_not_the_nrc_scan": "The 58-page NRC scan also has no text layer; the OSTI 55-page copy is the validated same-report alternate, and OCR of it produces the text used by the corpus."
+   },
+   "report_identity": "NUREG/CR-6478; INEL-96/0219 (1997)",
+   "identity_evidence": "OSTI 515583 record: Report Number(s) NUREG/CR-6478; INEL-96/0219; TI97008289. Rendered page 1 of the acquired alternate reads 'NUREG/CR-6478 / INEL-96/0219 / Motor-Operated Valve (MOV) Actuator Motor and Gearbox Testing', prepared by K. DeWall, J. C. Watkins, D. Bramwell (Idaho National Engineering Laboratory, Lockheed Idaho Technologies Company) for the U.S. Nuclear Regulatory Commission; page 55 availability statement reads 'AVAILABILITY STATEMENT ... Unlimited'; page 4 reads 'NUREG/CR-6478 has been reproduced from the best available copy.'",
+   "text_bearing_copy": {
+    "cache_name": "acquired/nrc-nureg-cr-6478-ocr.pdf",
+    "derivation": "OCR text layer placed on the pages of the OSTI 515583 scan; page count, page size (611x792 pt) and the scanned page images are preserved, one text layer per source page. No text was added, inferred, or synthesized.",
+    "ocr_tool": "tesseract 5.5.0 (leptonica 1.86.0), eng, --psm 3, 300 dpi grayscale raster from pdftoppm",
+    "text_layer_insertion": "PyMuPDF 2.1, invisible render mode 3, DejaVu Sans 4-8 pt, one OCR line per extracted line; blank separator lines preserved",
+    "pages": 55,
+    "extracted_words": 17716,
+    "pdftotext_layout_words": 17716,
+    "procedural_chunks": 12,
+    "ocr_note": "A small number of OCR artefacts remain (e.g. hyphen splits across lines and misread punctuation); no content was invented."
+   },
+   "preserved_copies": [
+    {
+     "path": "acquired/nrc-nureg-cr-6478.pdf",
+     "sha256": "7a163e614b94994bfe3fc8c65d489839f0a82e500ad4954d08ba0e444b9f3c58",
+     "bytes": 5200624,
+     "pages": 58,
+     "note": "Original acquisition: 58-page image-only NRC scan from the Wayback replay of ML18086B223.pdf; zero text layer; preserved unchanged."
+    },
+    {
+     "path": "acquired/nrc-nureg-cr-6478-osti-515583-alt.pdf",
+     "sha256": "cb14029bd8deec1e8285cabb0a79d321a1c66db728cc1d537b53e5454a7b6ce7",
+     "bytes": 4075216,
+     "pages": 55,
+     "note": "OSTI 515583 alternate of the same report (Image Alchemy scan, zero native text layer); valid PDF, 55 pages; preserved unchanged."
+    }
+   ],
+   "caveats": [
+    "Do not substitute Volume 2 material or other NUREG reports for this identity.",
+    "OCR text is a derived layer; the authoritative page images remain the two preserved scans."
+   ],
+   "ocr": {
+    "why": "Both the NRC URL and the OSTI 515583 mirror serve an image-only scan (0 native words).",
+    "tool": "tesseract 5.5.0 / leptonica 1.86.0",
+    "settings": "300 dpi, --psm 3, eng; text layer written with PyMuPDF 2.1 in invisible render mode 3",
+    "derived_artifact": "cache_name above (4,802,093 bytes) is the locally OCR-derived PDF, not a download",
+    "download_fetches": "the pre-OCR OSTI scan, so a cache-free build fails the pinned digest by design",
+    "preserved_sources": {
+     "nrc-original-scan": {
+      "cache_name": "acquired/nrc-nureg-cr-6478.pdf",
+      "sha256": "7a163e614b94994bfe3fc8c65d489839f0a82e500ad4954d08ba0e444b9f3c58",
+      "pages": 58,
+      "bytes": 5200624
+     },
+     "osti-515583-scan": {
+      "cache_name": "acquired/nrc-nureg-cr-6478-osti-515583-alt.pdf",
+      "sha256": "cb14029bd8deec1e8285cabb0a79d321a1c66db728cc1d537b53e5454a7b6ce7",
+      "pages": 55,
+      "bytes": 4075216
+     }
+    }
+   }
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-4692",
+   "title": "Operating Experience Review of Failures of Power Operated Relief Valves and Block Valves in Nuclear Power Plants (NUREG/CR-4692; ORNL/NOAC-233)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0402/ML040230365.pdf",
+   "download_uri": "https://web.archive.org/web/20260216073252/https://www.nrc.gov/docs/ML0402/ML040230365.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-4692.pdf",
+   "source_sha256": "68b495e5ef10417e1e43999d1b2efb956f861a93782785951ab36167a45a35c2",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 78,
+   "text_layer": true,
+   "extracted_words": 17227,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-4692; ORNL/NOAC-233 (1986)",
+   "identity_evidence": "Page-1 title block matches NUREG/CR-4692, Operating Experience Review of Failures of Power Operated Relief Valves and Block Valves.",
+   "licence_evidence_note": "Figure captions credit vendor illustrations ('Courtesy of Crosby Valve and Gage Company', 'Target Rock', 'Copes-Vulcan'); those third-party figures are excluded, and none of the selected procedural text chunks contains a courtesy/permission marker."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-6819-v2",
+   "title": "Common-Cause Failure Event Insights: Motor-Operated Valves (NUREG/CR-6819, Vol. 2; INEEL/EXT-99-00613)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0317/ML031710328.pdf",
+   "download_uri": "https://web.archive.org/web/20250216182212id_/https://www.nrc.gov/docs/ML0317/ML031710328.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-6819-v2.pdf",
+   "source_sha256": "7ca62e7f9f715440ee6125406c9ab80b118b642ccb40cdede9878e82cc855f17",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T2",
+   "pages": 153,
+   "text_layer": true,
+   "extracted_words": 61695,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-6819, Vol. 2; INEEL/EXT-99-00613 (2003)",
+   "identity_evidence": "Cover and title page read NUREG/CR-6819, Vol. 2 / INEEL/EXT-99-00613, Common-Cause Failure Event Insights, Motor-Operated Valves, prepared by INEEL for NRC.",
+   "licence_evidence_note": "Body notes that NPRDS and EPIX failure data are proprietary and are presented only in aggregated form; that is a data-confidentiality note, not a reproduction restriction on the published report text. No copyright notice appears."
+  },
+  {
+   "document_id": "doc:nrc-nureg-1296",
+   "title": "Thermal Overload Protection for Electric Motors on Safety-Related Motor-Operated Valves, Generic Issue II.E.6.1 (NUREG-1296)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML2407/ML24073A364.pdf",
+   "download_uri": "https://web.archive.org/web/20260616032844/https://www.nrc.gov/docs/ML2407/ML24073A364.pdf",
+   "cache_name": "acquired/nrc-nureg-1296.pdf",
+   "source_sha256": "ea4da30760f403d5fd5731ed1a200ce4113955b60867197c27c8d31b5d3c5453",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T2",
+   "pages": 52,
+   "text_layer": true,
+   "extracted_words": 13442,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG-1296 (1989)",
+   "identity_evidence": "Cover reads NUREG-1296, Thermal Overload Protection for Electric Motors on Safety-Related Motor-Operated Valves.",
+   "licence_evidence_note": "Cites ANSI/IEEE Standard 741-1986 by title only; the standard itself is copyrighted and is not reproduced. 6 procedural chunks selected (above the zero-chunk gate)."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-4302-v1",
+   "title": "Aging and Service Wear of Check Valves Used in Engineered Safety-Feature Systems of Nuclear Power Plants, Volume 1 (NUREG/CR-4302 Vol. 1; ORNL-6193/V1)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0402/ML040230128.pdf",
+   "download_uri": "https://web.archive.org/web/20260214230958/https://www.nrc.gov/docs/ML0402/ML040230128.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-4302-v1.pdf",
+   "source_sha256": "7bda5298d89409d0381f1467c62cdef5477f7380898e87185cbf0f4bfa790f2f",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 73,
+   "text_layer": true,
+   "extracted_words": 19915,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-4302, Volume 1; ORNL-6193/V1 (1985)",
+   "identity_evidence": "Page-1 block reads NUREG/CR-4302 Vol. 1, Aging and Service Wear of Check Valves ..., Oak Ridge National Laboratory."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-4302-v2",
+   "title": "Aging and Service Wear of Check Valves Used in Engineered Safety-Feature Systems of Nuclear Power Plants, Volume 2: Aging Assessments and Monitoring Method Evaluations (NUREG/CR-4302 Vol. 2; ORNL-6193 Vol. 2)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0402/ML040230352.pdf",
+   "download_uri": "https://web.archive.org/web/20260213130516/https://www.nrc.gov/docs/ML0402/ML040230352.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-4302-v2.pdf",
+   "source_sha256": "d9f46352299eba41e961729de12144823066b51b1292ee4ff4f85550a5243cf6",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 70,
+   "text_layer": true,
+   "extracted_words": 18047,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-4302, Volume 2; ORNL-6193 Vol. 2 (1989)",
+   "identity_evidence": "Page-1 block reads NUREG/CR-4302 Vol. 2, Aging Assessments and Monitoring Method Evaluations."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-5515",
+   "title": "Light Water Reactor Pressure Isolation Valve Performance Testing (NUREG/CR-5515; ETEC 88-01)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0403/ML040340709.pdf",
+   "download_uri": "https://web.archive.org/web/20250207144048id_/https://www.nrc.gov/docs/ML0403/ML040340709.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-5515.pdf",
+   "source_sha256": "520943cef7e2be115d83c80a45285f2f63016bf8b334df803f4463bdab622523",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 111,
+   "text_layer": true,
+   "extracted_words": 29170,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-5515; ETEC 88-01 (1990)",
+   "identity_evidence": "Title page reads NUREG/CR-5515, Light Water Reactor Pressure Isolation Valve Performance Testing.",
+   "licence_evidence_note": "References ASME Code Section XI by citation only; no standard text is reproduced."
+  },
+  {
+   "document_id": "doc:nrc-nureg-cr-5583",
+   "title": "Prediction of Check Valve Performance and Degradation in Nuclear Power Plant Systems - Wear and Impact Tests (NUREG/CR-5583; KEI 1656)",
+   "machine_types": [
+    "valve"
+   ],
+   "source_uri": "https://www.nrc.gov/docs/ML0403/ML040340783.pdf",
+   "download_uri": "https://web.archive.org/web/20260215022458/https://www.nrc.gov/docs/ML0403/ML040340783.pdf",
+   "cache_name": "acquired/nrc-nureg-cr-5583.pdf",
+   "source_sha256": "dfd9fe770eb0dffd44b2286aaa9c9ac962291ad7bddb15918454dca262c18ccd",
+   "basis": "site_permission",
+   "terms_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+   "attribution": "U.S. Nuclear Regulatory Commission; NRC site disclaimer: U.S. Government work not subject to copyright, freely available for non-exclusive publication or reproduction for any purpose, credit requested; embedded third-party material excluded (contractor report, so basis is the NRC site permission, not blanket federal authorship)",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 118,
+   "text_layer": true,
+   "extracted_words": 25097,
+   "licence_evidence": {
+    "site_statement_verbatim": "\"NRC's website constitutes a U.S. Government Work under federal copyright law and as such, it is not subject to copyright. It is freely available for non-exclusive rights in publication or reproduction for any purpose, in any form, and there are no restrictions on use. Similarly, there is no restriction on the right of others to use or reproduce the same material, now or in the future. NRC would appreciate the courtesy of credit for the publication. Permission to reproduce any copyrighted material (including photos or graphics) must be obtained from the original source.\"",
+    "site_statement_url": "https://www.nrc.gov/about-nrc/site-disclaimer.html",
+    "site_statement_fetched_utc": "2026-11-09T22:56:00Z",
+    "per_document_check": "Front-matter check: the NUREG 'Availability of Reference Materials' page repeats that \"Codes and standards are usually copyrighted and may be purchased from the originating organization\"; no copyright notice, all-rights-reserved line, or reproduction restriction appears in the report body, and none of the selected procedural chunks carries a courtesy, permission, copyright, reprint, or proprietary marker.",
+    "third_party_carveout": "Text only is used. Embedded figures/photographs and quoted industry standards or vendor data remain third-party material under the NRC carve-out and are not extracted as procedural text."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for nrc.gov /docs/ and /reading-rm/ assets",
+    "bytes_source": "Internet Archive Wayback Machine replay of the same official nrc.gov PDF URL",
+    "validation": "HTTP 200, %PDF header, pdfinfo parse, pdftotext text layer, byte length and SHA-256 recorded; trailing %%EOF checked during acquisition"
+   },
+   "report_identity": "NUREG/CR-5583; KEI 1656 (1990)",
+   "identity_evidence": "Title page reads NUREG/CR-5583, Prediction of Check Valve Performance and Degradation ..., Wear and Impact Tests."
+  },
+  {
+   "document_id": "doc:cdc-niosh-2019-124",
+   "title": "Dust Control Handbook for Industrial Minerals Mining and Processing, 2nd edition (DHHS (NIOSH) Publication No. 2019-124; RI 9701)",
+   "machine_types": [
+    "fan"
+   ],
+   "source_uri": "https://www.cdc.gov/niosh/media/pdfs/2026/04/2019-124.pdf",
+   "download_uri": "https://web.archive.org/web/20260726080107/https://www.cdc.gov/niosh/media/pdfs/2026/04/2019-124.pdf",
+   "cache_name": "acquired/cdc-niosh-2019-124-dust-control-handbook-2ed.pdf",
+   "source_sha256": "b4b3e62fde955f5813333f4ebaf47b4d37dbb0e581fc0e67fd89ec1743213742",
+   "basis": "public_domain_statutory",
+   "terms_url": "https://www.copyright.gov/title17/92chap1.html#105",
+   "attribution": "CDC/NIOSH (DHHS (NIOSH) Publication No. 2019-124, RI 9701); the document states: \"This document is in the public domain and may be freely copied or reprinted.\"",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T2",
+   "pages": 406,
+   "text_layer": true,
+   "extracted_words": 124119,
+   "report_identity": "DHHS (NIOSH) Publication No. 2019-124; Report of Investigations RI 9701 (March 2019)",
+   "identity_evidence": "Title page reads 'Report of Investigations 9701, Dust Control Handbook for Industrial Minerals Mining and Processing, Second edition', DHHS/CDC/NIOSH, March 2019; DOI 10.26616/NIOSHPUB2019124.",
+   "licence_evidence": {
+    "acquired_copy_statement_verbatim": "This document is in the public domain and may be freely copied or reprinted.",
+    "statement_location": "NIOSH publication notice page (PDF page 2, immediately after the title page)",
+    "third_party_carveout": "Cover credits: 'Bottom left front cover photo by Dust Solutions. Bottom center front photo cover by Dust Control Technologies. All other front and rear cover photos by NIOSH. All photos and illustrations used by permission as credited.' Images are third-party; only procedural text is extracted, and none of the selected chunks contains a credit/permission marker.",
+    "site_policy_note": "CDC/NIOSH federal work; the public-domain statement is printed in the acquired copy. Programmatic fetches to cdc.gov are blocked at the CDN edge from this host, so the validated Wayback replay of the same official PDF URL was used."
+   },
+   "acquisition": {
+    "official_url_fetch": "HTTP 403 Akamai 'Access Denied' from this host for cdc.gov",
+    "bytes_source": "Internet Archive Wayback Machine replay of the official cdc.gov PDF",
+    "validation": "HTTP 200, %PDF header, pdfinfo 406 pages, pdftotext text layer, SHA-256 and byte length recorded"
+   }
+  },
+  {
+   "document_id": "doc:usace-em-1110-2-3105-2020",
+   "title": "Mechanical and Electrical Design of Pump Stations, EM 1110-2-3105, 30 April 2020",
+   "machine_types": [
+    "pump"
+   ],
+   "source_uri": "https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-3105.pdf",
+   "download_uri": "https://web.archive.org/web/20230110172617/https://www.publications.usace.army.mil/Portals/76/Users/182/86/2486/EM1110-2%20-3105.pdf",
+   "cache_name": "acquired/usace-em-1110-2-3105-2020.pdf",
+   "source_sha256": "a0542e65f30813620ba7915e03566d74b8d427663e9a2f908143fb9d9c0f73a5",
+   "basis": "public_domain_statutory",
+   "terms_url": "https://www.copyright.gov/title17/92chap1.html#105",
+   "attribution": "U.S. Army Corps of Engineers; the manual states: \"This manual is approved for public release with unlimited distribution.\"",
+   "allows_redistribution": true,
+   "share_alike": false,
+   "relevance_tier": "T1",
+   "pages": 454,
+   "text_layer": true,
+   "extracted_words": 139505,
+   "report_identity": "EM 1110-2-3105, 30 April 2020",
+   "identity_evidence": "Cover and DA letterhead read 'EM 1110-2-3105, 30 April 2020, Mechanical and Electrical Design of Pump Stations'.",
+   "licence_evidence": {
+    "acquired_copy_statement_verbatim": "Distribution Statement. This manual is approved for public release with unlimited distribution.",
+    "statement_location": "Paragraph 3 of the manual and paragraph 1.3 (Chapter 1), both in the acquired copy",
+    "third_party_carveout": "References industry standards (e.g. NEMA) by citation; no standard text is reproduced.",
+    "edition_note": "This edition supersedes EM 1110-2-3105 dated 30 March 1994 and EM 1110-2-3102. The 1994 edition is already in the frozen v1 release as doc:usace-em-1110-2-3105, so v2 must not count both as independent sources."
+   },
+   "acquisition": {
+    "official_url_fetch": "publications.usace.army.mil returns HTTP 403 Akamai 'Access Denied' from this host",
+    "bytes_source": "Internet Archive Wayback Machine replay of the official USACE PDF (Users/182/86/2486/EM1110-2 -3105.pdf)",
+    "validation": "HTTP 200, %PDF header, pdfinfo 454 pages, pdftotext text layer, SHA-256 and byte length recorded"
+   }
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+# Python / environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Downloaded corpus source artifacts (re-fetched by scripts/build_scenario_corpus.py)
+.cache/
+.ipynb_checkpoints/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Hermes/local generated state
+.hermes/
+.hermes-e2e-flint/
+*.log
+logs/
+
+# Obsidian volatile workspace state
+thesis-wiki/.obsidian/workspace.json
+thesis-wiki/.obsidian/workspace-mobile.json
+
+# Nested cloned repositories / large external checkouts
+miscellaneous/pageindex/
+
+# Build outputs
+build/
+dist/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Secrets
+.env
+*.env
+secrets.*
+credentials.*
+auth.json

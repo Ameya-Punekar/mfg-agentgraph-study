@@ -1,0 +1,218 @@
+{
+  "artifact": "mfg-agentgraph-scenario-corpus-v3-derived-inputs",
+  "schema_version": 1,
+  "generated_utc": "2026-11-13T12:30:00Z",
+  "corpus_id": "mimii-synthetic-context-v3",
+  "kind": "derived_text_inputs",
+  "provenance": {
+    "statement": "Each input stands in for a licensed HTML documentation bundle that the declared URL no longer serves byte-identically. The committed .txt is the visible text extracted from the actual captured HTML bundle with the corpus builder's html.parser rule; the .html capture itself is NOT committed. This is a capture, not a direct raw-origin download, and a rebuild verifies the pinned text, not a full recrawl.",
+    "capture_mode": "text_only_snapshot",
+    "evidence": "The origin.sha256 and origin.bytes are the captured bundle identity that the frozen v3 corpus records as source_sha256. If the captured HTML is present in the local cache, the build re-checks its digest and re-runs html.parser extraction against the pinned text; on a cold cache the pinned text is the declared input and no URL is fetched for these two documents.",
+    "license": "Only visible documentation text is committed, no website code, images, or videos, consistent with the CC0/CC BY terms recorded in sources-v3.json.",
+    "limitations": "Byte-identical reproduction covers the committed text and the eight verified PDFs, not a recrawl of the two documentation sites. Component URLs and their order are preserved from the capture's '<!-- SOURCE: -->' markers."
+  },
+  "inputs": [
+    {
+      "document_id": "doc:farmbot-genesis-v1.8-docs",
+      "origin": {
+        "url": "https://genesis.farm.bot/v1.8/",
+        "cache_name": "extension/farmbot-genesis-v1.8-assembly-and-maintenance.html",
+        "sha256": "9279738bdf56a75a90189a050b347ebe1974325600558c791a1397fd9d1c1cc4",
+        "bytes": 1643559,
+        "capture": {
+          "kind": "html_page_bundle",
+          "mode": "text_only_snapshot",
+          "captured_utc": "2026-11-13T11:06:15Z",
+          "component_count": 21,
+          "components": [
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/intro",
+              "marker_line": 1,
+              "capture_segment_bytes": 67177,
+              "capture_segment_sha256": "804fa03684fc910d812f9a22f716aba68596c90a07ebd34620d7dd5cbb5faa01"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/intro/assembly-preparation",
+              "marker_line": 1412,
+              "capture_segment_bytes": 70177,
+              "capture_segment_sha256": "978bdf98a3eb6ff17b6716241831fc3dcc7a70bbad3fc08c56c7cf82ab3d4106"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/intro/high-level-overview",
+              "marker_line": 2880,
+              "capture_segment_bytes": 73017,
+              "capture_segment_sha256": "33233b33fcdfc47cdbaca58fe46285143f97cf6b3407c5c2669b19a29d5d7909"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/intro/product-safety",
+              "marker_line": 4394,
+              "capture_segment_bytes": 73056,
+              "capture_segment_sha256": "2a801fa2914aa0ba5f41c6cda0a7e7ae815deed3f90a0c6a03e6201aede7c77e"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/supporting-infrastructure/raised-bed",
+              "marker_line": 5892,
+              "capture_segment_bytes": 90948,
+              "capture_segment_sha256": "21d25160f3b1797ebe12354c85d578612e9e00080b8866b553bea9abc8098c3d"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/supporting-infrastructure/mobile-raised-bed",
+              "marker_line": 7628,
+              "capture_segment_bytes": 87870,
+              "capture_segment_sha256": "9bca1fd185058ea4c49acaa6878aa30bb4eb51421f2494ed60c43dd11f271192"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/supporting-infrastructure/pier-block-supports",
+              "marker_line": 9412,
+              "capture_segment_bytes": 82951,
+              "capture_segment_sha256": "871a98d3620aa09f9862b8308c8af733a6ef80f8e3bf3ca417843660ed1754b6"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/supporting-infrastructure/wood-posts",
+              "marker_line": 11075,
+              "capture_segment_bytes": 85918,
+              "capture_segment_sha256": "ae4387c9e1620f1ac730adb31af4025425a9d60802050ff88797dad65de965b7"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/tracks",
+              "marker_line": 12796,
+              "capture_segment_bytes": 74065,
+              "capture_segment_sha256": "9235d945d4c0a241d5bafa53ae5fea385795675b96cddc6cca9fcd9280147404"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/gantry",
+              "marker_line": 14295,
+              "capture_segment_bytes": 88084,
+              "capture_segment_sha256": "9797054b85fb4eb200dcd9f3eac0f6a0bc5e687a86410ae0d55ba0ca9a2ea17c"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/cross-slide-and-z-axis",
+              "marker_line": 15950,
+              "capture_segment_bytes": 83305,
+              "capture_segment_sha256": "0b5269666c165d8eb6a58e09dad6c070e60384130fb49f5012adc1f70568c354"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/toolbays",
+              "marker_line": 17543,
+              "capture_segment_bytes": 68367,
+              "capture_segment_sha256": "606ab58dc0ccf09b237a34c2462ac69e818c6f32b924a04f16b6d5aaeac5c2ad"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/tools",
+              "marker_line": 18962,
+              "capture_segment_bytes": 81998,
+              "capture_segment_sha256": "3aa37940d29897027602d44a2d1e7ec2c362bc8a53bea1d3f40c3cf8e2db21ac"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/electronics",
+              "marker_line": 20595,
+              "capture_segment_bytes": 84538,
+              "capture_segment_sha256": "a39f1af69c9bfcc1b6ddcbf8ddf33547a1418a1a435ba31ea73f78bce3352475"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/assembly/final-steps",
+              "marker_line": 22227,
+              "capture_segment_bytes": 121588,
+              "capture_segment_sha256": "e754b4373c5dae84c24e46d2394109efac66c50767fa414089e084534344333d"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance",
+              "marker_line": 24285,
+              "capture_segment_bytes": 64547,
+              "capture_segment_sha256": "c5cb06683651f9f76662a0ae9f942192ede38770d89e34816f511f3d685c96ae"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance/general-maintenance",
+              "marker_line": 25637,
+              "capture_segment_bytes": 71262,
+              "capture_segment_sha256": "0120ac49aa31243d9a12d7e7ea07cfe4cc581d52418a37e74194cf3c65e2fa41"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance/gantry-maintenance",
+              "marker_line": 27101,
+              "capture_segment_bytes": 68562,
+              "capture_segment_sha256": "7274cb01d0a19a75fe726d552448b56408c52639bf3a87652cee3fd212ddcb26"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance/track-maintenance",
+              "marker_line": 28522,
+              "capture_segment_bytes": 67209,
+              "capture_segment_sha256": "ff8983d129ab2873fa678dad1764c66a30924c32ae2cc0ab4ae0d5c6b3710c94"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance/utm-and-tool-maintenance",
+              "marker_line": 29919,
+              "capture_segment_bytes": 68799,
+              "capture_segment_sha256": "2578920138e1b2230e9efb54c7a220139d55220946da34120834e10078414951"
+            },
+            {
+              "url": "https://genesis.farm.bot/v1.8/extras/maintenance/storing-farmbot-for-winter",
+              "marker_line": 31344,
+              "capture_segment_bytes": 70121,
+              "capture_segment_sha256": "fa6cacd2746a638998f41e2125ac46e8c130119c6d3b35e6322faac8913cfd29"
+            }
+          ],
+          "note": "Captured by concatenating the 21 listed page URLs in order into one HTML bundle, each page prefixed with a '<!-- SOURCE: url -->' marker. The declared download_uri https://genesis.farm.bot/v1.8/ is the section root, which no longer serves this bundle, so the bundle is a build-time capture and is not re-downloaded.",
+          "components_sha256": "bec1d9ca80f95f07b10d326b73b7c2d9b32703efa0d013fd8f4cb9e2731a4466"
+        }
+      },
+      "derived_artifact": {
+        "sha256": "9279738bdf56a75a90189a050b347ebe1974325600558c791a1397fd9d1c1cc4"
+      },
+      "text": {
+        "path": "farmbot-genesis-v1.8-docs.visible-text.txt",
+        "sha256": "8da7ba13ad165af15ab45b5a97ec06fc8574631bb9d89724ad3b13ea73dc3f00",
+        "bytes": 230235,
+        "extraction": {
+          "tool": "html.parser",
+          "tool_version": "26.01.0",
+          "rule": "visible text of the documentation page"
+        }
+      }
+    },
+    {
+      "document_id": "doc:printnc-v4-assembly-wiki",
+      "origin": {
+        "url": "https://wiki.printnc.info/en/v4/assembly",
+        "cache_name": "extension/printnc-v4-assembly-wiki.html",
+        "sha256": "38e377bc4ff4a8b0c293121401fc4922a740a0fbe103997bc7dca2f6a1c0a75c",
+        "bytes": 85784,
+        "capture": {
+          "kind": "html_page_bundle",
+          "mode": "text_only_snapshot",
+          "captured_utc": "2026-11-13T11:06:22Z",
+          "component_count": 2,
+          "components": [
+            {
+              "url": "https://wiki.printnc.info/en/v4/assembly",
+              "marker_line": 1,
+              "capture_segment_bytes": 57254,
+              "capture_segment_sha256": "94b1339c2a3a11adaac55fdee3efc22552825a4683a88ca126554f649c7f74b5"
+            },
+            {
+              "url": "https://wiki.printnc.info/en/v4/painting",
+              "marker_line": 570,
+              "capture_segment_bytes": 28530,
+              "capture_segment_sha256": "3e1109d7439d89015454c37dbb2aa5f4a0784f0e236b412912421dc37e62c6af"
+            }
+          ],
+          "note": "Captured by concatenating the two listed page URLs in order into one HTML bundle, each page prefixed with a '<!-- SOURCE: url -->' marker. The declared download_uri serves the live wiki page, whose bytes differ from this capture, so the bundle is a build-time capture and is not re-downloaded.",
+          "components_sha256": "afb8589075ad93c19560b13cb91ae11692bc86fe628a327b5573dfc67f09c41b"
+        }
+      },
+      "derived_artifact": {
+        "sha256": "38e377bc4ff4a8b0c293121401fc4922a740a0fbe103997bc7dca2f6a1c0a75c"
+      },
+      "text": {
+        "path": "printnc-v4-assembly-wiki.visible-text.txt",
+        "sha256": "772c1a17442a48721111bfa3cadcae8b231fcf65249bab0b9121e0519f56723d",
+        "bytes": 42602,
+        "extraction": {
+          "tool": "html.parser",
+          "tool_version": "26.01.0",
+          "rule": "visible text of the documentation page"
+        }
+      }
+    }
+  ]
+}

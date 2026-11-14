@@ -1,0 +1,594 @@
+{
+  "artifact": "mfg-agentgraph-scenario-corpus-v1-acquisition",
+  "schema_version": 1,
+  "generated_utc": "2026-11-09T23:45:00Z",
+  "release": {
+    "path": "evaluation/scenario-corpus-v1/corpus-v1.json",
+    "contract_version": "mfg-agentgraph-scenario-corpus-v1",
+    "release_document_sha256": "16a956886bc1ac0c64cd3a1861bcf14421b964dae0d0c880454784406ad936ad",
+    "documents_in_release": 28,
+    "note": "This file records acquisition of documents that are NOT in corpus-v1. It does not change the frozen release and is not itself a corpus input."
+  },
+  "scope": "Re-attempt of the 13 document identities that the v1 release records as unreachable: nine NRC valve reports and four documents on hosts that refused programmatic download (cdc.gov, publications.usace.army.mil, media.defense.gov x2).",
+  "method": {
+    "blocked_at_cdn_edge": {
+      "egress_ip": "89.245.181.195",
+      "egress_geo": "DE / Duesseldorf (AS8881 1&1 Versatel)",
+      "evidence": "All four assigned hosts reject this egress at the CDN edge, not per file: https://www.cdc.gov/ , https://media.defense.gov/ , https://www.publications.usace.army.mil/ and https://stacks.cdc.gov/ all return HTTP 403 Akamai 'Access Denied' (errors.edgesuite.net reference) even for their homepages. https://archive.org/ , https://www.energy.gov/ , https://www.osha.gov/ , https://www.wbdg.org/ , https://www.msha.gov/ , https://usace.contentdm.oclc.org/ return 200.",
+      "nrc": {
+        "result": "blocked",
+        "evidence": "GET https://www.nrc.gov/docs/ML0403/ML040360264.pdf -> HTTP 403, 402-byte HTML 'Access Denied' with reference #18.e771302.1794263193.2a42ea49 (errors.edgesuite.net); HEAD identical; browser UA, nrc.gov Referer, and --http1.1 all 403; https://www.nrc.gov/ -> 200. Index page https://www.nrc.gov/reading-rm/doc-collections/nuregs/contract/cr6478/index -> 301 then 403."
+      }
+    },
+    "recovery_transport": "Direct origin fetch first; then Wayback Machine playback (public web archive, no credential or access-control bypass). Wayback raw-stream modifier 'id_' returned HTTP 429 for these PDFs (throttled), while normal playback served original bytes with Content-Type application/pdf and correct sizes.",
+    "browser_retry": "A managed Chromium load of https://www.nrc.gov/docs/ML0402/ML040230128.pdf returned the same Akamai \"Access Denied\" page, so the block is not a tool user-agent artefact.",
+    "validation_gate": "Every saved file: written to a .tmp name, validated with pdfinfo (parse + page count) and pdftotext (text layer, word count), then renamed. SHA-256 and byte count recorded for each. Acceptance also required an HTTP 200, a %PDF- header, >200 kB, and a trailing %%EOF, with two truncated 5,242,880-byte Wayback captures rejected and re-fetched.",
+    "reuse_rule": "Internet availability is not reuse permission. Every identity carries licence_status=pending_ingest_check and must pass the per-document licence check before it can enter a corpus."
+  },
+  "counts": {
+    "target_identities": 13,
+    "complete_documents_acquired": 11,
+    "partial_documents_acquired": 2,
+    "duplicates_acquired": 1,
+    "optional_candidates_acquired": 3,
+    "validated_files": 17,
+    "total_bytes": 103782885
+  },
+  "identities": [
+    {
+      "document_id": "doc:nrc-nureg-cr-4819-v1",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-4819, Volume 1",
+      "title": "Aging and Service Wear of Solenoid-Operated Valves Used in Safety-Related Systems of Nuclear Power Plants, Volume 1 (NUREG/CR-4819 Vol. 1; ORNL/Sub/83-28915/4/V1)",
+      "requested_url": "https://www.nrc.gov/docs/ML0403/ML040360264.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260215140752/https://www.nrc.gov/docs/ML0403/ML040360264.pdf",
+      "wayback_snapshot": "20260215140752",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-4819-v1.pdf",
+      "sha256": "5462408ecdc4243a8d2b0c4930f1a4b36400cff4fd4c77c9c3396c7dcb502afa",
+      "bytes": 2631833,
+      "pages": 65,
+      "text_layer": true,
+      "extracted_words": 15047,
+      "completeness": "complete",
+      "identity_evidence": "PDF internal Title metadata and page-1 title block both read 'NUREG/CR-4819 Volume 1 ... Aging and Service Wear of Solenoid-Operated Valves...'; matches OSTI record 6380049 report number NUREG/CR-4819-Vol.1 / ORNL/Sub-83-28915/4/V1 (1987-03).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "6380049",
+          "report_number": "NUREG/CR-4819-Vol.1; ORNL/Sub-83-28915/4/V1"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": [
+        "Volume 1 only; do not substitute Volume 2 (OSTI 7295854/10167892) for it."
+      ]
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-6478",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-6478",
+      "title": "Motor-Operated Valve (MOV) Actuator Motor and Gearbox Testing (NUREG/CR-6478, INEL-96/0219)",
+      "requested_url": "https://www.nrc.gov/reading-rm/doc-collections/nuregs/contract/cr6478/index",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20250617113917id_/https://www.nrc.gov/docs/ML1808/ML18086B223.pdf",
+      "wayback_snapshot": "20250617113917",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-6478.pdf",
+      "sha256": "7a163e614b94994bfe3fc8c65d489839f0a82e500ad4954d08ba0e444b9f3c58",
+      "bytes": 5200624,
+      "pages": 58,
+      "text_layer": false,
+      "extracted_words": 0,
+      "completeness": "complete",
+      "identity_evidence": "NRC catalogue index page (archived) for cr6478 is titled 'Motor-Operated Valve (MOV) Actuator Motor and Gearbox Testing (NUREG/CR-6478, INEL-96/0219)' and is the only PDF link on it (/docs/ML1808/ML18086B223.pdf); the fetched PDF's internal Title metadata is 'NUREG/CR-6478, \"Motor-Operated Valve (MOV) Actuator Motor and Gearbox Testing.\"'; matches OSTI 515583 (NUREG/CR-6478; INEL-96/0219, 1997-07).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "515583",
+          "report_number": "NUREG/CR-6478; INEL-96/0219"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": [
+        "PDF is an image-only scan (600 dpi CCITT); pdftotext returns no text, so OCR is required before text mining.",
+        "The requested inventory URL is a catalogue page, not a PDF; the actual document is ML18086B223.pdf."
+      ]
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-4692",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-4692",
+      "title": "Operating Experience Review of Failures of Power Operated Relief Valves and Block Valves in Nuclear Power Plants (NUREG/CR-4692; ORNL/NOAC-233)",
+      "requested_url": "https://www.nrc.gov/docs/ML0402/ML040230365.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260216073252/https://www.nrc.gov/docs/ML0402/ML040230365.pdf",
+      "wayback_snapshot": "20260216073252",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-4692.pdf",
+      "sha256": "68b495e5ef10417e1e43999d1b2efb956f861a93782785951ab36167a45a35c2",
+      "bytes": 2607439,
+      "pages": 78,
+      "text_layer": true,
+      "extracted_words": 16944,
+      "completeness": "complete",
+      "identity_evidence": "PDF internal Title metadata reads 'NUREG/CR-4692, \"Operating Experience Review of Failures of Power Operated...'; page-1 text shows 'NUREG/CR-4692 ORNL/NOAC-233'; matches OSTI 5980421 (NUREG/CR-4692; ORNL/NOAC-233, 1987-10).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "5980421",
+          "report_number": "NUREG/CR-4692; ORNL/NOAC-233"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": []
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-6819-v2",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-6819, Volume 2",
+      "title": "Common-Cause Failure Event Insights: Motor-Operated Valves (NUREG/CR-6819, Vol. 2; INEEL/EXT-99-00613)",
+      "requested_url": "https://www.nrc.gov/docs/ML0317/ML031710328.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20250216182212id_/https://www.nrc.gov/docs/ML0317/ML031710328.pdf",
+      "wayback_snapshot": "20250216182212",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-6819-v2.pdf",
+      "sha256": "7ca62e7f9f715440ee6125406c9ab80b118b642ccb40cdede9878e82cc855f17",
+      "bytes": 8597711,
+      "pages": 153,
+      "text_layer": true,
+      "extracted_words": 61574,
+      "completeness": "complete",
+      "identity_evidence": "Page-1 title block reads 'NUREG/CR-6819, Vol. 2 / INEEL/EXT-99-00613 / Common-Cause Failure Event Insights / Motor-Operated Valves'; the NRC catalogue index page (archived) titles NUREG/CR-6819 as 'Common-Cause Failure Event Insights (NUREG/CR-6819, INEEL/EXT-99-00613)'.",
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": [
+        "Volume 2 (Motor-Operated Valves) only; Volume 1 and Volume 3 of NUREG/CR-6819 were not requested and are not included.",
+        "No OSTI fulltext record located for this volume; archived Wayback capture of the NRC PDF is the only copy obtained."
+      ]
+    },
+    {
+      "document_id": "doc:nrc-nureg-1296",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG-1296",
+      "title": "Thermal Overload Protection for Electric Motors on Safety-Related Motor-Operated Valves, Generic Issue II.E.6.1 (NUREG-1296)",
+      "requested_url": "https://www.nrc.gov/docs/ML2407/ML24073A364.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260616032844/https://www.nrc.gov/docs/ML2407/ML24073A364.pdf",
+      "wayback_snapshot": "20260616032844",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-1296.pdf",
+      "sha256": "ea4da30760f403d5fd5731ed1a200ce4113955b60867197c27c8d31b5d3c5453",
+      "bytes": 4455315,
+      "pages": 52,
+      "text_layer": true,
+      "extracted_words": 13387,
+      "completeness": "complete",
+      "identity_evidence": "PDF internal Title and page-1 heading both read 'NUREG-1296, Thermal Overload Protection for Electric Motors on Safety-Related Motor-Operated Valves, Generic Issue II.E.6.1'; matches OSTI 6913252 (NUREG-1296, 1988-06).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "6913252",
+          "report_number": "NUREG-1296"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": []
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-4302-v1",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-4302, Volume 1",
+      "title": "Aging and Service Wear of Check Valves Used in Engineered Safety-Feature Systems of Nuclear Power Plants, Volume 1 (NUREG/CR-4302 Vol. 1; ORNL-6193/V1)",
+      "requested_url": "https://www.nrc.gov/docs/ML0402/ML040230128.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260214230958/https://www.nrc.gov/docs/ML0402/ML040230128.pdf",
+      "wayback_snapshot": "20260214230958",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-4302-v1.pdf",
+      "sha256": "7bda5298d89409d0381f1467c62cdef5477f7380898e87185cbf0f4bfa790f2f",
+      "bytes": 3304515,
+      "pages": 73,
+      "text_layer": true,
+      "extracted_words": 19550,
+      "completeness": "complete",
+      "identity_evidence": "Page-1 title block reads 'NUREG/CR-4302 Volume 1 / ORNL-6193/V1 / Aging and Service Wear of Check Valves...'; matches OSTI 6455380 (NUREG/CR-4302-Vol.1; ORNL-6193-Vol.1, 1985-12).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "6455380",
+          "report_number": "NUREG/CR-4302-Vol.1; ORNL-6193-Vol.1"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": [
+        "Volume 1 only; Volume 2 stored separately as nrc-nureg-cr-4302-v2.pdf."
+      ]
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-4302-v2",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-4302, Volume 2",
+      "title": "Aging and Service Wear of Check Valves Used in Engineered Safety-Feature Systems of Nuclear Power Plants, Volume 2 (NUREG/CR-4302 Vol. 2; ORNL-6193 Vol. 2)",
+      "requested_url": "https://www.nrc.gov/docs/ML0402/ML040230352.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260213130516/https://www.nrc.gov/docs/ML0402/ML040230352.pdf",
+      "wayback_snapshot": "20260213130516",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-4302-v2.pdf",
+      "sha256": "d9f46352299eba41e961729de12144823066b51b1292ee4ff4f85550a5243cf6",
+      "bytes": 3138980,
+      "pages": 70,
+      "text_layer": true,
+      "extracted_words": 18012,
+      "completeness": "complete",
+      "identity_evidence": "Internal Title metadata and page-1 text read 'NUREG/CR-4302, Vol. 2' / 'ORNL-6193 Vol. 2'; matches OSTI 5889875 (NUREG/CR-4302-Vol.2; ORNL-6193-Vol.2, 1991-04).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "5889875",
+          "report_number": "NUREG/CR-4302-Vol.2; ORNL-6193-Vol.2"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": []
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-5515",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-5515",
+      "title": "Light Water Reactor Pressure Isolation Valve Performance Testing (NUREG/CR-5515; ETEC 88-01)",
+      "requested_url": "https://www.nrc.gov/docs/ML0403/ML040340709.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20250207144048id_/https://www.nrc.gov/docs/ML0403/ML040340709.pdf",
+      "wayback_snapshot": "20250207144048",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-5515.pdf",
+      "sha256": "520943cef7e2be115d83c80a45285f2f63016bf8b334df803f4463bdab622523",
+      "bytes": 5683769,
+      "pages": 111,
+      "text_layer": true,
+      "extracted_words": 29030,
+      "completeness": "complete",
+      "identity_evidence": "Internal Title metadata and page-1 title block read 'NUREG/CR-5515 / ETEC 88-01 / Light Water Reactor Pressure Isolation Valve Performance Testing'.",
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": [
+        "No OSTI fulltext record found for this title/report number (searches for 'NUREG/CR-5515' returned only index-journal citations)."
+      ]
+    },
+    {
+      "document_id": "doc:nrc-nureg-cr-5583",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "NUREG/CR-5583",
+      "title": "Prediction of Check Valve Performance and Degradation in Nuclear Power Plant Systems — Wear and Impact Tests (NUREG/CR-5583; KEI 1656)",
+      "requested_url": "https://www.nrc.gov/docs/ML0403/ML040340783.pdf",
+      "transport": "Internet Archive Wayback Machine replay of the official www.nrc.gov PDF (network fetches to nrc.gov /docs/ blocked from this host)",
+      "final_url": "https://web.archive.org/web/20260215022458/https://www.nrc.gov/docs/ML0403/ML040340783.pdf",
+      "wayback_snapshot": "20260215022458",
+      "local_path": ".cache/scenario-corpus/acquired/nrc-nureg-cr-5583.pdf",
+      "sha256": "dfd9fe770eb0dffd44b2286aaa9c9ac962291ad7bddb15918454dca262c18ccd",
+      "bytes": 4350005,
+      "pages": 118,
+      "text_layer": true,
+      "extracted_words": 25040,
+      "completeness": "complete",
+      "identity_evidence": "Page-1 title block reads 'NUREG/CR-5583 / KEI No. 1656 / Prediction of Check Valve Performance and Degradation in Nuclear Power Plant Systems -- Wear and Impact Tests'; matches OSTI 6665911 (NUREG/CR-5583; KEI--1656, 1990-08).",
+      "cat_isbn_mirrors": [
+        {
+          "source": "OSTI",
+          "osti_id": "6665911",
+          "report_number": "NUREG/CR-5583; KEI--1656"
+        }
+      ],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "NRC site disclaimer: NRC's website is a U.S. Government work under federal copyright law and is not subject to copyright, freely available for non-exclusive rights in publication or reproduction for any purpose; permission for embedded third-party material must come from the original source. Recorded as a candidate basis pending the per-document ingest check.",
+      "caveats": []
+    },
+    {
+      "document_id": "doc:cdc-niosh-2019-124",
+      "machine_types": [
+        "fan"
+      ],
+      "report_identity": "Dust Control Handbook for Industrial Minerals Mining and Processing, 2nd edition; DHHS (NIOSH) Publication No. 2019-124; Report of Investigations RI 9701",
+      "title": "Dust Control Handbook for Industrial Minerals Mining and Processing, 2nd edition; DHHS (NIOSH) Publication No. 2019-124; Report of Investigations RI 9701",
+      "requested_url": "https://www.cdc.gov/niosh/media/pdfs/2026/04/2019-124.pdf",
+      "transport": "Internet Archive Wayback playback (origin host blocked at the CDN edge)",
+      "final_url": "https://web.archive.org/web/20260726080107/https://www.cdc.gov/niosh/media/pdfs/2026/04/2019-124.pdf",
+      "wayback_snapshot": null,
+      "local_path": ".cache/scenario-corpus/acquired/cdc-niosh-2019-124-dust-control-handbook-2ed.pdf",
+      "sha256": "b4b3e62fde955f5813333f4ebaf47b4d37dbb0e581fc0e67fd89ec1743213742",
+      "bytes": 40396231,
+      "pages": 406,
+      "text_layer": true,
+      "extracted_words": 124025,
+      "completeness": "complete",
+      "completeness_detail": "406 pages, cover through end. Matches the 2nd edition / 2019 publication identity.",
+      "identity_evidence": [
+        "NIOSH Mining Program Report of Investigations RI 9701",
+        "NIOSH [2019]. Dust control handbook for industrial minerals mining and processing. Second edition. ... DHHS (NIOSH) Publication No. 2019-124, RI 9701.",
+        "DOI: https://doi.org/10.26616/NIOSHPUB2019124",
+        "This document is in the public domain and may be freely copied or reprinted."
+      ],
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "Document states it is in the public domain and may be freely copied or reprinted (NIOSH); confirm on the acquired copy at ingest.",
+      "caveats": [
+        "Reuse statement is explicit and affirmative ('public domain ... freely copied or reprinted'), quoted from the document's own front matter.",
+        "Document front matter states the handbook was produced in partnership with the Industrial Minerals Association - North America (IMA-NA); third-party photos/illustrations are credited individually. Per-image credits were not enumerated here.",
+        "Retrieved via Wayback playback of the cdc.gov URL because the origin CDN denies this network."
+      ],
+      "duplicate_of_cached_source": false
+    },
+    {
+      "document_id": "doc:usace-em-1110-2-3105-2020",
+      "machine_types": [
+        "pump"
+      ],
+      "report_identity": "EM 1110-2-3105, Mechanical and Electrical Design of Pump Stations, 30 April 2020 (current edition)",
+      "title": "EM 1110-2-3105, Mechanical and Electrical Design of Pump Stations, 30 April 2020 (current edition)",
+      "requested_url": "https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-3105.pdf",
+      "transport": "Internet Archive Wayback playback (origin host blocked at the CDN edge)",
+      "final_url": "https://web.archive.org/web/20230110172617/https://www.publications.usace.army.mil/Portals/76/Users/182/86/2486/EM1110-2%20-3105.pdf",
+      "wayback_snapshot": null,
+      "local_path": ".cache/scenario-corpus/acquired/usace-em-1110-2-3105-2020.pdf",
+      "sha256": "a0542e65f30813620ba7915e03566d74b8d427663e9a2f908143fb9d9c0f73a5",
+      "bytes": 13689057,
+      "pages": 454,
+      "text_layer": true,
+      "extracted_words": 139393,
+      "completeness": "complete",
+      "completeness_detail": "454 pages, cover through appendices. This is the 2020 edition that supersedes the 1994 edition.",
+      "identity_evidence": [
+        "US Army Corps of Engineers ENGINEERING AND DESIGN / EM 1110-2-3105 / 30 April 2020 / Mechanical and Electrical Design of Pump Stations / ENGINEER MANUAL",
+        "Distribution Statement. This manual is approved for public release with unlimited distribution."
+      ],
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "USACE engineer manual; 1994 edition carried \"Approved for public release; distribution is unlimited\" — confirm the statement on this edition at ingest.",
+      "caveats": [
+        "Cover title in the 2020 edition reads 'Pump Stations' (plural), not 'Pumping Stations' as in the 1994 edition - use the 2020 title in the corpus manifest.",
+        "Zero occurrences of 'copyright' in the extracted text of all 454 pages; no third-party carve-out page observed.",
+        "Direct origin URL for this edition is on a /Users/182/86/... path, not the /Publications/EngineerManuals/ path named in the ticket; the /Publications/ path currently serves the 1994 edition.",
+        "Retrieved via Wayback playback because the origin CDN denies this network."
+      ],
+      "duplicate_of_cached_source": false
+    },
+    {
+      "document_id": "doc:navedtra-14265a",
+      "machine_types": [
+        "pump",
+        "valve"
+      ],
+      "report_identity": "Utilitiesman Basic, NAVEDTRA 14265A, October 2010 (nonresident training course), S/N 0504LP1100952",
+      "title": "Utilitiesman Basic, NAVEDTRA 14265A, October 2010 (nonresident training course), S/N 0504LP1100952",
+      "requested_url": "https://media.defense.gov/2014/Jun/20/2002655942/-1/-1/1/140620-N-ZZ182-6583.pdf",
+      "transport": "Internet Archive Wayback playback (origin host blocked at the CDN edge)",
+      "final_url": "https://web.archive.org/web/20250820035935/https://media.defense.gov/2014/Jun/20/2002655942/-1/-1/1/140620-N-ZZ182-6583.pdf",
+      "wayback_snapshot": null,
+      "local_path": ".cache/scenario-corpus/acquired/navedtra-14265a-utilitiesman-basic-oct2010-part1-ch1-9partial.pdf",
+      "sha256": "0fb5d6c8483e57e3c026708e91975153920589ba92c3930e00b69a3eec94b889",
+      "bytes": 4041437,
+      "pages": 600,
+      "text_layer": true,
+      "extracted_words": 176509,
+      "completeness": "partial",
+      "completeness_detail": "600 PDF pages. The manual's own table of contents lists 14 chapters plus Appendices I-III running to printed page 1099+. The file contains the front matter, Chapters 1-8 in full, and Chapter 9 only through printed page 9-28. Chapters 9(rest)-14 and Appendices I-III are absent. It is NOT a complete manual, and it is NOT a single chapter either. Chapter 7 'Prime Movers Pumps and Compressors' (printed pp. 398-484) is present and complete.",
+      "identity_evidence": [
+        "NONRESIDENT TRAINING COURSE / Date: October 2010 / UTILITIESMAN BASIC / NAVEDTRA 14265A / S/N 0504LP1100952",
+        "DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited.",
+        "Table of Contents: 1. Plans, Specifications, and Color Coding...14. Utilities Equipment and Maintenance (p.998); APPENDIX I Mathematics (p.1071), II Hand Signals (p.1099), III Construction Symbols",
+        "Last page footer: 'NAVEDTRA 14265A ... 9-28' (ends mid-Chapter 9, at the 'AUTOMATIC CONTROLS' / Figure 9-18 Float controller section)"
+      ],
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "Carries \"DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited.\" AND a \"COPYRIGHT STATEMENT FOR RECORD PURPOSES\" saying the publication contains approved third-party copyrighted material and is only distributed through DoD restricted sites (NKO, NLL). Do not treat as a clean open licence.",
+      "caveats": [
+        "REUSE CAVEAT, material: the same front matter carries both 'DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited.' AND 'COPYRIGHT STATEMENT FOR RECORD PURPOSES: This publication contains approved copyrighted material (c). In accordance, this manual is only available for distribution through Department of Defense (DoD) restricted websites (Navy Knowledge Online (NKO), Navy Advancement Center) and Naval Supply Systems Command, Naval Logistics Library (NLL) (Hard Copy only).' The two statements pull in opposite directions; the second implies third-party copyrighted material and DoD-restricted distribution. Do not record this volume as a clean open licence; the copyright-material table on p.i was not filled in the extracted text, so the specific third-party items could not be enumerated from this copy.",
+        "Partial: this is roughly the first half of a manual whose TOC runs past printed page 1099.",
+        "The ticket's URL is a split part, not the whole course; the two halves were uploaded as separate media.defense.gov objects."
+      ],
+      "duplicate_of_cached_source": false
+    },
+    {
+      "document_id": "doc:navedtra-14264a-ch09",
+      "machine_types": [
+        "valve"
+      ],
+      "report_identity": "Construction Mechanic Basic, NAVEDTRA 14264A - Chapter 9, 'Hydraulic and Pneumatic Systems'",
+      "title": "Construction Mechanic Basic, NAVEDTRA 14264A - Chapter 9, 'Hydraulic and Pneumatic Systems'",
+      "requested_url": "https://media.defense.gov/2014/Jun/20/2002655903/-1/-1/1/140620-N-ZZ182-6549.pdf",
+      "transport": "Internet Archive Wayback playback (origin host blocked at the CDN edge)",
+      "final_url": "https://web.archive.org/web/20250804025945/https://media.defense.gov/2014/Jun/20/2002655903/-1/-1/1/140620-N-ZZ182-6549.pdf",
+      "wayback_snapshot": null,
+      "local_path": ".cache/scenario-corpus/acquired/navedtra-14264a-construction-mechanic-basic-ch09-hydraulic-pneumatic.pdf",
+      "sha256": "a767ab5e30f5efabc28255394625ed15265ae2c7015fa96a434fb7a30a663f3c",
+      "bytes": 3438443,
+      "pages": 47,
+      "text_layer": true,
+      "extracted_words": 15211,
+      "completeness": "chapter",
+      "completeness_detail": "47 pages, chapter starts at 9-1 and ends at 9-47 with the course feedback form. This is one chapter, NOT the complete manual. Relevant content: hydraulic system principles and components, pneumatic systems, heavy-duty compressors.",
+      "identity_evidence": [
+        "Chapter 9 / Hydraulic and Pneumatic Systems / 1.0.0 Hydraulic Systems / 2.0.0 Pneumatic Systems",
+        "Footer on every page: 'NAVEDTRA 14264A' with page numbers 9-1 ... 9-47",
+        "Course map on p.9-1 lists the chapters of Construction Mechanic Basic (Hydraulic and Pneumatic Systems sits above Automotive Electrical Circuits and Wiring)"
+      ],
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "No distribution statement appears on this chapter upload.",
+      "caveats": [
+        "Chapter, not a manual: do not describe this file as 'Construction Mechanic Basic, NAVEDTRA 14264A' without the chapter qualifier.",
+        "No distribution statement or copyright notice appears anywhere in the extracted text of this chapter file; the reuse basis is not established by the file itself (the course-level statement would have to come from the front matter of another part).",
+        "Edition cannot be bracketed more tightly than 'the NAVEDTRA 14264A revision'; the file carries no cover/date page of its own."
+      ],
+      "duplicate_of_cached_source": false
+    },
+    {
+      "document_id": "doc:usace-em-1110-2-3105-1994-duplicate",
+      "machine_types": [
+        "pump"
+      ],
+      "report_identity": "EM 1110-2-3105, Mechanical and Electrical Design of Pumping Stations, 30 March 1994 (original) with Change 1 (31 Aug 1994) and Change 2 (30 Nov 1999)",
+      "title": "EM 1110-2-3105, Mechanical and Electrical Design of Pumping Stations, 30 March 1994 (original) with Change 1 (31 Aug 1994) and Change 2 (30 Nov 1999)",
+      "requested_url": "https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-3105.pdf",
+      "transport": "Internet Archive Wayback playback (origin host blocked at the CDN edge)",
+      "final_url": "https://web.archive.org/web/20250215070804/https://www.publications.usace.army.mil/Portals/76/Publications/EngineerManuals/EM_1110-2-3105.pdf",
+      "wayback_snapshot": null,
+      "local_path": ".cache/scenario-corpus/acquired/usace-em-1110-2-3105-1994-changes1-2.pdf",
+      "sha256": "e1ea7d04df25fa4e353d4a2585d43048512a3765958d1644a8c9ca1a7aab9c8f",
+      "bytes": 2247526,
+      "pages": 171,
+      "text_layer": true,
+      "extracted_words": 58628,
+      "completeness": "duplicate",
+      "completeness_detail": "171 pages. Same edition and same change set as the already-cached .cache/scenario-corpus/usace-em-1110-2-3105.pdf (also 171 pages, same cover text, same 1998 PDF creation date). The two files are not byte-identical and their OCR layers differ (the cached copy mis-recognises the number as '111 o-2-3105' / '11 10-2-3 105.'; this capture's OCR is cleaner): extracted-text word counts 50,132 vs 58,628 and an md5 of the extracted text differs. Treat as the same document with a better text layer, NOT as a new edition or a new source.",
+      "identity_evidence": [
+        "EM 1110-2-3105 / Changes 1 and 2 / Engineering and Design MECHANCIAL AND ELECTRICAL DESIGN OF PUMPING STATIONS (Changes 1 and 2)",
+        "30 March 1994 (original) / 31 August 1994 (change 1) / 30 November 1999 (change 2)",
+        "Distribution Restriction Statement Approved for public release; distribution is unlimited."
+      ],
+      "cat_isbn_mirrors": [],
+      "licence_status": "pending_ingest_check",
+      "licence_note": "Duplicate of the already-cached archive.org mirror of the same edition and change set; cleaner OCR. Not a new document.",
+      "caveats": [
+        "Older edition: superseded by the 2020 edition now acquired as usace-em-1110-2-3105-2020. Do not substitute for the 2020 source.",
+        "Duplicate: keep only if the cleaner OCR layer is wanted; it does not increase the distinct-source count.",
+        "Cover misspells 'MECHANCIAL' - that is in the original, not an extraction artefact."
+      ],
+      "duplicate_of_cached_source": true
+    }
+  ],
+  "optional_candidates": {
+    "status": "acquired as candidates only. NOT count-approved and NOT rights-approved; none of these is a substitute for a required identity, and none changes the four-identity result. Separately issued NAVEDTRA publications, so no edition conflation with the 14265A/14264A items above.",
+    "documents": [
+      {
+        "key": "navedtra-14264-1998-optional",
+        "identity": "Construction Mechanic Basic, Volume 1, NAVEDTRA 14264, February 1998 (complete older edition of the course, pre-A revision)",
+        "relation_to_required": "Older edition of the same course as navedtra-14264a-ch09; a complete 312-page volume, but NOT the A revision requested.",
+        "final_url": "https://archive.org/download/USNavyCourseAviationMaintenanceRatingsNAVEDTRA14022/US%20Navy%20course%20-%20Construction%20Mechanic%20Basic%2C%20Volume%201%20NAVEDTRA%2014264.pdf",
+        "via": "archive.org item USNavyCourseAviationMaintenanceRatingsNAVEDTRA14022 (third-party public upload of US Navy NRTCs)",
+        "saved_path": ".cache/scenario-corpus/acquired/navedtra-14264-construction-mechanic-basic-vol1-1998-OPTIONAL.pdf",
+        "sha256": "70dc2a7c7a7bb2e537ad7ea2100b6a0fe88abf8e0c505cdf66909bd2463a6be7",
+        "bytes": 6542265,
+        "pdfinfo_pages": 312,
+        "extraction": {
+          "tool": "pdftotext",
+          "text_words": 112583,
+          "outcome": "clean text layer"
+        },
+        "front_page_evidence": [
+          "NONRESIDENT TRAINING COURSE / February 1998 / Construction Mechanic Basic, Volume 1 / NAVEDTRA 14264",
+          "DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited."
+        ],
+        "caveats": [
+          "1998 edition, not the 14264A revision.",
+          "Served from a third-party archive upload; the Distribution Statement A text is reproduced in the file, but the host is not an official Navy endpoint."
+        ]
+      },
+      {
+        "key": "navedtra-14075-optional",
+        "identity": "Engineman 1 & C, NAVEDTRA 14075, April 1987",
+        "relation_to_required": "Separately issued course listed in local://issue115-pump-fan-sources.md (P9); independent of the four required identities.",
+        "final_url": "https://archive.org/download/USNavyCourseAviationMaintenanceRatingsNAVEDTRA14022/US%20Navy%20course%20-%20Engineman%201%20%26%20C%20NAVEDTRA%2014075.pdf",
+        "via": "same archive.org item",
+        "saved_path": ".cache/scenario-corpus/acquired/navedtra-14075-engineman-1c-1987-OPTIONAL.pdf",
+        "sha256": "1b642c89b41de5c77832671ed049ec47ff3b6e70a3b36d6d5186d3389def890b",
+        "bytes": 5955565,
+        "pdfinfo_pages": 320,
+        "extraction": {
+          "tool": "pdftotext",
+          "text_words": 141533,
+          "outcome": "clean text layer"
+        },
+        "front_page_evidence": [
+          "NONRESIDENT TRAINING COURSE / April 1987 / Engineman 1 & C / NAVEDTRA 14075",
+          "DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited."
+        ],
+        "caveats": [
+          "1987 edition; the file carries a notice that page 6-2 must be printed on a specific stock (formatting notice, not an access restriction)."
+        ]
+      },
+      {
+        "key": "navedtra-14076-optional",
+        "identity": "Engineman 2, NAVEDTRA 14076, April 1992",
+        "relation_to_required": "Separately issued course listed in local://issue115-pump-fan-sources.md (P10).",
+        "final_url": "https://archive.org/download/USNavyCourseAviationMaintenanceRatingsNAVEDTRA14022/US%20Navy%20course%20-%20Engineman%202%20NAVEDTRA%2014076.pdf",
+        "via": "same archive.org item",
+        "saved_path": ".cache/scenario-corpus/acquired/navedtra-14076-engineman-2-1992-OPTIONAL.pdf",
+        "sha256": "74b48d7e531236f94b604d01fad47786fad3e9bff0593cc72b005a247e96c5cd",
+        "bytes": 4353217,
+        "pdfinfo_pages": 230,
+        "extraction": {
+          "tool": "pdftotext",
+          "text_words": 94245,
+          "outcome": "clean text layer"
+        },
+        "front_page_evidence": [
+          "NONRESIDENT TRAINING COURSE / April 1992 / Engineman 2 / NAVEDTRA 14076",
+          "DISTRIBUTION STATEMENT A: Approved for public release; distribution is unlimited."
+        ],
+        "caveats": [
+          "1992 edition."
+        ]
+      }
+    ]
+  },
+  "residuals": [
+    {
+      "id": "navedtra-14265a-remainder",
+      "what_is_missing": "NAVEDTRA 14265A pages after printed 9-28: the rest of Chapter 9, Chapters 10-14 (Steam Distribution, Heating, Refrigeration, Air Conditioning, Utilities Equipment and Maintenance), and Appendices I-III (printed pages ~602-1099+).",
+      "why": "Origin media.defense.gov rejects this network at the Akamai edge (403 on origin, including its homepage). The continuation objects in the same upload batch (2002655943 = ...6584, and 2002655935/936/937 = 6575/6576/6577) exist in the Wayback Machine but every one of those captures is truncated at 1,048,576 bytes against crawler lengths of 3.4-6.2 MB, so they are not parseable PDFs (discarded). No complete copy of the A revision exists on archive.org (searches for utilitiesman / 14265 / 14264 returned only pre-A editions and one 1992 advanced course).",
+      "exact_remaining_steps": [
+        "Fetch https://media.defense.gov/2014/Jun/20/2002655943/-1/-1/1/140620-N-ZZ182-6584.pdf (and any further parts) from a US-network host or an authenticated DoD/NKO source; verify Content-Length 6,161,020 for 6584 before trusting it.",
+        "Validate with pdfinfo and confirm the first page continues Chapter 9 / starts Chapter 10, then concatenate with the acquired part 1 or keep as parts in the manifest.",
+        "Until then, record this source as 'part 1 of 2, chapters 1-8 complete + chapter 9 partial' - the acquisition does not satisfy a full-manual requirement."
+      ]
+    },
+    {
+      "id": "navedtra-14264a-remainder",
+      "what_is_missing": "Construction Mechanic Basic NAVEDTRA 14264A chapters other than 9 (the course map shows Civil Engineering Support Equipment maintenance administration, internal combustion engines, power trains, brakes, electrical circuits, etc.).",
+      "why": "Same origin block. The course was uploaded chapter-by-chapter to media.defense.gov (e.g. 6544 = Chapter 1 Technical Administration, 6545 = Chapter 3 Construction of an Internal Combustion Engine), so the 'manual' is only obtainable by assembling ~14 separate objects; the archive captures probed for that batch are truncated at 1 MiB and the untruncated ones cannot be predicted from the numbering (several numbers are absent: 6555, 6561, 6564, 6567, 6572-6574, 6579, 6582).",
+      "exact_remaining_steps": [
+        "Obtain the per-chapter object list from a US-network host (or NETC/NKO), download each chapter, and validate with pdfinfo.",
+        "Assemble in chapter order and re-check the TOC on the course cover before labelling it 'complete'; do not label the single Chapter 9 file as the manual.",
+        "If only an older edition is acceptable, navedtra-14264-construction-mechanic-basic-vol1-1998-OPTIONAL.pdf (312 pp, complete, Feb 1998) is available but is NOT the 14264A revision."
+      ]
+    },
+    {
+      "id": "cdc-and-usace-provenance",
+      "what_is_missing": "Nothing content-wise. Only provenance: both required documents were served from Wayback playback rather than the agency origin.",
+      "why": "The agency CDNs deny this German egress at the edge; a US-network fetch would produce the same bytes from the canonical URL.",
+      "exact_remaining_steps": [
+        "For a canonical-URL hash in the manifest, re-download https://www.cdc.gov/niosh/media/pdfs/2026/04/2019-124.pdf and https://www.publications.usace.army.mil/Portals/76/Users/182/86/2486/EM1110-2%20-3105.pdf from a US network and compare SHA-256 against the recorded values (b4b3e62f... and a0542e65...).",
+        "If the hashes match, record the agency URL as final_url; if they differ, keep both hashes and note the divergence."
+      ]
+    }
+  ],
+  "next_steps": [
+    "Decide whether the 11 complete documents enter the corpus. Adding them changes the frozen release, so it needs an approved SOURCES extension and a corpus v2 (or an explicit amendment), not a silent rebuild.",
+    "Run the per-document licence check before any ingestion; the Navy 14265A copyright-for-record-purposes statement and third-party figures inside NRC/USACE documents are the known hazards.",
+    "OCR NUREG/CR-6478 if its text is needed (image-only scan, no text layer).",
+    "Complete the two Navy manuals from a US-network or DoD-accredited host: 14265A continuation object 2002655943 (expect Content-Length 6,161,020) and the remaining 14264A chapter objects."
+  ]
+}

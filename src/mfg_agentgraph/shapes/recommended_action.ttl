@@ -1,0 +1,269 @@
+@prefix mfg: <https://w3id.org/mfg-agentgraph/v1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mfg:RecommendedActionShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:property mfg:TargetAssetExactlyOneShape ,
+        mfg:TargetAssetModeledShape ,
+        mfg:SupportEvidenceMinCountShape ,
+        mfg:SupportEvidenceModeledShape ,
+        mfg:ActionAnomalyWindowStartRequiredShape ,
+        mfg:ActionAnomalyWindowEndRequiredShape .
+
+mfg:TargetAssetExactlyOneShape
+    a sh:PropertyShape ;
+    sh:path mfg:targetAsset ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:message "Recommended action must name exactly one target asset." .
+
+mfg:TargetAssetModeledShape
+    a sh:PropertyShape ;
+    sh:path mfg:targetAsset ;
+    sh:class mfg:Asset ;
+    sh:message "Target asset must be modeled as mfg:Asset." .
+
+mfg:SupportEvidenceMinCountShape
+    a sh:PropertyShape ;
+    sh:path mfg:hasSupportEvidence ;
+    sh:minCount 1 ;
+    sh:message "Recommended action must cite at least one support reference." .
+
+mfg:SupportEvidenceModeledShape
+    a sh:PropertyShape ;
+    sh:path mfg:hasSupportEvidence ;
+    sh:class mfg:SupportEvidence ;
+    sh:message "Each support reference must be modeled as mfg:SupportEvidence." .
+
+mfg:ActionAnomalyWindowStartRequiredShape
+    a sh:PropertyShape ;
+    sh:path mfg:anomalyWindowStart ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:dateTime ;
+    sh:message "Recommended action must include exactly one anomaly window start timestamp." .
+
+mfg:ActionAnomalyWindowEndRequiredShape
+    a sh:PropertyShape ;
+    sh:path mfg:anomalyWindowEnd ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:dateTime ;
+    sh:message "Recommended action must include exactly one anomaly window end timestamp." .
+
+mfg:ObservationSupportRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Recommended action must cite at least one support reference linked to an observation." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                $this mfg:hasSupportEvidence ?support .
+                FILTER NOT EXISTS { $this mfg:hasSupportEvidence/mfg:observation ?observation }
+            }
+        """ ;
+    ] .
+
+mfg:ProcedureSupportRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Recommended action must cite at least one support reference linked to a procedure." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                $this mfg:hasSupportEvidence ?support .
+                FILTER NOT EXISTS { $this mfg:hasSupportEvidence/mfg:procedure ?procedure }
+            }
+        """ ;
+    ] .
+
+mfg:TargetAssetTypeRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Target asset must include exactly one asset type." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                {
+                    SELECT $this ?target (COUNT(?assetType) AS ?assetTypeCount) WHERE {
+                        $this mfg:targetAsset ?target .
+                        ?target a mfg:Asset .
+                        FILTER NOT EXISTS { $this mfg:targetAsset ?otherTarget . FILTER (?otherTarget != ?target) }
+                        OPTIONAL { ?target mfg:assetType ?assetType }
+                    }
+                    GROUP BY $this ?target
+                }
+                FILTER (?assetTypeCount != 1)
+            }
+        """ ;
+    ] .
+
+mfg:ObservationFeatureOfInterestRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Supported observations must identify a feature of interest." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this WHERE {
+                $this mfg:hasSupportEvidence/mfg:observation ?observation .
+                FILTER NOT EXISTS { ?observation sosa:hasFeatureOfInterest ?featureOfInterest }
+            }
+        """ ;
+    ] .
+
+mfg:ObservationTypedShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Each linked support observation must be typed as sosa:Observation." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this WHERE {
+                $this mfg:hasSupportEvidence/mfg:observation ?observation .
+                FILTER NOT EXISTS { ?observation a sosa:Observation }
+            }
+        """ ;
+    ] .
+
+mfg:ObservationResultTimeRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Supported observations must include exactly one result timestamp." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this WHERE {
+                {
+                    SELECT $this ?observation (COUNT(?observedAt) AS ?observedAtCount) WHERE {
+                        $this mfg:hasSupportEvidence/mfg:observation ?observation .
+                        OPTIONAL { ?observation sosa:resultTime ?observedAt }
+                    }
+                    GROUP BY $this ?observation
+                }
+                FILTER (?observedAtCount != 1)
+            }
+        """ ;
+    ] .
+
+mfg:ProcedureApplicableAssetTypeRequiredShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Recommended procedure must include exactly one applicable asset type." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                {
+                    SELECT $this ?procedure (COUNT(?applicableType) AS ?applicableTypeCount) WHERE {
+                        $this mfg:hasSupportEvidence/mfg:procedure ?procedure .
+                        OPTIONAL { ?procedure mfg:applicableAssetType ?applicableType }
+                    }
+                    GROUP BY $this ?procedure
+                }
+                FILTER (?applicableTypeCount != 1)
+            }
+        """ ;
+    ] .
+
+mfg:ProcedureTypedShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Each linked support procedure must be typed as mfg:Procedure." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                $this mfg:hasSupportEvidence/mfg:procedure ?procedure .
+                FILTER NOT EXISTS { ?procedure a mfg:Procedure }
+            }
+        """ ;
+    ] .
+
+mfg:ObservationConcernsTargetShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Supported observations must concern the recommended target asset." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            SELECT $this WHERE {
+                $this mfg:targetAsset ?target ;
+                      mfg:hasSupportEvidence ?support .
+                ?target a mfg:Asset .
+                ?support mfg:observation ?observation .
+                ?observation sosa:hasFeatureOfInterest ?observedTarget .
+                FILTER NOT EXISTS { $this mfg:targetAsset ?otherTarget . FILTER (?otherTarget != ?target) }
+                FILTER (?observedTarget != ?target)
+            }
+        """ ;
+    ] .
+
+mfg:ObservationWithinAnomalyWindowShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Supported observation timestamps must fall inside the inclusive anomaly window." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            PREFIX sosa: <http://www.w3.org/ns/sosa/>
+            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+            SELECT $this WHERE {
+                $this mfg:anomalyWindowStart ?start ;
+                      mfg:anomalyWindowEnd ?end ;
+                      mfg:hasSupportEvidence ?support .
+                ?support mfg:observation ?observation .
+                ?observation sosa:resultTime ?observedAt .
+                FILTER (
+                    DATATYPE(?observedAt) != xsd:dateTime ||
+                    DATATYPE(?start) != xsd:dateTime ||
+                    DATATYPE(?end) != xsd:dateTime ||
+                    ?start > ?end ||
+                    ?observedAt < ?start ||
+                    ?observedAt > ?end
+                )
+            }
+        """ ;
+    ] .
+
+mfg:ProcedureAppliesToTargetTypeShape
+    a sh:NodeShape ;
+    sh:targetClass mfg:RecommendedAction ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "Recommended procedure must apply to the target asset type." ;
+        sh:select """
+            PREFIX mfg: <https://w3id.org/mfg-agentgraph/v1#>
+            SELECT $this WHERE {
+                $this mfg:targetAsset ?target ;
+                      mfg:hasSupportEvidence ?support .
+                ?target mfg:assetType ?assetType .
+                ?support mfg:procedure ?procedure .
+                ?procedure mfg:applicableAssetType ?applicableType .
+                FILTER NOT EXISTS { ?target mfg:assetType ?otherAssetType . FILTER (?otherAssetType != ?assetType) }
+                FILTER NOT EXISTS { ?procedure mfg:applicableAssetType ?otherApplicableType . FILTER (?otherApplicableType != ?applicableType) }
+                FILTER (?applicableType != ?assetType)
+            }
+        """ ;
+    ] .

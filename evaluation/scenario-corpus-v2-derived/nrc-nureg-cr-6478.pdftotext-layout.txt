@@ -1,0 +1,3418 @@
+NUREG/CR-6478
+INEL· 96/0219
+
+Motor-Operated Valve (MOV)
+Actuator Motor and Gearbox ·Testing
+
+MASTER
+
+Prepared by
+K. DeWall, J. C. Watkins, D. Bramwell
+
+Idaho National Engineering Laboratory
+Lockheed Idaho Technologies Company | Fan E C E | VED
+
+- AG 11 1997
+OSsTi
+
+Prepared for
+U.S. Nuclear Regulatory Commission
+
+DISTRIBUTION OF THIS DOCUMENT IS meng .
+AVAILABILITY NOTICE
+Availability of Reference Materials Cited in NRC Publications
+
+Most documents cited in NRC publications will be available from one of the following sources:
+1. The NRC Public Document Room, 2120 L Street, NW., Lower Level, Washington, DC 20555-0001
+
+2. -The Superintendent of Documents, U.S. Government Printing Office, P.O. Box 37082, Washington, DC
+20402-9328 :
+
+3. ·The National Technical Information Service, Springfield, VA 22161-0002
+
+Although the listing that follows represents the majority of documents cited in NRC publications, it is not in-
+tended to be exhaustive.
+
+Referenced documents available for inspection and copying for a fee from the NRC Public Document Room
+include NRC correspondence and internal NRC memoranda; NRC bulletins, circulars, information notices, in-
+spection and investigation notices; licensee event reports; vendor reports and correspondence; Commission
+papers; and applicant and licensee documents and correspondence.
+
+The following documents in the NUREG series are available for purchase from the Government Printing Office:
+formal NRC staff and contractor reports, NRC-sponsored conference proceedings, international agreement
+reports, grantee reports, and NRC booklets and brochures. Also available are regulatory guides, NRC regula-
+: tions in the Code of Federal Regulations, and Nuclear Regulatory Commission Issuances.
+
+Documents available from the National Technical Information Service include NUREG-series reports and tech-
+nical reports prepared by other Federal agencies and reports prepared by the Atomic Energy Commission,
+forerunner agency to the Nuclear Regulatory Commission.
+
+Documents available from public and special technical libraries include.all open literature items, such as books,
+journal articles, and transactions. Federal Register notices. Federal and State legislation, and congressional
+reports can usually be obtained from these libraries.
+
+Documents such as theses, dissertations. foreign reports and translations, and non-NRC conference pro-
+ceedings are available for purchase from the organization sponsoring the publication cited.
+
+Single copies of NRC draft reports are available free. to the extent of supply. upon written request to the Office
+of Administration, Distribution and Mail Services Section, U.S. Nuclear Regulatory Commission, Washington,
+DC 20555-0001.
+
+Copies of industry codes and standards used in a substantive manner in 1 the NRC regulatory process are main-
+tained at the NRC Library, Two White Flint North, 11545 Rockville Pike, Rockville, MD 20852-2738, for use by
+the public. Codes and standards are usually copyrighted and may be purchased from the originating organiza-
+tion or, if they are American National Standards. from the American National Standards institute, 1430 Broad-
+way, New York, NY 10018-3308.
+
+DISCLAIMER NOTICE
+
+This report was prepared. as an account of work sponsored by an.agency of the United States Government.
+Neither the United States Goverment nor any agency thereof, nor any of their employees, makes any warranty,
+expressed or implied, or assumes any legal liability or responsibility for any third party·s use, or the results of
+such use, of any information, apparatus, product, or process disclosed in this report, or represents that its use
+by such third party would not infringe privately owned rights.
+NUREG/CR-6478
+INEL· 96/0219
+
+Motor-Operated Valve (MOV)
+Actuator Motor and Gearbox Testing
+
+Manuscript Completed: February 1997
+Date Published: July 1997
+
+Prepared by
+K. DeWall, J. C. Watkins, D. Bramwell
+
+Idaho National Engineering Laboratory
+Managed by the U.S. Department of Energy
+
+Lockheed Idaho Technologies Company
+Idaho Falls, ID 83415
+
+G. H. Weidenhamer, NRC Project Manager
+
+Prepared for
+
+Division of Engineering Technology
+Office of Nuclear Regulatory Research
+U.S. Nuclear Regulatory Commission
+Washington, DC 20555-0001
+
+NRC Job Code A6857
+
+DISCLAIMER
+
+This report was prepared as an account of work sponsored by an agency of the United States
+Government. Neither the United States Government nor any agency thereof, nor any of their
+employees, makes any warranty, express or implied, or assumes any legal liability or responsi-
+bility for the accuracy, completeness, or usefulness of any information, apparatus, product, or
+process disclosed, or represents that its use would not infringe privately owned rights. Refer-
+ence herein to any specific commercial product, process, or service by trade name, trademark,
+manufacturer, or otherwise does not necessarily constitute or imply its endorsement, recom-
+mendation, or favoring by the United States Government or any agency thereof. The views
+and opinions of authors expressed herein do not necessarily state or reflect those of the
+United States Government or any agency thereof.
+NUREG/CR-6478 has been reproduced
+from the best available copy.
+a
+DISCLAIMER
+
+Portions of this document may be illegible
+in electronic image products. Images are
+produced from the best available original
+document.
+ABSTRACT
+
+This report documents the results of valve research sponsored by the U.S.
+Nuclear Regulatory Commission (NRC) and conducted at the Idaho National Engi-
+neering and Environmental Laboratory (INEEL). The research provides technical
+bases to the NRC in support of their effort regarding motor-operated valves
+(MOVs) in nuclear power plants. Specifically, the research measured the capabili-
+ties of typical valve actuators during operation at simulated design basis loads and
+operating conditions. Using a test stand that simulates the stem load profiles a valve
+actuator would experience when closing a valve against flow and pressure, we
+tested five typical electric motors (four ac motors and one dc motor) and three gear-
+boxes at conditions a motor might experience in a power plant, including such off-
+normal conditions as operation at high temperature and reduced voltage. We also
+monitored the efficiency of the actuator gearbox. The testing produced the follow-
+ing results:
+
+e _ All five motors operated at or above their rated starting torque during tests at
+normal voltages and temperatures.
+
+° For all five motors (dc as well as ac), actual motor torque losses due to volt-
+age degradation were greater than the losses calculated by methods typically
+used for predicting motor torque at degraded voltage conditions.
+
+e · Startup torques in locked rotor tests compared well with stall torques in
+dynamometer-type tests.
+
+e __ For three of the ac motors, the actual motor torque losses due to elevated
+operating temperatures were equal to or lower than losses calculated by the
+typical predictive method; for the de motor, the actual losses were signifi-
+cantly greater than the predictions.
+
+e __ For all three actuator gearboxes, the actual running efficiencies determined
+from testing were lower than the running efficiencies published by the
+manufacturer. In most instances, the actual pullout efficiencies were lower
+than the published pullout efficiencies.
+
+e Operation of the gearbox at elevated temperature did not affect the operating
+efficiency.
+
+Job Code: A6857·-Equipment Operability
+
+iii NUREG/CR-6478
+CONTENTS
+
+ABSTRACT 2.2... ccc cece ccc cece eee eect ee eee eee eee e ee eee sete eee nees ili
+EXECUTIVE SUMMARY ............ cee cece cence eee eee neees cece cece cece ees ix
+INTRODUCTION ..... 0... ccc ccc cece cc cee ee teen ee ee tee eee eee e eee eneeeees 1
+Background ......... cece cee ccc ce eee ce cence ee eee ene e ee eee e eee sees eee eeees 1
+Earlier Testing 2... 2... 0. cece cece cece cee eee eee eee cence eee eee een eeetee 2
+
+SY 00)» | 4
+TEST EQUIPMENT ....... cece ccc ccc cc cee cence eee ete eee eee eee ee teen teens 6
+TEST MATRIX 2.0... ccc ccc ccc cee cee ce eee eee eee eee eee e eee tenn eee eeeees 8
+RESULTS . 00... ccc cece eee ee eee eee eee cece eee cence seen eee en eeees 9
+Performance Curves for the ac Motors 2.0.2.0... . 0. cece eee cece eee cence teen teens - 10
+Conclusions ...... cece cece ce cee ree cee eee eee eee eee eee eee ee eenes 13
+
+Degraded Voltage Testing of the ac Motors ........ 0... cece cece cece ee eee eee tenes 13
+
+EO00 Cod TY (0) 1 t 17
+
+Locked Rotor Testing of the ac Motors ....... 0... cece cee cee cece cece eect een eeenes 17
+COMCIUSIONS 2... cece eee eee eee eee ee eee eee teen eee eeeenes 18
+
+Elevated Temperature Testing of the ac Motors .......... 0. cece cece cece cree e eee ees 18
+Conclusions .............. ee eee ee eee ee eee ee ee eee eee reese e ee ene eeee 21
+
+Testing of the dc Motor ........ ccc cece ee cee cee e eee eee ence eee receees 21
+Earlier StudieS 2.0.0... . cece cece cece eee eect eee eee e eee eee eeenees 21
+Performance Curves for the dc Motor ......... 0. ccc cece cece cece ence eee eenees 25
+
+Degraded Voltage Testing of the dc Motor ......... 0. cece eer e nce e eet eee eeee 25
+
+Locked Rotor Testing of the dc Motor ......... 0. cece cee cee eect e eee e ence eee 28
+
+Elevated Temperature Testing of the dc Motor ............ 2. cess eee eee nec e eens 28
+
+Actuator Gearbox Efficiency ......... 0. cece ec cece cece eee e eee e eee e cence 30
+ConclusionS 21... . cece cece ce cece ee eee eee eee eter eee eee ee ene e ees 38
+OVERALL CONCLUSIONS 2... 0... ccc ec ccc cece cee eee eect en eee cree eee eenees 39
+REFERENCES 2.00... cc cece ccc ccc cee eee cece eee eee e neers eee ee eee eee eeees 40
+
+Vv NUREG/CR-6478
+. FIGURES
+
+Diagram of a motor-operated gate valve
+
+Sketch of the internal components of a gate valve, showing the main forces involved in a
+valve closure
+
+Diagram of the main components inside an actuator gearbox
+Photograph of the motor-operated valve load simulator (MOVLS)
+
+Motor performance curves derived from testing of the 5 ft-Ib ac motor; manufacturer·s
+published data are also shown
+
+Motor performance curves derived from testing of the 25 ft-lb ac motor; manufacturer·s
+published data are also shown
+
+Motor performance curves derived from testing of the 60 ft-lb ac motor; manufacturer·s
+published data are also shown
+
+Motor performance curves derived from testing of the high-speed 40 ft-lb ac motor;
+manufacturer·s published data are also shown
+
+Motor speed versus torque, derived from testing of the 5 ft-lb motor at degraded voltage ....
+Motor speed versus torque, derived from testing of the 25 ft-lb motor at degraded voltage ...
+Motor speed versus torque, derived from testing of the 60 ft-lb motor at degraded voltage ...
+
+Motor speed versus torque, derived from testing of the high-speed 40 ft-lb ac motor at
+degraded voltage
+
+Motor current versus torque, derived from testing of the 40 ft-lb ac motor at degraded
+voltage at room temperature and at 250°F
+
+Results of testing of the four ac motors at reduced voltage, with the data plotted as the
+solution for the exponent n in the voltage squared formula
+
+Torque histories from a locked rotor test and a dynamometer-type test of the 5 ft-lb motor ...
+
+Motor speed versus torque, derived from elevated temperature testing of the 5 ft-lb motor
+at 100% voltage and at 80% voltage
+
+Motor current versus torque, derived from elevated temperature testing of the
+60 ft-Ib motor at 100% voltage and at 80% voltage
+
+Motor torque versus elevated temperature at 100% voltage and 80% voltage for the
+5 ft-lb ac motor; predictions are also shown
+
+Motor torque versus elevated temperature at 100% voltage and 80% voltage for the
+25 ft-lb ac motor; predictions are also shown
+
+NUREG/CR-6478
+20.
+21.
+22.
+23.
+24.
+25.
+26.
+27.
+28.
+29.
+30.
+
+31.
+32.
+
+33.
+34.
+35.
+36.
+
+37.
+
+38.
+
+Motor torque versus elevated temperature at 100% voltage and 80% voltage for the
+60 ft-lb ac motor; predictions are also SHOWN .. 2... 6. eee cee ee cee eee teen eeeees 23
+
+Motor torque versus elevated temperature at 100% voltage and 80% voltage for the
+40 ft-lb ac motor; predictions are also SHOWN ..... 1... ce eee eee cee ene cence nee 23
+
+Motor current versus elevated temperature at 100% voltage and 80% voltage for the
+5 ft-lb ac motor; predictions are also SHOWN 00.1... cece cece cee eee eee tweens 24
+
+Motor current versus elevated temperature at 100% voltage and 80% voltage for the
+60 ft-lb ac motor; predictions are also shown .......... 2.00 e eee eeeee Lecce ences eeeee 24
+
+Performance curves (speed versus torque) from testing of the 40 ft-lb ac motor and the
+40 ft-Ib de motor, for comparison ......... ccc ccc eee ee cee eee e eee e nese snes 25
+
+Motor performance curves derived from testing of the 40 ft-lb dc motor; manufacturer·s
+published data are also SHOWN. «16... eee cee cece cee cece eee eect eee eneees 26
+
+Motor speed versus torque, derived from testing of the 40 ft-lb dc motor at degraded
+voltage at room temperature 2.1... ee ccc ee cece eee ee rete nent tees neces 27
+
+Results from testing of the 40 ft-Ib dc motor, with the data plotted as the solution to the
+exponent 7 in Equation (4) 2... 0... cece cc eee ee ee ee ee eee eee e eee eee eeee 27
+
+Motor current versus torque, derived from testing of the 40 ft-lb de motor at degraded
+voltage at room temperature 2.1... cece eee eee eee ence nee n eens eee 28
+
+Motor speed versus torque, derived from elevated temperature testing of the 40 ft-lb dc
+motor at 100% voltage 2... ccc ee eee eee eee ee eee ence nese rene ees 29
+
+Motor speed versus torque, derived from elevated temperature testing of the 40 ft-lb dc
+
+motor at 80% voltage 2... eee ee ee eee eee been tenet eee tenses 29
+Actuator torque history from a test of the SMB-1-60 ac actuator (output torque) ........... 32
+Motor torque history from a test of the SMB-1-60 ac actuator (input torque) .............. 32
+
+Running calculation of the gearbox efficiency, derived from the data shown in Figures 31
+Ee 0) A 33
+
+Gearbox efficiency calculations derived from stall testing of the SMB-1-60 ac
+Valve actuator 2... ec cc ce ee ee eee eee eee eee tee ee eee eee tent eens 33
+
+Gearbox efficiency calculations derived from testing of the SMB-00-5 ac valve actuator .... 34
+Gearbox efficiency calculations derived from testing of the SMB-0-25 ac valve actuator .... 34
+
+Gearbox efficiency calculations derived from testing of the SB-1-40 ac high speed
+Valve actlator 2... kc cc ce ee ce ee te eee eee e eee eee eect ete eens 35
+
+Gearbox efficiency calculations derived from testing of the SMB-00-5 ac valve actuator,
+with the motor torque adjusted to compensate for the hotel load ...................0002-- 36
+
+Vii NUREG/CR-6478
+Gearbox efficiency calculations derived from testing of the SMB-1-40 dc valve actuator ....
+
+Gearbox efficiency calculations derived from elevated temperature testing of the SMB-0-25
+ac motor-actuator
+
+NUREG/CR-6478
+EXECUTIVE SUMMARY
+
+A typical nuclear power plant contains
+hundreds of motor-operated valves (MOVs) that
+are actuated by an assembly consisting of an elec-
+tric motor and a gearbox. Many of these MOVs
+are safety-related, a term that means that the
+safety of the plant depends on the ability of these
+valves to close (or open) when called upon to
+operate at the conditions specified in the plant·s
+design documents. For some valves, these condi-
+tions include very high flows and pressures. In
+response to initiatives by the Nuclear Regulatory
+Commission (NRC), utilities have developed pro-
+grams that use testing and analysis to verify MOV
+design basis capability. The NRC has sponsored
+the Idaho National Engineering and Environmen-
+tal Laboratory (INEEL) in performing laboratory
+tests to provide the NRC with the technical basis
+for evaluating these utility responses. This report
+presents the results of tests evaluating the opera-
+tion of the electric motor and the actuator gearbox
+at typical design basis conditions, including
+operation at degraded voltage and elevated tem-
+perature conditions.
+
+The tests used motor/gearbox combinations
+configured from equipment purchased by the
+NRC and used in previous research projects. Each
+motor/gearbox combination was subjected to
+baseline tests and parametric tests at various volt-
+ages and temperatures. Specific questions
+addressed by the tests are:
+
+e How does the measured output torque of the
+actuator motor compare with the torque
+characteristics published by the actuator
+manufacturer?
+
+e How much does the measured output torque
+of the motor decrease at various reductions
+in the voltage supplied to the motor? How
+do these measured values of torque degrada-
+tion compare with values calculated using
+methods recommended by the actuator
+manufacturer for estimating degradation
+due to low voltage?
+
+iX
+
+e How much does the measured output torque
+of the motor decrease as the motor·s operat-
+ing temperature increases? How do these
+measured values of torque degradation
+compare with values calculated using meth-
+ods recommended by the actuator manufac-
+turer for estimating degradation due to
+motor heating?
+
+e What is the actual efficiency of the actuator
+gearbox, especially at high loadings and ele-
+vated temperatures? How does the actual
+efficiency compare with the efficiency val-
+ues published by the actuator manufacturer?
+
+The tests were conducted at the INEEL on the
+motor-operated valve load simulator (MOVLS),
+an instrumented test stand that provides
+dynamometer-type testing of valve actuators
+using load profiles that are very similar to the load
+profile a valve actuator would experience when
+closing a valve against a flow load. For these
+tests, we imposed a gradually increasing load on
+the valve actuator until the load caused the motor
+to stall, while taking continuous measurements of
+motor speed, motor voltage and current, motor
+torque, actuator torque (gearbox output torque),
+motor temperature, and other measurements.
+
+We tested a total of six combinations of actua-
+tor gearboxes and electric motors:
+
+e AnSMB-00 actuator equipped with a 5 ft-lb
+ac motor
+
+e AnSMB-O actuator equipped with a 25 ft-lb
+ac motor
+
+e The same SMB-0 actuator and motor, but
+running with a different gear set
+
+e AnSMB-1 actuator equipped with a 60 ft-Ib
+ac motor
+
+e The same SMB-1 actuator equipped with a
+40 ft-Ib 125-vde motor
+
+NUREG/CR-6478
+° The SMB-1 actuator converted to an SB-1
+
+actuator and equipped with a high speed
+(3600 rpm) 40 ft-lb ac motor.
+
+All four ac motors were configured for 460-volt,
+3-phase operation.
+
+The tests included baseline tests at room
+temperature and normal voltage, a series of tests
+at various stages of degraded voltage or elevated
+operating temperature, and tests at selected com-
+binations of the two conditions. We also con-
+ducted locked rotor tests for comparing motor
+current and motor torque at locked rotor startup to
+the results at stall in the dynamometer-type tests.
+Continuous measurements of motor torque (gear-
+box input torque) and actuator torque (gearbox
+output torque) allowed us to monitor the gearbox
+efficiency during the entire test. The results of
+these tests are summarized in the following
+
+paragraphs.
+
+The results showed that the data plots of motor
+current versus torque and motor speed versus
+torque, produced by the baseline tests, compared
+fairly well with the published data. However,
+there were some minor differences in the shape of
+the ac motor curves, indicating that the load
+threshold at which the motor drops off to a stall
+occurs at a different rpm, or at a different torque
+load, than indicated by the published data. All
+five motors met or exceeded their rated starting
+torques.
+
+We compared the results of the degraded volt-
+age tests to the results of predictions produced by
+methods typically used in analytical evaluations
+of motor capability. For the ac motors, the typical
+method is the voltage squared method. In all
+cases, the voltage squared method underesti-
+mated the actual torque losses experienced by the
+motors at degraded voltage conditions. For the dc
+motor, the typical method (a linear method) for
+predicting torque loss likewise underestimated
+the actual torque loss.
+
+The results of the locked rotor startup tests
+compared favorably with the results of the
+dynamometer-type tests at stall. We found the
+simple locked rotor startup test to be useful for
+
+NUREG/CR-6478
+
+evaluating a motor·s actual performance (torque
+produced and current drawn), for comparison
+with published data (rated torque) or with the data
+stamped on the name plate.
+
+The results of the elevated temperature tests
+were compared with the results of predictions
+based on the actuator manufacturer·s data. The
+results of our tests showed that for three of the ac
+motors, the measured motor torque values at ele-
+vated temperatures were equal to or a little higher
+than the predictions. For one of the ac motors, the
+actual torque was lower than the prediction.
+
+We also compared the motor current results
+from the elevated temperature tests to predictions
+based on the manufacturer·s data. For all four ac
+motors, the measured values were lower than the
+predictions.
+
+For the de motor, the results from the elevated
+temperature tests were compared to the actuator
+manufacturer·s data on the torque output of dc
+motors at elevated temperature. The torque mea-
+sured in the tests was lower than the prediction,
+by a large margin.
+
+The results of the gearbox efficiency tests were
+compared with the efficiency values published by
+the actuator manufacturer. The published values
+include a running efficiency, applicable at normal
+motor speeds and low to moderate loads, and a
+pull-out efficiency, applicable when the motor is
+lugging at low speed against a high load. For most
+motor/gearbox combinations, the actual running
+efficiencies and pullout efficiencies were lower
+than the published values. In no case was the pub-
+lished running efficiency adequate for predicting
+the actual efficiency of the gearbox when operat-
+ing against a significant load. The published pull-
+out efficiency appeared to be adequate or nearly
+so in most cases for predicting the gearbox effi-
+ciency at the loads expected during valve opera-
+tion, but it was in some instances inadequate for
+predicting the gearbox efficiency at or near motor
+stall.
+
+Lower operating speeds tended to correspond
+with lower gearbox efficiency. This result has sig-
+nificance for dc-powered valve actuators,
+because when challenged by loads approaching We tested one actuator gearbox at elevated
+the motor·s rated load, dc motors operate at much temperature. The elevated temperature did not
+lower speed than ac motors. affect the operating efficiency of the gearbox.
+
+xi NUREG/CR-6478
+MOV Actuator Motor and Gearbox Testing
+
+INTRODUCTION
+
+During the past several years, the Nuclear Reg-
+ulatory Commission (NRC) has supported
+research addressing the performance of motor-
+operated gate valves (Figure 1) and other motor-
+operated valves (MOVs) installed in nuclear
+power plants. The research included tests and
+analysis to determine the capability of safety-
+related MOVs to close (or open) when subjected
+to their design basis conditions. For some safety-
+related valves, these design-basis conditions
+include high flow and pressure loads, high tem-
+peratures (which can reduce the output of the
+electric motor), and operation of the electric
+motor at reduced voltage.
+
+This report documents the results of tests spon-
+sored by the NRC and performed by the Idaho
+National Engineering and Environmental Labora-
+
+tory (INEEL) to address factors that affect the
+performance of MOV electric motors and the
+actuator gearboxes.
+
+Background
+
+Most of the past MOV research conducted at
+the INEEL focused on gate valves and the identi-
+fication of variables that most affect MOV perfor-
+mance. These variables include:
+
+a. The system conditions at the valve (the dif-
+ferential pressure across the disc, and the
+system temperature, flow, and pressure)
+
+b. The friction at the disc/guide and disc/seat
+interfaces, and possible damage to the slid-
+ing surfaces at these interfaces
+
+Electric
+motor
+
+Limitorque
+
+operator
+
+Yoke |
+
++
+
+Valve stem ··
+
+Seat ring ···_]] |
+Disc :
+
+Seat ring
+
+Figure 1. Diagram of a motor-operated gate valve.
+
+NUREG/CR-6478
+Introduction
+
+The load due to packing friction
+
+The friction at the stem/stem-nut interface
+The control switch setting
+
+The efficiency of the actuator gearbox |
+
+The torque capability of the actuator motor
+at normal conditions
+
+The effects of reduced voltage on the torque
+capability of the motor
+
+The effects of motor heating and high tem-
+perature on the torque capability of the
+motor.
+
+Of these variables, the ones that are most difficult
+to determine are items b, d, f, g, h, and 1. The tests
+documented in this report focused on items f
+through i. Items b and d have been addressed by
+recent tests, including NRC/INEEL tests briefly
+described below under ·Earlier Testing.·
+
+Figure 2 shows the components and forces
+involved in items a and b above. Fyze, in Figure 2
+indicates the force needed to move the stem in a
+downward direction to close the valve. The main
+force that the actuator must overcome is the resis-
+tance to motion at the disc (the vertical force des-
+ignated V in Figure 2), caused mainly by the
+differential pressure (F,) minus Faown) acting on
+the effective disc area, forcing the disc against the
+downstream seat (or guide) and thus contributing
+to the friction drag at the disc/seat (or disc/guide)
+interface. The horizontal force H represents the
+resistance to horizontal disc motion, provided by
+the valve seats. Other minor forces are also
+involved, including the stem rejection load (Fsrem,
+rej), the packing friction load (Fpacking), and the
+load caused by pressure acting on various sur-
+faces of the wedge-shaped disc (Fjop) minus
+Fottom)-
+
+Figure 3 shows the components involved in
+items d through 1 in a typical valve actuator. The
+interface between the stem and the stem nut is the
+point where the rotary motion of the actuator
+gearbox is converted to linear motion of the stem
+
+NUREG/CR-6478
+
+and disc (the stem nut rotates on the threaded
+stem, driving the stem downward during closure,
+while the stem and disc are prevented from rotat-
+ing). Friction at this interface contributes to the
+load that the valve actuator must overcome in
+order to move the disc. Thus, it can be said that
+items a through d combined create a load that
+makes the stem nut difficult to turn on the stem,
+and that the actuator must deliver a certain
+amount of torque to the worm-gear/stem-nut
+assembly in order to overcome that load.
+
+While items a through d involve forces that
+must be overcome by the valve actuator, items f
+through i involve the torque the actuator must be
+capable of providing to overcome those forces.
+The torque switch (item e) acts to limit the
+amount of torque the worm can apply to the worm
+gear. When resistance to motion of the stem/disc
+assembly makes the stem nut very difficult to
+turn, the worm moves to the right in relation to the
+worm gear (Figure 3), compressing the torque
+spring as it slides on the splined shaft until it trips
+the torque switch, which trips a relay that shuts
+off the motor. Under certain unfavorable condi-
+tions (for example, too high a torque switch set-
+ting, an underpowered motor, or degradation of
+motor output due to motor heating or reduced
+voltage), it is possible that the motor will stall
+before the torque switch trips. In that case, the
+output of the motor, not the torque switch setting,
+limits the actuator·s torque output. In some
+applications the torque switch is bypassed. In this
+case, too, the output of the motor limits the actua-
+tor·s output torque.
+
+Earlier Testing
+
+Earlier MOV research at the INEEL addressed
+many of the issues related to valve performance.
+In one of those earlier research programs, for
+example, the NRC sponsored the INEEL in con-
+ducting two sets of full-scale tests involving six
+gate valves. The purpose of those tests was to
+evaluate the response of the valves when operat-
+
+ing against high-flow (blowdown) loads. Those
+
+tests focused on determining the force required to
+open and close the gate, which depends partly on
+the friction at the disc/seat interface, and on the
+Introduction
+
+| Fetem
+Foacking
+
+Frop
+
+F, stem rej
+
+|
+|
+|
+|
+
+Figure 2. Sketch of the internal components of a gate valve, showing the main forces involved in a valve
+closure.
+
+Sleeve bearings
+
+Worm gear
+
+Helical Spline
+ear set
+gear se Z
+
+mMoToR ({@
+TORQUE Z
+
+STEM TORQUE
+STEM THRUST ¥
+
+·Torque switch
+
+Z665-WHT-696-02A
+
+Figure 3. Diagram of the main components inside an actuator gearbox.
+
+3 NUREG/CR-6478
+Introduction
+
+possibility of damage to the disc, seats, and
+guides when the valve closes against very high
+flows (item b above). The importance of those
+tests was that they were among the first full-scale
+tests ever conducted where one of the specific
+objectives was to quantify the actual disc factor (a
+term that includes friction at the disc/seat inter-
+face) at high flow loads. The results showed that
+the stem forces experienced by gate valves at
+these high loads were greater than the values pre-
+dicted by typical formulas in use at the time,
+largely because the disc factors were higher than
+had been used in the formulas.
+
+Other tests focused on friction at the interface
+between the valve stem and the stem nut in the
+valve actuator (item d above). Friction at the
+stem/stem-nut interface is one of the variables
+that affects the conversion of actuator torque to
+valve thrust. Here again, it was important to quan-
+tify this friction coefficient, and to understand the
+changes likely to occur in this friction coefficient,
+in order to be able to properly predict valve capa-
+bility. The results of the earlier tests·the full-
+scale blowdown valve tests as well as the actuator
+tests·are documented in References 1 through 4.
+
+The INEEL also conducted NRC-sponsored
+tests in Germany that included a dc-powered
+motor-operated gate valve (Reference 5). Those
+tests focused on the effects of seismic loads on
+MOV and piping performance; however, the tests
+also provided important results addressing opera-
+tion of dc-powered valves at reduced voltage and
+other valve issues. A brief review of those results,
+as they relate to the tests reported here, is pro-
+vided later in this report.
+
+Scope
+
+The testing described in this report focused on
+the capability of the electric motor and on the effi-
+ciency of the actuator gearbox. Specifically, the
+testing addressed the following questions:
+
+NUREG/CR-6478
+
+e How does the actual, measured output
+torque of the actuator motor compare with
+the torque characteristics published by the
+manufacturer?
+
+e How much does the output torque of the
+motor decrease at various reductions in the
+voltage supplied to the motor? How do these
+measured values of torque reduction
+compare with the reductions calculated by
+typical analytical predictions?
+
+e How much does the output torque of the
+motor decrease as the motor·s operating
+temperature increases? How do these mea-
+sured values of torque reduction compare
+with the reductions calculated by typical
+analytical predictions?
+
+e What is the actual efficiency of the actuator
+gearbox, especially at high loadings and ele-
+vated temperatures? How does the actual
+efficiency compare with the manufacturer·s
+published efficiency values?
+
+The testing also provided information about stall
+characteristics, inrush current, unbalanced volt-
+age (ac only), and motor momentum. Preliminary
+results of some of the tests were published in Ref-
+erence 4; a full report on the results is presented
+here.
+
+We tested six combinations of actuator gear-
+boxes and electric motors, using five motors and
+three gearboxes (see Table 1). All of the equip-
+ment was well conditioned from previous use in
+other test programs. The SMB-1 actuator was
+tested with two different motors installed. The
+SMB-0 actuator with the 25-ft-lb motor was
+tested with two different sets of helical gears in
+the gearbox, one of them a set of high-speed
+gears. Table 1 summarizes the information pro-
+vided by the motor manufacturers and the actua-
+tor manufacturer about the six actuator
+combinations, including the gear ratios of the
+helical gear sets.
+Introduction
+
+q
+
+*/ pue g saouaIaJay WO Byep ADUDIDIJJO XOQIRD *(SoxogIeEs JOJENIDE OY} JOJ)
+
+anbioj wr] pur *(40;0UL Op ay) 10g) ·ouy ·Auedwios J9,10 ·yf ·H ·UOISIAI 91N99]q] ssayiee pure ·(sIOJOUI oe op Joy) Aueduioz dinoayq souerjoy Aq popraoad se e
+
+707d Taps 9SaH 96d 96d 954
+06°0 06°0 06°0 06°0 06°0 06°0
+0s'0 09°0 0s'0 ss·0 0s'0 0s·0
+Or'0 sv'0 Or'0 0v'0 Or'0 Or'0
+0s'0 09°0 0s·0 ss'0 0s'0 0s'0
+
+Ov/ZE SE/LE Ov/ZE SE/LE Lv/S@ ·b/7
+
+1 Ope 1 PE 1 OPE 1% LE 1 OLE 1 0 Sp
+
+OS tr EVE 0S tr 96°bE 95°69 3°L8
+
+OPA S71 b¢ 98A OOF bE dBA OOF bE DBA 09H bE d8A OOP bE 9A OOP
+0061 ·· OOPE OOLT OOLI OOLI OOLI
+
+o'e9 0'6r 0°99 5°67 4 S99
+
+Or Or 09 SZ SZ S
+2por-1-dINS 38Op-I-AS 9809-1 -AIN'S 28¢7-0-AINS 2e¢7-0-A NS 2e¢-00- NS
+
+OWL IOJOJ
+Joo} uoTeoddy
+ADUSIOTJO [PIS
+
+Aousto1jJo NOT [Ng
+Aouatoyyo Suruuny
+
+JOS Ivd8 [eoI]OH
+
+Oe 1eaS WOM
+
+ONC! ][eIOAG
+
+OBRIOA Pojey
+
+(wid1) poods poyey
+
+(q[-13) onbso} ][e1s porstoodg
+(Q[-¥J) onbso) SunsEys pow
+
+poleMprey ISO], ·| OIQEL
+
+NUREG/CR-6478
+TEST EQUIPMENT
+
+This research focuses on the performance of
+the motor and the actuator gearbox under loaded
+conditions, separate from the performance of the
+valve disc and seat. This being the case, it is not
+necessary to conduct the tests with an entire valve
+assembly with a flow load imposed on the valve.
+For this research, it was possible to test the valve
+actuator under simulated loads.
+
+The tests were performed on the motor-oper-
+ated valve load simulator (MOVLS), a test stand
+owned by the NRC and built by the INEEL for
+testing valve actuators. The MOVLS, shown in
+Figure 4, uses actuators, valve yokes, and valve
+stems the same as they are assembled on the
+valves. The MOVLS simulates valve loads by
+using a hydraulic cylinder and an accumulator
+that contains a gas overpressure. As the actuator
+lowers the end of the valve stem (as if it were
+closing the valve), the end of the stem pushes on
+
+the piston in the cylinder, which discharges water .
+
+to the accumulator. The specific valve load pro-
+file is controlled by the initial water level and gas
+pressure in the accumulator. This configuration
+allows us to impose a steadily increasing load on
+the stem, very similar to what an actuator would
+experience when actually closing a valve against
+
+NUREG/CR-6478
+
+a flow load. The valve seating load is simulated
+when the cylinder bottoms out.
+
+The MOVLS is instrumented to take all the
+measurements that are important for diagnosing
+valve actuator performance. Motor speed was
+measured directly. On the ac motors, the electrical
+measurements included RMS (root mean square)
+voltage between phases 2 and 3, RMS and peak-
+to-peak current on all three phases, motor power,
+and phase angle. On the dc motor the electrical
+measurements included voltage and current.
+Motor temperature was measured using a com-
+bination of thermocouples and an infrared sensor,
+allowing us to monitor the actual internal rotor
+temperature. The output torque of the electric
+motor was measured by a torque cell mounted
+between the motor and the gearbox. The output
+torque of the gearbox was measured by a cali-
+brated torque arm attached to the valve stem. (The
+torque arm measures the reaction torque in the
+stem, which is equal to the output torque of the
+gearbox, that is, the torque applied to the stem nut
+by the worm gear. See Figure 3.) With direct mea-
+surement of both the output torque of the motor
+and the output torque of the gearbox, we were
+able to continuously monitor the efficiency of the
+gearbox.
+Test Equipment
+
+7 NUREG/CR-6478
+TEST MATRIX
+
+Most actuator and motor testing is typically
+performed by applying a sudden torque load
+(applying the brake on a dynamometer or hard-
+seating a valve without a flow load) or with a
+locked stem (similar to a locked rotor test). Our
+tests used the MOVLS to conduct dynamometer-
+type tests that imposed a load that gradually
+increased until it caused the motor to stall; a grad-
+ually increasing load is characteristic of the load
+an actuator will experience when closing a valve
+against a high flow load. Unlike earlier tests on
+the MOVLS, these tests used the hydraulic cylin-
+der but not the accumulator to created the loads.
+The cylinder was extended and filled with gas (no
+water), the valve between the cylinder and the
+accumulator was closed, and the actuator was
+required to compress the gas in the cylinder until
+the resistance caused the actuator motor to stall.
+Stall occurred before the cylinder bottomed out.
+These tests allowed us to determine the actual
+output torque of the motor and of the gearbox for
+the entire operating range of the motor. We also
+conducted locked rotor startup tests, measuring
+
+NUREG/CR-6478
+
+torque, current, and other parameters with no
+motor rotation.
+
+For each motor/gearbox combination, baseline
+tests were conducted with the assembly at normal
+conditions, then tests were conducted at various
+stages of reduced voltage, at various levels of
+operating temperature, and with selected com-
+binations of the two. A three-phase, 60-amp-per-
+leg auto transformer was used to perform the
+degraded voltage tests. This same auto trans-
+former was used as the supply to the dc power
+source to permit degraded voltage tests for the dc
+motor. In the elevated temperature tests, we
+wrapped the motor with heat tape, controlled by
+thermocouples and variable voltage control. The
+motor was also insulated, creating a custom oven
+on each motor. Environmentally qualified motors
+were heated to 300°F. However, because of wir-
+ing insulation concerns, other motors were heated
+only to 250°F. All testing at ambient temperature
+was conducted with an internal motor tempera-
+ture between 70 and 80°F.
+RESULTS
+
+The results of our research address all the terms
+in the typical formula for predicting the output
+torque of a valve actuator. The formula begins
+with the motor·s rated output torque at normal
+conditions, then multiplies that value by specified
+factors to account for torque losses due to voltage
+degradation and motor heating. The formula also
+includes an application factor to account for
+motor differences and minor fluctuations in the
+supply voltage. The resulting value is the pre-
+dicted output torque of the electric motor. Also
+included in the formula is an efficiency factor to
+account for losses due to friction in the actuator
+gearbox, and a multiplier to account for the torque
+increase associated with the gear reduction in the
+gearbox. The product of this formula is the esti-
+mated output torque of the actuator. The formula
+is:
+
+Trourput = Trrotor (=) Fremp Fapp Eff gearbox OAR (i)
+
+where
+
+Toutput = output torque of the valve
+actuator
+
+Tmotor = rated starting torque of the
+electric motor
+
+Vact = actual voltage supplied to
+the motor
+
+Vrat = the motor·s rated voltage
+
+n = 2 for ac motors, 1 for dc
+motors
+
+Fremp = factor to account for losses
+due to motor heating
+
+Fapp = application factor
+
+Effgearbox = gearbox efficiency
+
+OAR = overall gear ratio.
+
+The term (Vact/ Vrat)· for ac motors is the voltage
+squared relationship, a calculation commonly
+used for predicting torque losses due to reduced
+voltage operation. For dc motors, the formula
+(Vact / Vrat)! represents a linear adjustment where
+the percent loss in torque is equal to the percent
+loss in voltage. For the term Fremp, information
+published by the actuator manufacturer indicates
+that this factor ranges from about 0.76 to 1.0,
+depending on the temperature and on the particu-
+lar motor. The application factor (Fapp) is usually
+0.9, but the operator manufacturer suggests using
+1.0 under certain circumstances, discussed later
+in this report. For a given actuator gearbox, the
+actuator manufacturer publishes three values for
+the gearbox efficiency (Effgearbox); usually these
+values are in the range of 0.4 to 0.6. The overall
+gear ratio (OAR) in rising-stem MOV actuators is
+always a number larger than one; it accounts for
+the torque increase produced by the gear reduc-
+tion in the gearbox.
+
+The following discussion presents the results
+of valve actuator tests and compares those results
+to the predictions produced by the typical meth-
+ods represented in Equation (1). Specifically, this
+section of the report presents results on the fol-
+lowing topics:
+
+e Actual motor performance curves for the
+four ac motors tested at normal (baseline)
+conditions. Motor performance data pub-
+lished by the actuator manufacturer are
+included for comparison.
+
+e ·_ Tests of the ac motors at degraded voltage,
+with measurements of motor torque. Esti-
+mates of motor torque produced by the volt-
+age squared relationship are included for
+comparison; the application factor is also
+reviewed in this context.
+
+e _ Locked rotor testing of the ac motors.
+e Tests of ac motors at elevated temperature,
+
+with measurements of motor torque and
+motor current. Estimates based on data
+
+NUREG/CR-6478
+. Results
+
+issued by the actuator manufacturer are
+included for comparison.
+
+Tests of the dc motor for the topics listed
+above (as applicable)
+
+Gearbox efficiency data derived from mea-
+surements of gearbox iriput torque and gear-
+box output torque. Efficiency data
+published by the manufacturer are included
+for comparison.
+
+Relevant data plots are presented along with a
+discussion of the results.
+
+Performance Curves for the ac
+Motors
+
+Figure 5 shows motor speed versus motor
+torque and motor current versus torque from our
+baseline test of the 5 ft-lb ac motor. As mentioned
+earlier, these curves are produced by running the
+motor at normal speed and then applying a
+constantly increasing load until the load causes
+the motor to stall. The oscillations in the data
+curves are due to gear train noise and to normal
+surges that occur when the electric motor lugs
+down under high loads. Figure 5 also shows the
+manufacturer·s speed/torque and current/torque
+curves for this motor. The asterisk on the current
+trace marks the end of the manufacturer·s pub-
+lished curve; we extrapolated the current trace
+from the point of the asterisk through the pub-
+lished stall value. Note that this particular motor
+is rated at 5 ft-lb, and the data from our test show
+that it produces more than 6 ft-lb of torque as it
+approaches stall.
+
+Figure 6 presents the torque curves from our
+baseline test of the 25 ft-lb ac motor. Figure 6 also
+shows the manufacturer·s torque curves for this
+motor. The two Xs on the extrapolated portion of
+the current trace are test points from earlier field
+testing. The two speed/torque curves are quite
+similar in shape; both indicate that at about 1200
+rpm the motor begins to stall. Very little addi-
+tional torque is produced after the motor speed
+drops below 1200 to 1000 rpm. (This part of the
+trace is called the knee of the curve. The knee of
+
+NUREG/CR-6478
+
+the curve is an important part of the analysis,
+because it generally represents the peak useable
+torque before the motor stalls. Beyond the knee,
+the motor will stall if there is virtually any
+increase in the load.) Although the two speed/
+torque curves shown in Figure 6 are similar in
+shape, they show a difference in available torque.
+The test data show about 30 ft-lb torque available
+in this rpm range (1000 to 1200), while the
+manufacturer·s curve shows about 25 ft-lb.
+Another difference is at very low rpm (less than
+200). The manufacturer·s curve shows a signifi-
+cant increase in torque as the motor approaches
+stall, while the test data show a moderate increase
+followed by a rapid decrease. Both curves show
+about the same stall torque.
+
+Figure 7 presents the torque curves from our
+baseline test of the 60 ft-lb ac motor. The figure
+also shows the manufacturer·s torque curves for
+this motor. The two speed/torque curves are
+somewhat similar in shape, and the absolute
+torque values indicated are similar. However, the
+curve from our test data indicates a knee at about
+1200 rpm and 58 ft-lb, while the knee of the
+manufacturer·s curve is at about 1300 rpm and 52
+ft-lb. The actual peak torque of about 64 ft-lb
+occurs at 500 to 1000 rpm. The manufacturer·s
+curve shows a peak torque of about 64 ft-lb at
+stall. This motor·s output torque is close to its 60
+ft-lb rating.
+
+Figure 8 presents the torque curves from our
+baseline test of the high-speed (3600 rpm) 40 ft-Ib
+ac motor. The figure also shows the manufactur-
+er·s torque curves for this motor. In this instance
+the manufacturer·s current curve shows data all
+the way to motor stall, so no extrapolation was
+necessary. The shapes of the curves from our tests
+are a little different for the high-speed motor, as
+compared with the curves for the other ac motors,
+especially at very low rpm. Unlike the other ac
+motors, the stall torque for the high speed motor
+is much lower than the torque just before stall.
+However, the motor continues to provide some
+additional torque as the motor speed drops from
+2500 to 1000 rpm. In this rpm range, the output
+torque increases to a value well above the motor·s
+40 ft-lb rating, peaking at about 55 ft-lb.
+Results
+
+2,000 ·· SL EEEEEEEEEEEEEE EER
+
+5 ft-lb ac motor
+
+1,500
+
+Manufacturer·s data
+
+1,000
+
+Motor speed (rpm)
+
+Motor current (amp)
+
+| Current 1 2
+500 + · |
+
+oy 4
+
+F * End of manufacturer·s curve 7
+
+| ··-· Extrapolated )
+
+01234567
+
+Motor torque (ft-lb)
+
+2665-WHT-696-29a
+
+Figure 5. Motor performance curves derived from testing of the 5 ft-lb ac motor; manufacturer·s
+
+published data are also shown.
+
+2,800 · re ad ul . q v_· . T . . 1 . La T T ' . | 28
+i 25 ft-lb ac motor ; |
+2,400 + % End of manufacturer's curve | J 24
+X Data points from earlier testing /
+··-· Extrapolated /
+· 2,000 / 420 =<
+= iS
+= cS
+> 1,600 } 146 =
+o9
+2. 5
+· 1,200 | Manufacturer's data 4+ 12 ©
+22
+o fe)
+= L 48 =
+£00 Current 1
+400 14
+0) 14 J. pe oro i A · | 1 | @)
+0 4 12 16 20 24 28 32 36
+Motor torque (ft-lb) zoos. wiT.so6 038
+
+Figure 6. Motor performance curves derived from testing of the 25 ft-Ib ac motor; manufacturer·s
+
+published data are also shown.
+
+11
+
+NUREG/CR-6478
+Results
+
+2,000 ae ·· ry · 50
+60 ft-lb ac motor |
+A-|
++ 40
+1,500 + | ~
+·e
+= wo
+~ Manufacturers data ; 30 ·
+3 Cc
+® 1,000 + £
+oD 3
+g 420 <
+[e) _
+= S$
+500 +
+| Current | 10
+% End of manufacturer's curve
+| ··W· Extrapolated
+0 10 20 30 40 50 60 70
+Motor torque (ft-lb)
+Figure 7. Motor performance curves derived from testing of the 60 ft-lb ac motor; manufacturer·s
+published data are also shown.
+4,000, ··· 80
+40 ft-lb ac motor ·~
+3,500 - I . . 1 70
+3,000 | 5 + 60
+a |. =
+= 2,500 + 750
+8 2.000 | Manufacturer's data : 40 E
+13
+77) ] S)
+£ 1,500 § 130
+] fo)
+=1=
+1,000 + ; 20
+Current ]
+500 + y · 1 10
+0 10 20 30 40 50 60
+Motor torque (ft-Ib) 2665-WHT-896-04a
+
+Figure 8. Motor performance curves derived from testing of the high-speed 40 ft-lb ac motor;
+manufacturer·s published data are also shown.
+
+NUREG/CR-6478 12
+Conclusions
+
+The test data show that the load threshold at
+which the motor will drop to a stall (the knee of
+the curve) does not always occur at the motor
+speed or at the load threshold indicated by the
+published data; however, the actual torque output
+at the knee of the curve (1200 to 1000 rpm for the
+three 1800 rpm motors, and 2400 to 2000 rpm for
+the high-speed 3600 rpm motor) is consistently
+higher than indicated by the manufacturer·s
+curves.
+
+There is some variation between the published
+rated torque and the torque we measured at high
+loadings and at stall. All four motors exceeded
+their rated starting torque, some by larger margins
+than others. Also, the torque at the knee of the
+curve was greater than or equal to the stall torque
+for all four of these ac motors.
+
+Degraded Voltage Testing of the
+ac Motors
+
+For some actuator motors, operation at reduced
+voltage is one of the design-basis conditions that
+must be considered in analytical evaluations of
+MOV capability. Our test program included tests
+to determine how much torque loss resulted from
+operation at reduced voltage.
+
+For ac motors, the voltage squared calculation
+is used extensively to predict motor output at
+degraded voltage conditions. According to the
+voltage squared calculation, the theoretical rela-
+tionship of torque to voltage at constant speed is:
+
+2
+
+Tha = Ta (¥2) >
+where
+
+Tact = actual torque
+
+Trat = rated torque
+
+Vact = actual voltage
+
+Vrat = rated voltage.
+
+13
+
+Results
+
+Figure 9 shows motor speed/torque curves for
+the 5 ft-lb motor at degraded voltages down to
+60% of the nominal 460 vac. The results of a volt-
+age squared calculation to predict a single value
+of the running torque (near the knee of the curve,
+at 1000 rpm) and the stall torque at degraded volt-
+age are also shown. These predicted values are
+calculated from the actual torque output at 100%
+voltage, not the rated starting torque. As shown in
+Figure 9, the voltage squared calculation overesti-
+mates the actual running torque (at 1000 rpm) at
+degraded voltage by 0.16 to 0.49 ft-lb, or about 3
+to 10% of the motor·s rated torque. With the
+25 ft-lb motor (Figure 10), the voltage squared
+calculation overestimates the actual running
+torque (at 1000 rpm) by 0.21 to 0.74 ft-Ib (about 1
+to 3%), and with the 60 ft-lb motor (Figure 11),
+the calculation overestimates by 1.05 to 2.61 ft-lb
+(about 2 to 4%). With the high speed 40-ft-Ib ac
+motor (Figure 12), the calculation overestimates
+by 1.32 to 3.00 ft-Ib (about 3 to 7%) at 2000 rpm.
+
+The actuator manufacturer·s literature speci-
+fies that an application factor of 0.9 be used in the
+calculation to account for torque losses due to
+voltage degradation down to 90% of the nominal
+voltage. For voltages at 90% and lower, the
+manufacturer allows the application factor to be
+1.0 and specifies that the voltage squared calcula-
+tion be used. Figure 11 shows that at 1000 rpm
+(near the knee of the curve), the 60 ft-lb motor
+delivers its rated torque of 60 ft-lb. If the applica-
+tion factor of 0.9 is used, the available output
+torque at 90% voltage would be predicted to be 54
+ft-lb. The voltage squared calculation (with an
+application factor of 1.0) would predict a value of
+48.6 ft-lb at 90% voltage. The actual measured
+torque at 90% voltage at 1000 rpm was 47 ft-lb.
+At 80% voltage, the voltage squared calculation
+(with an application factor of 1.0) predicts an
+available motor torque of 38.4 ft-lb; the measured
+torque was 35.4 ft-lb.
+
+Our evaluation included a look at the effects of
+degraded voltage combined with the effects of
+operation at elevated temperature (a subject dis-
+cussed later in this report). Figure 13 shows
+speed/torque curves for 100% and 80% voltage
+
+NUREG/CR-6478
+Results
+
+T T ··r r T r uy T T T T T T T
+
+5 ft-lb ac motor, ambient temperature
+
+60%
+volt
+
+Motor speed (rpm)
+
+A Locked rotor
+| «starting test
+© Calculated value
+
+0
+
+0345
+Motor torque (ft-lb) Zess.wireseota
+
+Figure 9. Motor speed versus torque, derived from testing of the 5 ft-lb motor at degraded voltage.
+
+2,000 ··· EAL · a
+
+25 ft-lb ac motor, ambient temperature © Calculated value
+1,750 . 4 Locked rotor starting test
+
+1,500
+1,250
+1,000
+
+100% volt
+750
+
+Motor speed (rpm)
+
+60% volt 70% volt, 80% vol 90% volt
+500
+
+250 |
+
+0) [ L A 4 A Ae 3 oY, |
+0 5 10 15 20 25 30 35
+Motor torque (ft-ib)
+
+Figure 10. Motor speed versus torque, derived from testing of the 25 ft-lb motor at degraded voltage.
+
+2665-WHT-696-06
+
+NUREG/CR-6478
+Results
+
+60 ft-lb ac motor, ambient temperature © Calculated value 1
+1,750 + 4 Locked rotor starting test 4
+1,500 } 1
+
+e~
+£ 1,250 F = 4
+Oo i 1
+® 1,000 5 O O O 5 1
+oa · 2 1
+7) j
+2 750 | 60% volt |70% volt, 80% volt 90% volt 100% volt 4
+=]
+500 + ;
+250 + 4
+
+0! S © be pe
+
+0 10 20 30 40 50 60 70
+Motor torque (ft-lb) 2506: WHT806.91
+
+Figure 11. Motor speed versus torque, derived from testing of the 60 ft-lb motor at degraded voltage.
+
+4,000 . . t * lj * v T T * r * qT iv r T r ]
+High speed 40 ft-lb ac motor, ambient temperature ]
+3,500 + A Locked rotor starting test +
+Ving h O Calculated value
+3,000 + .
+=:
+& 2,500 | :
+31
+a 2,000 + 7
+ej
+2 1,500 | |
+=.]
+1,000 + J
+500 + 4
+60% volt\ 70% volt/ 80% volt 90% volt 100% volt
+0 10 20 30 40 50 60 70
+Motor torque (ft-lb) ees WHT996-07
+
+Figure 12. Motor speed versus torque, derived from testing of the high-speed 40 ft-lb ac motor at
+degraded voltage.
+
+15 NUREG/CR-6478
+Results
+
+4,000 ->····
+
+40 ft-lb ac motor
+3,500
+
+3,000
+2,500
+
+2,000
+
+Motor speed (rpm)
+
+1,500 [|
+1,000
+
+500 250° F
+
+0.
+0 10 20
+
+80% volt
+
+·30 40 50 60 70
+Motor torque (ft-lb)
+
+© Calculated value |]
+4 Stall 1
+@ Measured value
+
+100% volt 100% volt
+250°F ambient
+
+80% volt
+ambient
+
+2665-WHT-696-32
+
+Figure 13. Motor current versus torque, derived from testing of the 40 ft-lb ac motor at degraded voltage
+
+at room temperature and at 250°F.
+
+and for room temperature (80°F) and elevated
+(250°F) temperature for the 40 ft-lb motor.
+Predictions produced by the voltage squared cal-
+culation are also shown, with the predictions
+based on the actual torque at 100% voltage for the
+two temperatures. The figure shows that the volt-
+age squared calculation overestimates the avail-
+able torque not only at room temperature, but also
+at elevated temperature. The results with the other
+ac motors are similar.
+
+To further evaluate the voltage squared cal-
+culation, we rearranged the formula shown in
+Equation (2) and used the data from the tests
+results as input so we could solve for the exponent
+n. The purpose of this effort was to determine
+whether an exponent other than 2 might be con-
+sistent with the test results. We began by modify-
+ing the names of the terms slightly, as follows:
+
+n
+V reduced
+Vv 100%
+
+T reduced = Ti00% (
+
+NUREG/CR-6478
+
+where
+
+torque measured at reduced
+voltage
+
+Treduced
+
+T 100% torque measured at 100%
+voltage
+
+the reduced voltage for the
+test
+
+Vreduced
+
+Vi00% the full voltage for the test
+n = the unknown exponent
+
+Rearranging and solving for the exponent n yields
+
+T, ut
+In (·a= =)
+
+100%
+
+Vv Teduced
+In Ge 4)
+
+Using results from full voltage and reduced volt-
+age tests of the four ac valves as input to
+Equation (4), we solved for the exponent n and
+plotted the results in Figure 14. The results shown
+
+n=
+Results
+
+3.5 [ T T T T T T T T T T T T T T T T T T T T T 7 T T T T T T ;
+
+3.0 + 4
+
+_ 256 q g |
+
+cr~4
+
+ef K A a g
+
+a b e) oO 4
+
+5 2.0 ° 4
+
+2Li
+
+oL1
+
+> 1.5 L 7
+
+[ O 5 ft-lb ac 1
+
+tok O 25 ft-lb ac 7
+
+ans A 60 ft-lb ac 4
+
+r © 40ftlb ac 1
+
+@) 5 [ l L lL lL | lL L i 1 I 1 L L L i 1 L L L | L 4 L 1 l L L L L 1
+·40 50 60 70 80 90 100
+C318-WHT-1196-01
+
+Voltage (percent of nominal)
+
+Figure 14. Results of testing of the four ac motors at reduced voltage, with the data plotted as the solution
+
+for the exponent n in the voltage squared formula.
+
+here are based on motor torque at the knee of the
+curve, namely, 1,000 rpm for the 1,800-rpm
+motors, and 2,000 rpm for the 3,600-rpm motor.
+This analysis does not consider an application
+factor (in other words, the application factor is
+assumed to be 1.0). The results suggest that for
+these four motors, an exponent of 2.5 instead of 2
+in the voltage squared calculation would produce
+predictions of torque loss that are consistently
+equal to or higher than the actual torque losses.
+(Note, again, that these analyses use the actual
+motor torque at 100% voltage, not the motor·s
+rated torque, as the basis for the calculation.)
+
+Conclusions
+
+These results show that the voltage squared |
+
+calculation consistently underestimates motor
+torque losses at degraded voltage conditions.
+These results are based on using the motor·s
+actual output torque at 100% voltage as the basis
+for the calculation. Using the rated starting motor
+torque (instead of the actual motor torque at
+100% voltage) in the voltage squared calculation
+
+17
+
+for the 5, 25, and 40 ft-lb motors we tested pro-
+vides predictions of motor torque that are lower
+than the measured values, but only because the
+rated starting torque provides a lower basis for the
+calculation than the actual torque. For the 60 ft-lb
+motor, the actual torque is very close to the rated
+torque. Here, the voltage squared calculation
+underpredicts the torque losses at reduced voltage
+conditions regardless of whether the rated starting
+torque or the actual torque (at 100% voltage) is
+used as the basis of the calculation. Our analysis
+of the results indicates that the use of a different
+exponent (2.5 instead of 2) in the voltage squared
+calculation would produce more useful predic-
+tions.
+
+Locked Rotor Testing of the ac
+Motors
+
+The small delta symbols at the bottom of the
+plot in Figure 9 are the locked rotor startup
+torques. These individual data points are pro-
+duced by energizing the motor with an artificial
+load imposed on the motor that prevents the rotor
+
+NUREG/CR-6478
+Results
+
+from turning. Note in Figure 9 that the speed
+curves end (at motor stall) very near the locked
+rotor startup torques, indicating that the motor
+torque at stall and the startup motor torque with a
+locked rotor for this motor are about the same.
+The same is true of Figures 10, 11, and 12 for the
+other three ac motors.
+
+Figure 15 shows torque versus time for two
+tests: a locked rotor startup test (on the left) and
+an ordinary dynamometer-type test running at
+increasing load to stall. These results are from the
+5 ft-lb ac motor tested at 100% voltage at room
+temperature. Notice that the stall torque produced
+by the locked rotor startup test is very similar to
+the stall torque produced by the ordinary
+dynamometer-type test.
+
+Conclusions
+
+For all four of the ac motors we tested, the
+locked rotor startup torques were always lower
+than the peak running torque. In addition, the
+locked rotor startup torques matched very well
+
+with the stall torques from dynamometer-type
+tests. We found the locked rotor startup torque to
+be a useful indication of where a specific motor is
+with respect to its rating.
+
+For the high-speed (3400 rpm) 40 ft-lb motor
+(Figure 12), the results show a greater loss of
+torque immediately before motor stall than do the
+three 1800-rpm ac motors we tested. The effect is
+that the stall torque (as well as the locked rotor
+startup torque) for the high speed motor is far
+below the running torque in the rpm range of
+interest (2000 to 2800 rpm). Still, the stall torque
+is higher than the rated torque. We do not know
+whether this behavior is typical of high-speed
+motors in general.
+
+Elevated Temperature Testing of
+the ac Motors
+
+For some actuator motors, operation at ele-
+vated temperature is one of the design-basis
+conditions that must be considered in analytical
+evaluations of MOV capability. The output of the
+
+8,3
+
+7+
+
+LR Test
+
+Motor torque (ft-lb)
+
+5 ft-lb motor
+
+Slow Stall
+
+6) A . A !
+0
+
+Time (s)
+
+10 15
+
+ZB65-WHT-696-33
+
+Figure 15. Torque histories from a locked rotor test and a dynamometer-type test of the 5 ft-Ib motor.
+
+NUREG/CR-6478
+
+18
+electric motor tends to degrade at higher tempera-
+ture, mostly because of increased resistance in the
+motor windings. This is the case regardless of
+whether the increase in the motor temperature is
+caused by ambient conditions or by motor opera-
+tion. Some motors are expected to operate at high
+ambient temperatures. Also, some motors might
+experience high internal temperatures if they are
+operated continuously or very frequently at high
+loads.
+
+Figure 16 shows the performance of the 5 ft-lb
+ac motor during the elevated temperature testing
+at 100% voltage and at 80% voltage. (In this fig-
+ure and the next, we smoothed the data using the
+mean of the oscillations to make it easier to distin-
+guish the individual traces.) The 5 ft-lb motor is
+an environmentally qualified motor, so we heated
+it to a typical design basis temperature of 300°F.
+The motor was tested at both voltage conditions
+at room temperature, at 100°F, and at increments
+of 50°F up to 300°F.
+
+Compare the curve on the far right (80°F, 100%
+voltage) with the curve on the far left (300°F,
+
+Results
+
+80% voltage). Taken together, the reduction
+caused by both the reduced voltage conditions
+and the elevated temperature conditions amounts
+to about half of the motor·s capability, compared
+with normal voltage and room temperature
+conditions.
+
+The results for the other three motors are simi-
+lar to the results shown in Figure 16. These three
+motors are not qualified for service in a harsh
+environment, so they were heated only to 250°F.
+
+Figure 17, presented here as an example, shows
+the current/torque traces for the 60-ft-lb ac motor
+tested at elevated temperature. We used these cur-
+rent/torque data (and similar data for the other
+three ac motors) to evaluate the actual degraded
+performance of the motor, in terms of torque loss
+and current loss, for comparison with the actuator
+manufacturer·s data (Reference 8). The manufac-
+turer·s data on torque and current loss for motor
+operation at elevated ambient temperatures for
+motors that correspond (in rated output) with the
+four ac motors we tested are shown in Table 2.
+
+2,000 -· ee
+1.800 | 5 ft-lb ac motor |
+1,600 £ 4
+Ee 1,400 80% voltage ;
+E 4200 | 80'F ]
+Oo , 100°F
+© 1,000 5 150°F :
+eS 200°F 100% voltage
+S 800 § 250°F OE ;
+= 300°F 100°E |
+= 600 F 150°F > 1
+400 · 200°F q
+: 250°F
+200 + 300°F 1
+f
+01234567
+
+Motor torque (ft-Ib)
+
+2665-WHT-696-13a
+
+Figure 16. Motor speed versus torque, derived from elevated temperature testing of the 5 ft-lb motor at
+
+100% voltage and at 80% voltage.
+
+19
+
+NUREG/CR-6478
+Results
+
+35 i r T i r r · T T T T T
+100% voltage ;
+80°F ]
+30 + 7
+
+80% voltage
+
+25
+
+20
+
+15
+
+Current (amp)
+
+10 |
+
+60 ft-lb ac motor, high temperature test
+
+0 10 20 30 40 50 60 70
+Torque (ft-lb)
+
+Z665-WHT-696-34
+
+Figure 17. Motor current versus torque, derived from elevated temperature testing of the 60 ft-lb motor
+at 100% voltage and at 80% voltage.
+
+Table 2. Manufacturer·s predictions of loss in ac motor performance with increased temperature.
+
+Current loss Torque loss
+(%) (%)
+Motor 5 ft-Ib 25 ft-lb 60 ft-Ib 40 ft-lb 5 ft-lb 25 ft-lb 60 ft-lb 40 ft-lb
+
+temperature motor motor motor motor motor motor motor motor
+TT°F (25°C) 0 0 0 0 0 0 0 0
+100°F (38°C) 1.80 1.90 1.7] 1.34 1.81 1.91 1.72 0.97
+150°F (66°C) 5.70 6.04 5.44 4.24 5.73 6.07 5.47 3.09
+200°F (93°C) 9.61 10.18 9.17 T.A4 9.65 10,23 9.21 5.20
+250°F (121°C) 13.52 14,32 12.90 10.05 13.58 14.39 12,96 7.32
+300°F (149°C) 17.42 18.46 16.63 12.95 17.50 18.54 16.71 9.43
+356°F (180°C) 21.80 23.10 20.80 16.20 21.90 23.20 20.90 11.80
+
+NUREG/CR-6478 20
+Figures 18, 19, 20, and 21 show the actual
+motor torque measured at elevated temperature
+for 100% voltage and for 80% voltage for the four
+ac motors we tested. The figures also show the
+predictions, based on the manufacturer·s data, for
+these motors. For three of the motors (Figures 18,
+20, and 21), the actual torque values measured in
+the tests follow the predictions fairly well. For the
+25 ft-lb motor (Figure 19), the predicted torque is
+higher than the actual available torque, by 3 to
+8%. Thus, for this motor, the predictions of torque
+loss underestimate the actual losses.
+
+Figure 22 shows the actual motor currents
+measured in the elevated temperature testing of
+the 5 ft-lb motor. The predictions are also shown.
+The results from the other motors are similar to
+the results shown here. For the 60 ft-lb motor
+(Figure 23), the actual currents follow the pre-
+dicted values quite closely. For the other three ac
+
+motors, the predictions overestimate the current |
+
+drawn at elevated temperature, as illustrated in
+Figure 22 for the 5 ft-lb motor.
+
+Conclusions
+
+The predictions of torque loss due to elevated
+temperature were about equal to or greater than
+the actual losses for three of the four ac motors we
+tested. However, the results shown in Figure 19
+for the 25 ft-lb motor indicate that the predictions
+might not be appropriate for this motor. Note,
+however, that this motor is not qualified for
+
+nuclear service, a fact that might affect its output .
+
+at elevated temperature.
+
+Testing of the dc Motor
+
+The performance of a dc motor is somewhat
+different than that of an ac motor. An ac motor
+tends to stall quickly when the load reaches a cer-
+tain threshold. This is because above that thresh-
+old, very little additional torque is available to
+handle an increase in the load. In contrast, a de
+motor responds to a load increase by continuing
+to produce additional torque, albeit at lower rpm,
+until the motor finally stalls at a peak torque
+
+21
+
+Results
+
+value. Figure 24 compares a typical speed/torque
+curve for an ac motor (this one from our 40 ft-lb
+high-speed ac motor) with the speed/torque curve
+from the 40 ft-lb de motor we tested. Both of
+these curves are from 100% voltage tests at room
+temperature (80°F).
+
+There are also differences in the responses to
+degraded voltage conditions and elevated temper-
+ature conditions, and differences in the ways
+these conditions are dealt with analytically.
+
+Earlier Studies
+
+The 40 ft-lb dc motor used in this test program
+was the same one that had been used in earlier
+testing to evaluate the effects of seismic loadings
+on valve operation and on piping system and pip-
+ing support system integrity. We procured the
+valve in the mid-1980s from the decommissioned
+Shippingport nuclear power station and subjected
+it to the seismic tests. The results of those tests are
+reported in Reference 5. A brief summary of per-
+tinent results is presented here.
+
+During the seismic tests, the dc-powered valve
+was closed against a high static pressure load and
+a moderate pump flow load while the building
+was subjected to a simulated design-basis earth-
+quake. During some of those tests, the torque
+switch in the actuator failed to trip, and the motor
+stalled. An extensive investigation was conducted
+to identify the cause of the problem. That inves-
+tigation produced two findings that relate specifi-
+cally to dc-powered valves and that pertain to this
+research:
+
+e Resistance caused by heating in the dc
+motor degraded the motor·s torque output,
+especially at higher loads. During
+dynamometer testing, torque output
+degraded about 10 ft-lb during 20 seconds
+of continuous operation at a high load (40 to
+50 ft-lb) with the motor lugging at about 200
+rpm. Heating incurred during a given valve
+closure affected the motor·s output in subse-
+quent closures if the motor did not have a
+chance to cool between runs.
+
+NUREG/CR-6478
+Results
+
+7 aa T T TY r * * q * * 7 1 * . t
+S fib motor @ Actual torque at 100% voltage
+4 Actual torque at 80% voltage
+· Prediction
+-_ 6 i ® Ad |
+2
+Oo e
+5
+5 5+ |
+2
+S
+(e)
+=
+4 Lo 4
+A
+A
+50 100 150 200 250 300 350
+
+Temperature (°F)
+
+Z665-WHT-696-1 8a
+Figure 18. Motor torque versus elevated temperature at 100% voltage and 80% voltage for the 5 ft-lb ac
+motor; predictions are also shown.
+
+35 . t . . ° T . . . . T . * . . q . * a
+@® Actual torque at 100% voltage ;
+4 Actual torque at 80% voltage |
+39 | · Prediction j
+2
+~e
+= 25} e |
+@
+S
+S
+2£
+o 20F J
+vs) 4
+=
+15 + a R |
+25 ft-lb motor |
+50 100 150 200 250 300
+Temperature (°F)
+Z665-WHT-696-20a
+
+Figure 19. Motor torque versus elevated temperature at 100% voltage and 80% voltage for the 25 ft-lb ac
+motor; predictions are also shown.
+
+NUREG/CR-6478 22
+Results
+
+65 i T T 1 qT
+@ Actual torque at 100% voltage
+60 - A Actual torque at 80% voltage
+} · Prediction
+_ 55 tL :
+2t]
+© 50 :
+@r
+a) E 1
+So 45+ 1.
+£,
+Ss 40} :
+2
+20 | re
+} 60 ft-lb motor
+25 · 1 . 1 L 1 1 1 2 L 1 s , A 1 2 A A A 1 . 2 . A ]
+50 100 150 200 250 300
+
+Temperature (°F)
+
+Figure 20. Motor torque versus elevated temperature at 100% voltage and 80% voltage for the 60 ft-lb ac
+motor; predictions are also shown.
+
+Z192-WHT-394-21a
+
+45 , * q . * * qT , . * T * r * ° q
+ee
+Le
+40 ; 4
+2
+= 35+
+g @ Actual torque at 100% voltage |
+oO 4 Actual torque at 80% voltage
+£ ·· Prediction
+S 30} ;
+oO
+=
+25 + .
+,|
+ee ]
+40 ft-lb motor |
+20 ·· :
+
+50 100 150 200 250 300
+Temperature (°F)
+
+Z665-WHT-696-22a
+
+Figure 21. Motor torque versus elevated temperature at 100% voltage and 80% voltage for the 40 ft-lb ac
+motor; predictions are also shown.
+
+23 NUREG/CR-6478
+Results
+
+@ Actual current at 100% voltage |
+4 Actual current at 80% voltage
+· Prediction
+
+Motor current (amp)
+
+5 ft-lb motor |
+
+50 100 150 200 250 300 350
+Temperature (°F)
+
+Z665-WHT-696-19a
+
+Figure 22. Motor current versus elevated temperature at 100% voltage and 80% voltae for the 5 ft-lb ac
+motor; predictions are also shown.
+
+36 I ' T t
+
+I @ Actual current at 100% voltage |
+34 4 Actual current at 80% voltage -
+r · Prediction
+
+32 |
+30 |
+
+28 |
+
+26 |
+
+Motor current (amp)
+
+24 |
+
+22 |
+
+60 ft-lb motor |
+
+50 100 150 200 250 300
+Temperature (°F) zise.wiT-994-228
+
+Figure 23. Motor current versus elevated temperature at 100% voltage and 80% voltage for the 60 ft-lb
+ac motor; predictions are also shown.
+
+20
+
+NUREG/CR-6478
+Results
+
+4,000 ~····+
+3,500 +
+3,000
+2,500 |
+
+2,000 +
+
+Motor speed (rpm)
+
+1,500 +
+1,000
+
+500 §
+
+40 ft-lb de motor
+
+40 ft-lb ac motor
+
+1 4 1 I.
+
+0 10 20
+
+Motor torque (ft-lb)
+
+60
+
+Z665-WHT-696-24A
+
+30 40 50
+
+Figure 24. Performance curves (speed versus torque) from testing of the 40 ft-lb ac motor and the 40 ft-
+
+Ib dc motor, for comparison.
+
+e Resistance in the circuit supplying power to
+the actuator motor degraded the motor·s
+output at high loads. The configuration of
+the motor circuit was conventional, but it
+was such that four long cable runs contrib-
+uted to the resistance, not just two, as had
+been assumed in the analysis that served as
+the basis for the selection of cable size. The
+circuit configuration also made it very diffi-
+cult to measure the voltage drop across all
+four cable runs.
+
+These two factors (motor heating and undersized
+cables) combined to cause the motor to produce
+too little torque to trip the torque switch in some
+of the seismic tests.
+
+During subsequent investigations of the anom-
+alous performance of the actuator motor, we had
+the de motor overhauled, including new wind-
+ings, and restored to its original condition. This
+same dc motor, with the new windings, was used
+in the tests that are reported in the following
+discussion.
+
+25
+
+Performance Curves for the dc Motor
+
+As with the ac motors, we developed motor
+performance curves for the dc motor (motor
+speed versus motor torque, and motor current ver-
+sus torque). Figure 25 presents the speed/torque
+and current/torque curves derived from testing of
+this 40 ft-lb dc motor. The figure also shows the
+motor data supplied by the actuator manufacturer.
+The test results show that the actual torque output
+is lower than predicted by the manufacturer·s
+curve.
+
+Degraded Voltage Testing of the dc
+Motor
+
+Operation at degraded voltage is a design-basis
+condition for some dc-powered motor-operated
+valves. We conducted tests operating our 125-volt
+de motor at 50, 60, 70, 80, 90, and 100% of the
+rated voltage to determine the actual torque pro-
+duced at these voltages.
+
+NUREG/CR-6478
+Results
+
+4,000
+3,500
+3,000
+
+2,500
+
+2,000
+
+1,500
+
+Motor speed (rpm)
+
+1,000
+
+500
+
+0
+
+Current
+
+Manufacturer's |
+data
+
+Motor current (amp)
+
+0 20 30
+Motor torque (ft-lb)
+
+40 60
+
+2685-WHT-696-25A,
+
+Figure 25. Motor performance curves derived from testing of the 40 ft-lb dc motor; manufacturer·s
+
+published data are also shown.
+
+Analytical evaluations of MOV capability typi-
+cally use the following formula to account for
+reduced dc motor output at degraded voltage
+conditions:
+
+1
+Vv
+
+·The formula is identical to the voltage squared
+calculation used for ac motors, except that the
+exponent is 1 instead of 2. As part of our data
+analysis, we compared the results of the degraded
+voltage tests to estimates calculated using Equa-
+tion (5).
+
+Figure 26 shows the speed versus torque curves
+for the degraded voltage tests. Values represent-
+ing estimates based on the method described
+above are also shown, identified by x. The esti-
+mates are based on the results of the 100% volt-
+age test at 1000 rpm, 500 rpm, and stall. The
+estimate for 80% voltage (80% of the nominal
+voltage of 125 vdc) overestimates the actual
+
+NUREG/CR-6478
+
+torque by about 4 ft-lb (10% of the motor·s rated
+torque), and the estimate for 50% voltage overes-
+timates the actual torque by about 7 ft-lb (18%).
+
+To further evaluate the method for predicting
+dc motor output at reduced voltage conditions, we
+used the formula shown in Equation (4) and used
+the data from the tests results as input so we could
+solve for the exponent. Similar to our effort to
+evaluate the voltage squared calculation for the ac
+motors, the purpose of this effort was to deter-
+mine whether an exponent other than 1 might be
+consistent with the test results for this dc motor.
+The results of this effort are shown in Figure 27.
+For locked rotor (stall) conditions, the results sug-
+gest use of an exponent of about 1.3 in the for-
+mula to estimate the actual torque losses of this
+motor at reduced voltage; for a motor speed of
+500 rpm, the results suggest use of an exponent of
+1.9 to estimate the actual torque losses.
+
+Conclusions. These results show that the con-
+ventional linear method for predicting torque loss
+due to operation of dc motors at reduced voltage
+Results
+
+; 40 ft-lb dc motor, ambient temperature :
+2,250 F :
+; & Locked rotor starting test j
+2,000 r 100% x Calculated value ;
+t 90% :
+1,750 - j
+t 80% 1
+1,500 4
+
+1,250 f
+1,000
+750 |
+
+Motor speed (rpm)
+
+500 |
+
+250 |
+
+0 5 10 15 20 25 30 35 40 45 50 55
+Motor torque (ft-lb) seesunrresece
+
+Figure 26. Motor speed versus torque, derived from testing of the 40 ft-lb dc motor at degraded voltage
+at room temperature.
+
+3.5 |. T T T T | T T T T | t T T T [ T T T T T T T T T I T r T T J
+
+| 40 ft-lb de motor [] 1000 RPM ;
+
+O 500RPM |
+
+3.0 - A LR 4
+
+L ·s oO J
+
+oL0J
+
+Cc ·= 4
+
+(o)
+
+2 rc 4
+
+o 2.0 5 ;
+
+2 L Oo al
+
+ro r O O O O 7
+
+- 456 4
+
+AAAAA1
+
+0 5 L i 1 1 4 [ 1 1 L i l L t at 1 | 1 H i 1 { 1 1 L 4 ! L 1 L i 1
+40 50 60 70 80 90 100
+Voltage (percent of nominal) CHBWIT 1198-08
+
+Figure 27. Results from testing of the 40 ft-Ib dc motor, with the data plotted as the solution to the expo-
+nent n in Equation (4).
+
+27 NUREG/CR-6478
+Results
+
+underestimates the actual torque losses. Our
+analysis of the results shows that a formula simi-
+lar to the voltage squared calculation, with an
+exponent of at least 1.3, would produce more use-
+ful predictions.
+
+Locked Rotor Testing of the dc Motor
+
+Figure 26 also shows the locked rotor startup
+torques for the dc motor. The locked rotor results
+show fair agreement with the stall torques indi-
+cated at the ends of (or extrapolated from the ends
+of) the traces representing the running tests. (Note
+that some of the traces for the running tests do not
+reach zero rpm, because the motor was shut off
+while it was still turning very slowly. This inad-
+vertence makes the comparison less exact than it
+otherwise would have been.)
+
+Figure 28 shows the current/torque data for the
+40 ft-lb motor tested at reduced voltage. A line
+representing the manufacturer·s published perfor-
+mance data is also shown. Locked rotor data are
+included as well. The six traces from tests at vari-
+
+130
+
+ous voltages lie on top of each other, indicating
+that although reduced voltage causes the dc motor
+to run more slowly (Figure 26), and although
+reduced voltage causes a reduction in the peak
+torque (and the peak current) at low-speed, high-
+torque conditions, the output torque of the dc
+motor at a given current is about the same regard-
+less of the voltage. Figure 28 also shows that, as
+expected, the current/torque relationship for the
+dc motor is almost linear. However, at higher
+loads (above about 30 ft-lb) the manufacturer·s
+published curve slightly underestimates the cur-
+rent the motor draws to produce a given amount
+of torque.
+
+Elevated Temperature Testing of the dc
+Motor
+
+Figures 29 and 30 are the elevated temperature
+plots for the 40 ft-lb de motor for 100% and 80%
+voltage, respectively. This motor was heated to
+250°F. The increase in temperature from room
+temperature to 250°F reduced the output torque
+
+a tT T 7T
+
+120 §
+110 f
+100 }
+90 |
+80 |
+70
+60
+50 |
+40 |
+30 |
+20
+10 f
+
+Motor current (amp)
+
+Pe or eee oe | it
+
+40 ft-lb dc motor, ambient temperature
+
+50% voltage
+
+100%
+voltage 4
+90% voltage
+
+80% voltage
+
+70% voltage
+60% voltage
+
+4 Locked rotor starting test
+
+0) E 2 14
+0 20
+Motor
+
+5 10 15
+
+25
+
+40 50 55
+
+Z665-WHT-696-27a
+
+30 835
+torque (ft-lb)
+
+45
+
+Figure 28. Motor current versus torque, derived from testing of the 40 ft-lb de motor at degraded voltage
+
+at room temperature.
+
+NUREG/CR-6478
+Results
+
+2,500 '? | T ' : rr t "oo "oT * q i eT
+40 ft-lb de motor, high temperature ······ Ambient 1
+2,250 r , ··--·-~- 100°F 4
+rr er ee 450° ]
+2,000 F a · · · 200°F :
+.: ·-··- 250°F
+= 1,750 f 1
+a. q
+= 1,500 | ;
+ne} q
+® 41,250 § :
+jor , q
+a4
+6 1,000 fF :
+3|
+= 750+ 4
+8 ft-lb loss at 300 rpm |
+500 F 1
+250 | 4
+¢) ' Pan evearerearans ae n | Fe er Se SS ot ]
+
+0 5 10 15 20 25 30 35 40 45 50 £55
+
+Motor torque (ft |b) aos wereoe-28
+
+Figure 29. Motor speed versus torque, derived from elevated temperature testing of the 40 ft-lb de motor
+at 100% voltage.
+
+2,500 . U q 1 q q q ee | U La Uy
+
+········ Ambient
+
+2250-0 a 100°F :
+
+a 150°F :
+
+2,000 F · · · 200°F 4
+
+·- 250°F
+
+· 1,750 F ;
+
+5]
+
+= 1,500 f 1
+
+ze) 4
+
+®
+
+2 1,250 - 4
+
+big 4
+
+6 1,000 + :
+°
+
+= 750 £ 4
+
+500 · :
+
+250 t ee 4
+
+·Ss
+@) fan bo ! l Fane Gn Pa a er aa. Cn ae Lo bio J
+0 5 10 15 20 25 30 35 40 45 50 £55
+Motor torque (ft Ib) Aas eg000e-38
+
+Figure 30. Motor speed versus torque, derived from elevated temperature testing of the 40 ft-Ib dc motor
+at 80% voltage.
+
+29 NUREG/CR-6478
+Results
+
+by 8 to 10 ft-lb at high loads. For example, at
+300 rpm, elevated temperature caused output to
+fall from the rated torque of 40 ft-lb to a value of
+32 ft-Ib.
+
+The manufacturer·s dc actuator qualification
+requires the actuator to perform at 340°F. For dc
+motors Operating at this temperature, the
+manufacturer provides a table (Reference 9) rec-
+ommending adjustments to the rated torque value
+when sizing a nuclear qualified actuator. Accord-
+ing to this table, a rated torque of 40 ft-lb would
+be adjusted to 39 ft-lb. (The adjustment is greater
+for larger motors; for example, a rated torque of
+60 ft-lb would be adjusted to 54 ft-Ib.)
+
+Conclusions. The results of elevated tempera-
+ture testing of this dc motor show that the adjust-
+ment recommended by the manufacturer for
+accounting for torque losses due to motor heating
+underestimated the actual torque losses. Specifi-
+cally, the predicted torque loss was 1 ft-1b at
+340°F for this 40 ft-lb dc motor, while the test
+results showed an actual torque loss of 8 ft-lb at
+only 250°F.
+
+Actuator Gearbox Efficiency
+
+Gearbox efficiency is part of the relationship
+between the input torque and the output torque of
+an actuator gearbox. The output torque can be
+represented by
+
+Toutput = Tinput (Eff searbox OAR) (6)
+
+where
+
+Toutput output torque
+
+Tinput input torque (motor torque
+after adjustments described
+earlier in this report)
+
+the efficiency of the gear-
+box
+
+Effgearbox
+
+OAR overall gear ratio. -
+
+The input torque consists of the torque delivered
+by the electric motor to the input side of the gear-
+
+NUREG/CR-6478
+
+box, and the output torque consists of the torque
+delivered to the stem nut (through the worm gear)
+by the worm. The overall gear ratio is the total
+gear reduction in the gearbox--the number of
+motor revolutions required for one revolution of
+the stem nut. Overall gear ratios for the actuators
+we tested (Table 1) range from about 32 to about
+88. The gear reduction in the gearbox, which
+includes the reduction in the helical gear set as
+well as the reduction at the worm gear, greatly
+increases the torque output (at the stem nut) but
+
+_ reduces the rotational speed of the stem nut. The
+
+gearbox efficiency accounts for losses to friction
+at the helical gear set, the worm/spline interface,
+the worm/worm-gear interface, and the
+associated bearings. Typical efficiency values for
+operator gearboxes are in the range of 0.4 to 0.6.
+The more efficient the gearbox performance (the
+less the loss to friction), the higher the efficiency
+value. The gearbox efficiency value does not
+include friction in the motor or friction at the
+stem/stem-nut interface, which are separate cal-
+culations. The main drive train components of an
+actuator gearbox are shown in Figure 3, referred
+to earlier in this report.
+
+Typical gearbox efficiencies are referred to as
+pullout efficiency, stall efficiency, and running
+efficiency. The pullout efficiency is the lowest of
+the three. This value applies when the motor is
+lugging at very low speed under a load or starting
+up against a load. The stall efficiency is higher
+than the others because it includes consideration
+of motor inertia during a sudden stall; it is typi-
+cally used in evaluations of possible overload
+problems. The running efficiency is typically
+used to estimate the efficiency of the gearbox at
+normal motor speed and normal loads.
+
+Table | (referred to earlier in this report) lists
+the actuators we tested and the published operat-
+ing efficiencies (running, pull-out, and stall) for
+these actuators, along with other pertinent
+information. The published running efficiencies:
+of the actuators vary between 50 and 60%. These
+efficiency values indicate that it takes about half
+the input motor power to overcome losses (pri-
+marily friction) in the gearbox.
+Our tests, conducted on the MOVLS, were
+designed to determine actual gearbox efficiencies
+with the gearboxes subjected to a full range of
+various possible loads. By measuring the motor
+torque (which is the torque input to the gearbox)
+and the actuator output torque (which is the gear-
+box output torque, measured as the actuator
+torque reacted by the torque arm attached to the
+valve stem in the MOVLS), and by accounting for
+the gear reduction, we were able to continuously
+monitor the efficiency of a gearbox at various
+loads. Figure 31 shows the actuator torque (out-
+put torque) measured during the 100 percent volt-
+age test of the SMB-1 actuator with the 60 ft-lb ac
+motor. The negative convention for this measure-
+ment indicates that the actuator was being oper-
+ated in the closing direction. Note that the
+actuator output torque gradually increases in a
+manner representative of a closure under design-
+basis flow. Figure 32 shows the motor torque
+measured during the same test. Figure 33 shows
+the actual gearbox efficiency calculation made
+from the data in Figures 31 and 32; the published
+running and pullout efficiencies are also shown.
+The gearbox efficiency begins at about 0.41 at
+low load and slowly rises to 0.51 while the actua-
+tor is still under moderate load. However, the
+efficiency drops as the load increases, dropping
+below the published pullout efficiency at stall.
+
+Figure 34 shows the same information as Fig-
+ures 31 through 33, but in a different format. Here
+we have plotted output torque (actuator torque)
+versus input torque (motor torque) using data
+from the reduced voltage parametric study to pro-
+duce the traces. The format of the figure is based
+on Equation (6); the slope from the origin (0,0) to
+any point on one of the data traces represents the
+gearbox overall ratio times the actual gearbox
+efficiency for that data point. The two straight
+lines in Figure 34 represent the overall gear ratio
+times (a) the published running efficiency, and (b)
+the published pullout efficiency. This format
+allows comparison of the actual gearbox effi-
+ciency over the entire operating range (in terms of
+torque load) with the published values. For exam-
+ple, Figure 34 shows that for this actuator, the
+actual gearbox efficiency lies mostly between the
+published running efficiency and the published
+
+31
+
+Results
+
+pullout efficiency. However, at higher loads the
+actual gearbox efficiency approaches the pullout
+efficiency.
+
+In addition, Figure 34 indicates a relationship.
+between the gearbox efficiency and the load
+imposed on the actuator. At a motor torque load
+of about 18 ft-lb, the actual efficiency is at or
+above the running efficiency for all five tests.
+However, the actual efficiency falls below the
+published running efficiency at medium to high
+loads. These results suggest that as the load goes
+up, the efficiency of the gearbox goes down. This
+general decline in efficiency, most evident in the
+middle portion of the data where the traces lie on
+top of each other, is at least partly independent of
+motor speed (see Figure 11 for corresponding
+motor speed curves).
+
+A careful examination of Figure 34 also reveals
+a relationship between efficiency and the speed of
+the SMB-1-60 ac valve actuator. In each of the
+reduced voltage tests, the measured efficiency is
+near the published running efficiency when the
+motor is near its normal speed (early in the
+
+stroke), but drops toward the pullout efficiency as
+
+the motor approach stall. Here, the results suggest
+
+that as the motor speed goes down, the efficiency
+
+of the gearbox goes down. In the 60% voltage
+test, the efficiency approaches the pullout value at
+a motor torque of 22 ft-lb, in the 70 percent test at
+29 ft-lb, and so on. In each instance, the ·specific
+
+decline in efficiency, most evident on the tail of
+the trace near motor stall, corresponds more with
+the change in motor speed than with the change in
+motor torque. For any of the four low-voltage
+
+traces (90 to 60% voltage), the efficiency at the
+
+peak torque (just before stall) is notably lower
+
+than the efficiency indicated by higher-voltage
+
+traces at the same torque value but at higher:
+motor speeds. The effect of motor speed,
+
+independent of motor torque, is even more evi-
+
+dent in the dc motor data, described later in this
+
+discussion.
+
+For the other ac valve actuators, data similar to
+Figure 34 are presented in Figures 35 through 37.
+For the SMB-00-5 (Figure 35), the actual gearbox
+efficiency is well below the published pullout
+
+NUREG/CR-6478
+Results
+
+L{
+0
+a
+·® -500 +
+3
+>
+re)
+-1,000 +
+-1,500 b+
+0.5
+
+Figure 31. Actuator torque history from a test of the SMB-1-60 ac actuator (output torque).
+
+100 |
+oe) 6 6|
+S
+S 50;
+a
+rt
+ra
+=|
+0 i} |
+0.5 1.0 1.5 2.0 25 3.0 3.5 4.0 45 50 55 6.0 65 7.0 7.5
+Time (s) zasrecrase-ce
+
+Figure 32. Motor torque history from a test of the SMB-1-60 ac actuator (input torque).
+
+NUREG/CR-6478 32
+Results
+
+1.0 a T T T a | re | T a | an ae
+0.8 + ;
+.]
+2)
+54
+5 Running
+Ss
+oO
+4 0.4 Pullout ·\emneeel
+O
+0.2 +
+0.0 1 ee Pa ta Pe
+0.5 1.0 15 2.0 25 3.0 35 4.0 4.5 5.0 5.5 6.0 6.5 7.0 7.5
+Time (s) 2as7.WHT-496-03
+
+Figure 33. Running calculation of the gearbox efficiency, derived from the data shown in Figures 31
+and 32.
+
+1,500 al TTT a cr es an
+80 ft-lb ac motor Running efficiency calculation
+Pullout efficiency calculation
+sL
+2 10 4
+= 1,000 5 olt
+@ be
+3
+i
+2
+e 90%
+°o
+re volt
+®-4
+2 500 80%
+Oo volt
+70%
+volt
+60%
+volt A Stall
+0 · 1 a ·. l 2 rn 1 4 i 4. deat ry L rn oo 4 i 1 1 . | oo | oars Manet 1 .
+0 10 20 30 40 50 60 70
+
+Motor torque (ft-Ib)
+
+Figure 34. Gearbox efficiency calculations derived from stall testing of the SMB-1-60 ac valve actuator.
+
+33 NUREG/CR-6478
+ae
+
+| 5 ft-lb ac motor
+
+| Running efficiency calculation ese
+
+Pullout efficiency calculation
+
+Operator torque (ft-lb)
+
+A Stall
+
+8
+Motor torque (ft-lb) zes7 irae 56
+
+Figure 35. Gearbox efficiency calculations derived from testing of the SMB-00-5 ac valve actuator.
+
+1,000 ···-
+| 25 ft-lb ac motor
+
+r
+
+Running efficiency calculation
+
+Pullout efficiency calculation
+
+Operator torque (ft-lb)
+
+A Stall
+
+2 i 1 2 n ·, l 1 n A 2 1 =
+
+10 30 40
+
+2657 WHT-496-060
+
+20
+Motor torque (ft-ib)
+
+Figure 36. Gearbox efficiency calculations derived from testing of the SMB-0-25 ac valve actuator.
+
+NUREG/CR-6478
+Results
+
+1,500 ·-·-·-··_,_·_ T TT T T
++ 40 ft-lb ac motor
+Running efficiency calculation
+~ Pullout efficiency calculation
+Q
+¢, 1,000 + |
+® 100%
+Ss volt
+=
+£
+oe 90%
+ic) volt
+x
+@ 500 + 80% 5
+§ volt
+70%
+volt
+60%
+volt A Stall
+Q 4 dt tt
+0 10 20 30 40 50 60 70
+Motor torque (ft-Ib) sranrase.ore
+
+Figure 37. Gearbox efficiency calculations derived from testing of the SB-1-40 ac high speed valve
+
+actuator.
+
+efficiency. For this actuator, the motor torque
+required to spin the gear train without producing
+output torque (sometimes called the hotel load) is
+a significant percentage of the total motor torque.
+(For actuators powered by larger motors, the
+hotel load is negligible, it being a much smaller
+percentage of the total motor torque.) For the
+SMB-00-5, we measured a hotel load of 0.44
+ft-Ib; that is, the input torque was 0.44 ft-lb when
+the output torque was zero. For this motor/gear-
+box combination, a more meaningful comparison
+of gearbox efficiency can be made by subtracting
+0.44 ft-lb from the motor torque data to account
+for this hotel load. Figure 38 shows the same
+results as Figure 35, but with this 0.44 ft-lb offset
+to the motor torque data. As this analysis shows, it
+is important to consider the hotel load when
+determining the actuator capability for smaller
+motors.
+
+Figures 34 through 37 show that for each
+actuator we tested, the published running effi-
+ciency overpredicts the actual actuator efficiency
+at higher loads and lower speeds. Further, the two
+
+35
+
+smaller actuators exhibited efficiencies lower
+than the published pullout efficiency. This result
+is indicated whenever the trace drops below the
+line whose slope represents the pullout efficiency.
+
+Figure 39 presents the data from testing of the
+SMB-1 actuator when powered by the dc motor.
+The shape of the curves is different than in Fig-
+ures 34 through 37 (the difference is due to the
+speed versus torque relationship of dc motors as
+compared to ac motors), but the general trends are
+similar to those seen with the ac motors. For this
+SMB-1 actuator powered by a dc motor, the
+actual gearbox efficiency is consistently lower
+than the published running efficiency. As the
+motor speed drops under high load, efficiency
+drops to values below the pullout efficiency.
+Because the dc motor produces progressively
+higher torque at lower speed (corresponding
+motor speed curves are shown in Figure 26), the
+traces shown in Figure 39 for the various low
+voltages are more distinctly separate than in the
+ac motor tests. For example, at a motor torque of
+
+NUREG/CR-6478
+_ Results
+
+5 ft-lb ac motor (0.44 ft-lb offset)
+
+| Running efficiency calculation
+
+Pullout efficiency calculation
+
+90%
+volt
+
+80% \
+volt
+
+Calculation based on
+measured motor torque
+minus 0.44 ft-lb
+
+Operator torque (ft-lb)
+
+0) or ee eS Le a Ss A Ce oo
+02345678
+
+Motor torque (ft-ib) zasrwniT406-05
+
+Figure 38. Gearbox efficiency calculations derived from testing of the SMB-00-5 ac valve actuator, with
+the motor torque adjusted to compensate for the hotel load.
+
+900
+
+t 40 ft-lb de motor
+800 -
+
+Running efficiency calculation
+
+700 t Pullout efficiency calculation
+600 |
+500
+400 |
+
+300 f
+
+Operator torque (ft-Ib)
+
+200
+
+100 | A Stall
+
+pe
+
+6) Ly Pr re rr ee ee ee Jt [ Sa Oe Sa Ue VO SS
+0 5 10 15 20 25 30 35 40 45 50 = 55
+Motor torque (ft-Ib)
+
+26S7-WHT-496-08a
+
+Figure 39. Gearbox efficiency calculations derived from testing of the SMB-1-40 de valve actuator.
+
+NUREG/CR-6478 . | 36
+27 ft-lb, the efficiency for the 70% voltage test is
+lower than the efficiency for the 100% test at the
+same motor torque. This difference is due entirely
+to a difference in motor speed. These results show
+that the gearbox efficiency drops at lower speeds
+as well as at higher torques.
+
+This result might have significance for dc-
+powered valve actuators. In contrast to ac motors,
+which produce their rated torque at moderate
+speeds (typically at about 1200 rpm for 1800-rpm
+
+ac motors), dc motors produce their rated torque .
+
+at much lower speeds; Figure 25 shows this dc
+motor producing its rated torque at about 300
+rpm. Thus, a dc-powered actuator will have a
+lower efficiency than an ac-powered actuator
+when operated under the conditions that demand
+the rated output torque from the motor.
+
+This finding is evident in a comparison of Fig-
+ures 34 and 39, which show the efficiency results
+from the same SMB-1 actuator powered by the
+
+60-ac motor and the 40-de motor, respectively. If |
+
+the SMB-1-40 had operated with the same effi-
+
+Results
+
+ciency as the SMB-1-60, it would have produced
+about 14% more output torque at its rated input _
+torque of 40 ft-lb (740 ft-lb output torque instead
+of 650 ft-lb).
+
+Figure 40 shows the results of testing of the
+
+·SMB-0-25 ac actuator to determine if gearbox
+
+efficiency is affected by elevated temperature. In
+these tests, the second gear ratio shown in Table 1
+was used (a different gear set than in the tests
+described earlier). Three tests were performed.
+The first test was a baseline test to show gearbox
+efficiency at room temperature. The second and
+
+. third tests were performed with the gearbox
+
+heated to 350°F, The third test was performed
+immediately after the second to evaluate repeat-
+ability. The results are about the same for all three
+tests. Figure 40 shows that the gearbox efficiency
+was not affected by elevated temperature.
+
+For this gear set, the measured efficiency was
+slightly higher than the published pullout effi-
+ciency. By comparing this figure to Figure 36, we
+get an indication of the variation that can result
+
+r 625 ft-lb ac motor - high temperature test
+r Running efficiency calculation ~ . 1
+400 + oo 1
+~ Pullout efficiency calculation
+Q
+=z
+o 300F 7
+5
+Ss L
+£
+S|
+ra 200 +
+5.
+Q
+(e) j
+A Stall
+8) 1 1 n i 1 1 rl 1 rl 1 Lk 1 a IL rn n ht 1 det i 1 L L 2 x 1 L i rn 1 1
+0 5 10 15 20 25 30 35
+
+Motor torque (ft-Ib)
+
+Figure 40. Gearbox efficiency calculations derived from elevated temperature testing of the SMB-0-25
+
+ac motor-actuator.
+
+37
+
+NUREG/CR-6478
+Results
+
+from using different gear sets in the same actua-
+tor. Tests using a gear set with a lower gear ratio
+(higher output speed, lower output torque) pro-
+duced a higher gearbox efficiency. This result is
+consistent with the results from tests of the
+SMB-1-40 dc actuator (Figure 39), where lower
+spéeds, even at the same motor torque values,
+corresponded with lower gearbox efficiency
+values.
+
+Conclusions
+
+Overall, the test results show that actual effi-
+ciencies can differ from those published by the
+actuator manufacturer. For the actuators we
+tested, the published running efficiency was gen-
+erally not adequate for predicting actual perfor-
+mance of the gearboxes, especially at higher
+loads. The published pull-out efficiency was ade-
+quate for predicting gearbox performance for
+some gearboxes and at some conditions (moder-
+ate loads), but some of the actual efficiency data
+fell below the published pullout efficiency. The
+
+NUREG/CR-6478
+
+results also show that different gear sets with dif-
+ferent gear ratios operate at different efficiencies,
+even in the same gearbox. The gearbox efficiency
+was not affected by elevated temperatures.
+
+Gearbox efficiency is affected by motor speed
+as well as by the torque load imposed on the
+actuator. Lower motor speed and higher motor
+torque correspond with lower gearbox efficiency.
+At reduced voltages, the measured efficiency near
+motor stall drops well below the values measured
+at full voltage (and higher speed) for the same
+motor torque. The SMB-1 actuator operated with
+lower efficiency near maximum torque output
+when powered by the 40 ft-lb dc motor, as
+compared to operation with the 60 ft-lb ac motor;
+the difference is because the dc motor runs at
+lower speed near its maximum output.
+
+The actuator no-load motor torque, or hotel
+load, can be significant for smaller motors. Hotel
+load consumed almost ten percent of the motor
+rated torque for our SMB-00-5 actuator.
+OVERALL CONCLUSIONS
+
+A summary of the conclusions is presented in
+the following paragraphs. More details are pro-
+vided at the end of each subsection in the results
+section of the report.
+
+Performance curves. Published motor perfor-
+mance data matched the actual current/torque and
+speed/torque data fairly well. There were some
+minor differences in the shape of the ac motor
+curves near the knee of the curve, indicating that
+the load threshold at which the motor drops off to
+a stall occurs at a different rpm, or at a different
+torque load, than shown by the published data.
+For all five motors, the stall torque, the running
+torque before stall, and the locked rotor startup
+torque exceeded the rated torque. Some of the
+motors had more margin between the actual and
+rated values than others.
+
+Degraded voltage. Actual torque losses due to
+voltage degradation were greater than the losses
+estimated by the voltage squared calculation. This
+was true for all four ac motors at all the various
+reduced voltages we tested. The voltage squared
+calculation typically overpredicted the actual
+motor torque by | to 10%. The results suggest
+that for these four ac motors, an exponent of
+about 2.5 instead of 2 in the voltage squared cal-
+culation would produce adequate predictions of
+torque losses due to operation at reduced voltage.
+
+Results were similar for the dc motor; actual
+torque losses due to voltage degradation were
+greater than the losses estimated by the typical
+linear method used for predicting such losses. At
+80% voltage, the method overpredicted the actual
+motor torque at 500 rpm by 9%. The results sug-
+gest that a formula similar to the voltage squared
+calculation, but with an exponent of about 1.3,
+would produce adequate predictions for this dc
+motor at locked rotor conditions. For a motor
+speed of 500 rpm, an exponent of about 1.8 would
+produce adequate predictions.
+
+The results of the locked rotor startup tests
+compared favorably with the results of the
+dynamometer-type tests at stall.
+
+39
+
+Elevated temperature. For three of the ac
+motors, the actual motor output torques measured
+at elevated temperature were equal to or higher
+than the predictions of motor torque at those
+conditions. (The predictions in this instance are
+based on the actuator manufacturer·s data.) For
+one of the ac motors (the 25 ft-lb motor), the
+actual torques were lower than the predictions, by
+3 to 8%. The actual motor currents measured dur-
+ing the tests were lower than the predictions.
+
+For the dc motor, a prediction based on the
+actuator manufacturer·s data for dc motor perfor-
+mance at elevated temperature overestimated the
+actual torque measured in the tests by about 22%.
+
+Gearbox efficiency. For most motor/gearbox
+combinations, the actual efficiencies were lower ·
+than the running efficiencies specified by the
+actuator manufacturer. In no case was the pub-
+lished running efficiency adequate for predicting
+the actual efficiency of the gearbox when operat-
+ing against a significant load. Generally, the pub-
+lished pull-out efficiency was adequate for
+predicting the gearbox efficiency at moderate
+loads, but in some instances it was inadequate for
+predicting the gearbox efficiencies at higher loads
+at or near motor stall.
+
+Gearbox efficiency tended to be lower with
+operation at lower speeds. This finding is particu-
+larly true for actuators powered by dc motors,
+because dc motors approach their highest output
+torque at low rpm. Higher gearbox efficiency cor-
+responded with operation at higher speeds. This.
+finding was indicated in all the test results and
+confirmed by results from testing of the same ac-
+powered actuator with two different helical gear
+sets. The gear set with the lower gear ratio (lower
+output torque, higher output speed) operated with
+higher efficiency.
+
+Operation of the gearbox at elevated tempera-
+ture did not affect the operating efficiency of the
+
+· gearbox.
+
+NUREG/CR-6478
+REFERENCES
+
+1. NUREG/CR-5406, BWR Reactor Water Cleanup System Flexible Wedge Gate Isolation Valve Qualifi-
+cation and High Energy Flow Interruption Test, K. G. DeWall, R. Steele, Jr., Idaho National Engineer-
+ing Laboratory, EGG-2569, 1989.
+
+2. NUREG/CR-5558, Generic Issue 87: Flexible Wedge Gate Valve Test Program, R. Steele, Jr.,
+K. G. DeWall, J. C. Watkins, Idaho National Engineering Laboratory, EGG-2600, 1991.
+
+3. NUREG/CR-5720, Motor-Operated Valve Research Update, R. Steele, Jr., J. C. Watkins,
+K. G. DeWall, M. J. Russell, Idaho National Engineering Laboratory, EGG-2643, 1992.
+
+4. _NUREG/CR-6100, Gate Valve and Motor-Operator Research Findings, R. Steele, Jr., K. G. De Wall,
+J. C. Watkins, M. J. Russell, D. L. Bramwell, Idaho National Engineering Laboratory, INEL-94/0156,
+1995.
+
+5. NUREG/CR-4977, SHAG Test Series·Seismic Research on an Aged United States Gate Valve and on
+a Piping System in the Decommissioned Heissdampfreaktor (HDR), R. Steele, Jr., J. G. Arendts, Idaho
+National Engineering Laboratory, EGG-2505, 1989.
+
+6. Limitorque SEL-7, November 1989.
+
+7. Limitorque Technical Update #92-02, October 9, 1992.
+
+8. Limitorque Technical Update #93-03, September 1993.
+
+9. Limitorque SEL-5, November 9, 1988.
+
+NUREG/CR-6478 40
+NAC FORM 335 U.S, NUCLEAR REGULATORY COMMISSION | 1. REPORT NUMBER Vet, Suoe., Ree,
+3201, 3202 BIBLIOGRAPHIC DATA SHEET ns ·emeers env
+(See instructions on the reverse} NUREG/ CR-6478
+2. TITLE AND SUBTITLE INEL-96/0219
+Motor-Operated Valve(MOV) Actuator Motor and Gearbox Testing = ann · iad
+July 1997
+a. FIN OR GRANT NUMBER
+A6857
+[5. AUTHORS) 6. TYPE OF REPORT
+Kevin G. Dewall, John C. Watkins, Donovan Bramwell
+Technical
+7. PERIOD COVERED tinctusive Dates!
+[= PERFORMING ORGANIZATION · NAME AND ADDRESS {if NRC, provide Division, Office or Region, U.S. Nuclear Regulatory Commission, and mailing edidress
+
+Idaho National Engineering and Environmental Laboratory
+Lockheed Martin Idaho Technologies Company
+
+P.O. Box 1625
+
+Idaho Falls, Idaho 83415
+
+, 1 ANIZATION · NAME AND ADORESS (if NAC, type ·Same as above·: if , provide NRC Division, Oftice or Region, U.S. Nuciear Regulatory C issio
+and mailing eddress,}
+
+Division of Engineering Technology
+Office of Nuclear Regulatory Research
+U.S. Nuclear Regulatory Commission
+Washington, D.C. 20555 ~0001
+
+110, SUPPLEMENTARY NOTES
+
+fi 3, ABSTRACT (260 words or tessi
+
+Researchers at the Idaho National Engineering and Environmental Laboratory tested the performance of electric
+motors and actuator gearboxes typical of the equipment installed on motor·operated valves used in nuclear power
+plants. Using a test stand that simulates valve closure loads against flow and pressure, we tested five electric motors
+(four ac and one dc) and three gearboxes at conditions a motor might experience in a power plant, including
+
+such off·normal conditions as operation at high temperature and reduced voltage. We also monitored the efficiency
+of the actuator gearbox. All five motors operated at or above their rated starting torque during tests at normal
+voltages and temperatures. For all five motors, actual torque losses due to voltage degradation were greater than the
+losses calculated by methods typically used for predicting motor torque at degraded voltage conditions. For the dc
+motor the actual torque losses due to elevated operating temperatures were greater than the losses calculated by the
+typical predictive method. The actual efficiencies of the actuator gearboxes were generally lower than the running
+efficiencies published by the manufacturer and were generally nearer the published pull-out efficiencies. Operation -
+of the gearbox at elevated temperature did not affect the operating efficiency.
+
+fiz. KEY WORDS/ODESCR!PTORS {List words or phrases that will essist researchers in locating the report.) 13, AVAILABILITY STATEMENT
+motor-operated valve (MOV) Unlimited
+ac motor 14, SECURITY CLASSIFICATION
+dc motor This Pagel
+actuator gearbox Unclassified
+(This Report
+Unclassified
+
+, |S. NUMBER OF PAGES
+
+16. PRICE
+
+NAC FORM 335 (2-89)
+

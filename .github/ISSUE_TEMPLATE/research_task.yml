@@ -1,0 +1,35 @@
+name: Research / thesis task
+description: Track literature, wiki, citation, paper, or experiment planning work
+title: "research: "
+labels: ["type:research", "status:needs-triage"]
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What research/wiki/paper task should be done?
+    validations:
+      required: true
+  - type: checkboxes
+    id: rq
+    attributes:
+      label: RQ mapping
+      options:
+        - label: RQ1
+        - label: RQ2
+        - label: RQ3
+        - label: RQ4
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources / starting points
+      description: Papers, wiki pages, raw files, URLs, or prior notes.
+  - type: textarea
+    id: done
+    attributes:
+      label: Definition of done
+      value: |
+        - [ ] Wiki page or paper artifact updated
+        - [ ] Sources cited
+        - [ ] `[NEEDS VERIFICATION]` flags resolved or explicitly retained
+        - [ ] `python3 scripts/wiki_health.py` passes

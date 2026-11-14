@@ -1,0 +1,1 @@
+For anomalous sound at Pump_12, inspect the pump inlet for cavitation before recommending corrective action.

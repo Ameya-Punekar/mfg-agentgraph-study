@@ -1,0 +1,75 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mfg-agentgraph"
+version = "0.1.0"
+description = "Ontology-grounded KG-LLM agent architecture for manufacturing anomaly triage."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyshacl>=0.40.1,<0.41",
+    "rdflib>=7.6,<8",
+]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.18,<2",
+  "pre-commit>=4.3,<5",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6,<8",
+  "ruff>=0.12,<1",
+  "zizmor>=1.11,<2",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mfg_agentgraph"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src", "tests"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+  "integration: requires an explicitly configured live external service",
+]
+addopts = [
+  "--strict-config",
+  "--strict-markers",
+  "--cov=src/mfg_agentgraph",
+  "--cov-branch",
+  "--cov-report=term-missing",
+  "--cov-report=xml",
+  "--cov-fail-under=90",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["src/mfg_agentgraph"]
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
+skip_covered = true
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+  "raise NotImplementedError",
+]
+
+[project.scripts]
+mfg-agentgraph-demo = "mfg_agentgraph.demo_cli:main"
+mfg-agentgraph-annotate = "mfg_agentgraph.annotation_cli:main"
+mfg-agentgraph-stack = "mfg_agentgraph.stack_cli:main"
+mfg-agentgraph-corpus = "mfg_agentgraph.corpus_cli:main"

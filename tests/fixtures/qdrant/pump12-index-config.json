@@ -1,0 +1,22 @@
+{
+  "contract_version": "mfg-agentgraph-procedural-index-v1",
+  "document_id": "SOP-PUMP-OPS-2026",
+  "source_path": "tests/fixtures/sop/pump12-sop.txt",
+  "applicable_asset_id": "ex:Pump_12",
+  "applicable_asset_type": "centrifugal_pump",
+  "related_procedure": "ex:Procedure_InspectInletCavitation_Pump12",
+  "evidence_id_prefix": "ex:SOP_Chunk_",
+  "first_chunk_index": 7,
+  "max_chunk_chars": 250,
+  "collection_name": "pump12-procedures",
+  "vector_size": 4,
+  "distance": "Cosine",
+  "payload_indexes": [
+    {"field_name": "applicable_asset_id", "field_schema": "keyword"},
+    {"field_name": "applicable_asset_type", "field_schema": "keyword"},
+    {"field_name": "related_procedure", "field_schema": "keyword"}
+  ],
+  "vector_source": "caller_supplied",
+  "vector_producer_id": "pump12-test-vector-v1",
+  "embedding_generated_by_indexer": false
+}

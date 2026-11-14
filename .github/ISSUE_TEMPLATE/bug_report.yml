@@ -1,0 +1,53 @@
+name: Bug report
+description: Report broken behavior in scripts, wiki tooling, CI, or thesis artifacts
+title: "fix: "
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug description
+      description: What is broken?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - thesis-wiki
+        - concept-paper
+        - scripts
+        - CI/GitHub
+        - experiments
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or evidence
+      description: Paste concise logs. Redact secrets.
+      render: text
